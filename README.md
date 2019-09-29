@@ -1,6 +1,6 @@
-# travel
+# Cheap Airhub
 
-> My sublime Nuxt.js project
+>Cheap Air Hub | Ultimate Cheap Flight, Airline Tickets & Airfare by Cheapairhub.com
 
 ## Build Setup
 
