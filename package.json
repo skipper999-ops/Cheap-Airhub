@@ -1,0 +1,26 @@
+{
+  "name": "CheapAirHub",
+  "version": "1.0.0",
+  "description": "Cheap ticket to everywhere,You can find Low cost airline and save more money on airline tickets to your travel. CheapAirHub.com offers cheap airfare to every destination in the world.",
+  "author": "skip",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "nuxt": "^2.0.0",
+    "vue2-datepicker": "^2.12.0"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0",
+    "vue-jest": "^4.0.0-0"
+  }
+}
