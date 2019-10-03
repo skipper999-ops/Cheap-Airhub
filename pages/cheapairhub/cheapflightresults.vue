@@ -1716,6 +1716,7 @@ export default {
                 }
 
                 this.amadeus.push(temp);
+                this.amadeus = this.sortAmadeusData(this.amadeus, 1);
 
                 console.log(this.amadeus);
               }
@@ -2236,9 +2237,16 @@ export default {
     getSortedData: function(data, isAsc) {
       return data.sort((a, b) => {
         return (
-          (a.offerItems[0].price.total < b.offerItems[0].price.total &&
-          a.offerItems[0].services[0].segments[0].flightSegment.departure ==
-            $("#from_iata").val()
+          (a.offerItems[0].price < b.offerItems[0].price.total 
+            ? -1
+            : 1) * (isAsc ? 1 : -1)
+        );
+      });
+    },
+    sortAmadeusData: function(data, isAsc) {
+      return data.sort((a, b) => {
+        return (
+          (a.price < b.price 
             ? -1
             : 1) * (isAsc ? 1 : -1)
         );

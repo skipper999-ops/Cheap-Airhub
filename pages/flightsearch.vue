@@ -952,7 +952,6 @@ export default {
       .datepicker({
         autoClose: true,
         onSelect: function onSelect(fd, date) {
-          console.log(fd);
 
           var day = fd.split(",")[0];
           var _date = fd.split(",")[1];
@@ -1326,8 +1325,12 @@ export default {
               //     symbol = "₹";
               //     break;
               // }
+              console.log("databefore")
+              console.log(data)
 
               data.data = this.getSortedData(data.data, 1);
+
+              console.log(data)
 
               for (var i = 0; i < data.data.length; i++) {
                 var temp = {};
@@ -1425,8 +1428,6 @@ export default {
                   var seconds = day * 3600 * 24 + hour * 3600 + minute * 60;
 
                   duration = duration + seconds;
-
-                  console.log(seconds);
 
                   tmp.duration = this.seconds_to_date(seconds);
 
@@ -1597,7 +1598,6 @@ export default {
 
                     round_duration = round_duration + seconds;
 
-                    console.log(seconds);
 
                     tmp.round_duration = this.seconds_to_date(seconds);
 
@@ -1680,7 +1680,8 @@ export default {
 
                 this.amadeus.push(temp);
 
-                console.log(this.amadeus);
+                this.amadeus = this.sortAmadeusData(this.amadeus, 1);
+
               }
 
               // for (var i = 0; i < data.data.length; i++) {
@@ -1914,7 +1915,6 @@ export default {
               "&counter=0"
           })
             .then(res => {
-              console.log("res", res.data.data.onwardflights);
 
               var data = res.data.data.onwardflights;
               var returnflights = res.data.data.returnflights;
@@ -1928,9 +1928,6 @@ export default {
 
               if (this.isInternationDep == 0) {
                 for (var i = 0; i < data.length; i++) {
-                  console.log("one");
-
-                  console.log(parseInt(data[i].stops));
 
                   if (parseInt(data[i].stops) == 0) {
                     var loop =
@@ -1982,9 +1979,8 @@ export default {
                 }
 
                 for (var i = 0; i < returnflights.length; i++) {
-                  console.log("one");
 
-                  console.log(parseInt(returnflights[i].stops));
+
 
                   if (parseInt(returnflights[i].stops) == 0) {
                     var loop =
@@ -2038,7 +2034,6 @@ export default {
                 console.log("Internation result");
 
                 for (var i = 0; i < data.length; i++) {
-                  console.log(data[i].returnfl.length);
                   if (data[i].returnfl.length == 0) {
                     var loop =
                       '<div class="card"> <div class="flight_name"> <p>' +
@@ -2063,8 +2058,6 @@ export default {
                     var d1 = document.getElementById("goibibo_internation");
                     d1.insertAdjacentHTML("beforeend", loop);
                   } else {
-                    console.log(data[i].returnfl[0].destination);
-                    console.log(i);
 
                     var onwardflights,
                       arrtime,
@@ -2079,7 +2072,6 @@ export default {
 
                       arrtime = data[i].arrtime;
                     } else {
-                      console.log(data[i].onwardflights.length - 1);
 
                       onwardflights =
                         data[i].onwardflights[data[i].onwardflights.length - 1]
@@ -2114,11 +2106,10 @@ export default {
                           );
                         }
 
-                        console.log("origin_length");
-                        console.log(origin_length);
+
 
                         for (var j = 0; j < origin_length; j++) {
-                          console.log(originStops);
+                          
 
                           originStops = originStops.concat(
                             " - " + data[i].onwardflights[j].origin
@@ -2196,9 +2187,16 @@ export default {
     getSortedData: function(data, isAsc) {
       return data.sort((a, b) => {
         return (
-          (a.offerItems[0].price.total < b.offerItems[0].price.total &&
-          a.offerItems[0].services[0].segments[0].flightSegment.departure ==
-            $("#from_iata").val()
+          (a.offerItems[0].price.total < b.offerItems[0].price.total 
+            ? -1
+            : 1) * (isAsc ? 1 : -1)
+        );
+      });
+    },
+    sortAmadeusData: function(data, isAsc) {
+      return data.sort((a, b) => {
+        return (
+          (a.price < b.price 
             ? -1
             : 1) * (isAsc ? 1 : -1)
         );
@@ -2212,13 +2210,11 @@ export default {
       });
     },
     capitalizeFirstLetter: function(string) {
-      console.log("char");
-      console.log(string);
+      
+      
 
       if (string != undefined && string != "") {
-        console.log(
-          "ss" + string.charAt(0).toUpperCase() + string.toLowerCase().slice(1)
-        );
+
 
         return string
           .toLowerCase()
@@ -2286,8 +2282,7 @@ export default {
           }
         })
           .then(res => {
-            console.log("res", res);
-            console.log("Token Generated");
+            
             if (res.data.length == 0) {
               this.airportDepListError = true;
             } else {
@@ -2302,7 +2297,7 @@ export default {
       }
     },
     selectDep: function(id) {
-      console.log(id);
+      
 
       if (this.airportList.filter(v => v.id == id).length > 0) {
         var data_ins = this.airportList.filter(v => v.id == id)[0].municipality;
@@ -2354,8 +2349,6 @@ export default {
               this.airportArrListError = false;
             }
 
-            console.log(res);
-
             $(".arr").removeClass("hide");
           })
           .catch(err => {
@@ -2364,8 +2357,6 @@ export default {
       }
     },
     selectArr: function(id) {
-      console.log(id);
-
       if (this.airportListArr.filter(v => v.id == id).length > 0) {
         var data_ins = this.airportListArr.filter(v => v.id == id)[0]
           .municipality;
@@ -2399,9 +2390,6 @@ export default {
       }
     },
     getJSONKeyValue: function(json, value) {
-      console.log("value");
-      console.log(value);
-
       for (var i in json) {
         var key = i;
         var val = json[i];
@@ -2451,7 +2439,6 @@ export default {
       })
         .then(res => {
           console.log("res", res);
-          console.log("Info Added");
 
           this.transaction_id = res.data.transaction_id;
 
