@@ -678,7 +678,7 @@
                   <div v-if="isInternationDep == 0">
                     <p
                       style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'"
-                    >Cabin: 7kg | Check-in: 15kg</p>
+                    >Cabin: 7kg | Check-in: 15kg | Refundable</p>
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
@@ -689,7 +689,7 @@
                   <div v-if="isInternationDep == 1">
                     <p
                       style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'"
-                    >Cabin: 7kg | Check-in: 25kg</p>
+                    >Cabin: 7kg | Check-in: 25kg | Refundable</p>
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
@@ -896,7 +896,7 @@ export default {
     airportListArr: [],
     typingTimer: 0,
     typingTimer_to: 0,
-    picked: "oneway",
+    picked: "roundtrip",
     disc: 0,
     source: "amadeus",
     isInternationDep: 0,
@@ -1406,16 +1406,35 @@ export default {
                     ).detailedName
                   );
 
-                  tmp.dep_time = data.data[
+                  var a = data.data[
                     i
                   ].offerItems[0].services[0].segments[
                     j
                   ].flightSegment.departure.at
+
+
+                  var zone = " AM";
+
+                  var b = a
                     .split("T")
                     ["1"].split("-")
-                    ["0"].split(":")
-                    .slice(0, 2)
-                    .join(":");
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+
+                  tmp.dep_time = b.slice(0, 2).join(":") + zone
+
+
+
+
+
+
 
                   tmp.destination =
                     data.data[i].offerItems[0].services[0].segments[
@@ -1430,16 +1449,31 @@ export default {
                     ).detailedName
                   );
 
-                  tmp.arr_time = data.data[
-                    i
-                  ].offerItems[0].services[0].segments[
+
+
+                  var a = data.data[i].offerItems[0].services[0].segments[
                     j
                   ].flightSegment.arrival.at
+
+
+                  var zone = " AM";
+
+                  var b = a
                     .split("T")
                     ["1"].split("-")
-                    ["0"].split(":")
-                    .slice(0, 2)
-                    .join(":");
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  tmp.arr_time = b.slice(0, 2).join(":") + zone
+
+
+                  console.log(tmp.arr_time)
 
                   tmp.flight_number =
                     data.data[i].offerItems[0].services[0].segments[
@@ -1462,8 +1496,6 @@ export default {
                   var seconds = day * 3600 * 24 + hour * 3600 + minute * 60;
 
                   duration = duration + seconds;
-
-                  console.log(seconds);
 
                   tmp.duration = this.seconds_to_date(seconds);
 
@@ -1499,14 +1531,31 @@ export default {
                   ).detailedName
                 );
 
-                temp.dep_time = data.data[
+               var a = data.data[
                   i
                 ].offerItems[0].services[0].segments[0].flightSegment.departure.at
-                  .split("T")
-                  ["1"].split("-")
-                  ["0"].split(":")
-                  .slice(0, 2)
-                  .join(":");
+
+
+                                    var zone = " AM";
+
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  
+                  temp.dep_time = b.slice(0, 2).join(":") + zone
+
+
+
+
 
                 temp.destination =
                   data.data[i].offerItems[0].services[0].segments[
@@ -1522,14 +1571,54 @@ export default {
                   ).detailedName
                 );
 
-                temp.arr_time = data.data[i].offerItems[0].services[0].segments[
+
+                
+                  var a = data.data[i].offerItems[0].services[0].segments[
                   data.data[i].offerItems[0].services[0].segments.length - 1
                 ].flightSegment.arrival.at
-                  .split("T")
-                  ["1"].split("-")
-                  ["0"].split(":")
-                  .slice(0, 2)
-                  .join(":");
+
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  var zone = " AM";
+                  
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  temp.arr_time = b.slice(0, 2).join(":") + zone
+
+                var a = data.data[i].offerItems[0].services[0].segments[
+                  data.data[i].offerItems[0].services[0].segments.length - 1
+                ].flightSegment.arrival.at
+
+
+                
+                  var zone = " AM";
+                  
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  temp.arr_time = b.slice(0, 2).join(":") + zone
 
                 temp.price =
                   data.data[i].offerItems[0].price.total -
@@ -1577,16 +1666,29 @@ export default {
                       ).detailedName
                     );
 
-                    tmp.round_dep_time = data.data[
+                    var a = data.data[
                       i
                     ].offerItems[0].services[1].segments[
                       j
                     ].flightSegment.departure.at
-                      .split("T")
-                      ["1"].split("-")
-                      ["0"].split(":")
-                      .slice(0, 2)
-                      .join(":");
+
+                                                          var zone = " AM";
+
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  
+                  tmp.round_dep_time = b.slice(0, 2).join(":") + zone
+
 
                     tmp.round_destination =
                       data.data[i].offerItems[0].services[1].segments[
@@ -1601,16 +1703,33 @@ export default {
                       ).detailedName
                     );
 
-                    tmp.round_arr_time = data.data[
+
+ 
+                  var a =  data.data[
                       i
                     ].offerItems[0].services[1].segments[
                       j
                     ].flightSegment.arrival.at
-                      .split("T")
-                      ["1"].split("-")
-                      ["0"].split(":")
-                      .slice(0, 2)
-                      .join(":");
+
+                  var zone = " AM";
+                  
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  tmp.arr_time = b.slice(0, 2).join(":") + zone
+
+
+
+
 
                     tmp.round_flight_number =
                       data.data[i].offerItems[0].services[1].segments[
@@ -1633,8 +1752,6 @@ export default {
                     var seconds = day * 3600 * 24 + hour * 3600 + minute * 60;
 
                     round_duration = round_duration + seconds;
-
-                    console.log(seconds);
 
                     tmp.round_duration = this.seconds_to_date(seconds);
 
@@ -1671,14 +1788,29 @@ export default {
                     ).detailedName
                   );
 
-                  temp.round_dep_time = data.data[
+                  var a = data.data[
                     i
                   ].offerItems[0].services[1].segments[0].flightSegment.departure.at
+
+
+                    
+                                                          var zone = " AM";
+
+                  var b = a
                     .split("T")
                     ["1"].split("-")
-                    ["0"].split(":")
-                    .slice(0, 2)
-                    .join(":");
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  
+                  temp.round_dep_time = b.slice(0, 2).join(":") + zone
+                    
 
                   temp.round_destination =
                     data.data[i].offerItems[0].services[1].segments[
@@ -1700,11 +1832,48 @@ export default {
                   ].offerItems[0].services[1].segments[
                     data.data[i].offerItems[0].services[1].segments.length - 1
                   ].flightSegment.arrival.at
+
+
+                  
+                  var zone = " AM";
+                  
+                  var b = a
                     .split("T")
                     ["1"].split("-")
-                    ["0"].split(":")
-                    .slice(0, 2)
-                    .join(":");
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  temp.round_arr_time = b.slice(0, 2).join(":") + zone
+
+
+                                  var a =  data.data[
+                    i
+                  ].offerItems[0].services[1].segments[
+                    data.data[i].offerItems[0].services[1].segments.length - 1
+                  ].flightSegment.arrival.at
+
+
+                  var zone = " AM";
+                  
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  temp.round_arr_time = b.slice(0, 2).join(":") + zone
 
                   temp.round_price =
                     data.data[i].offerItems[0].price.total -
@@ -1716,9 +1885,8 @@ export default {
                 }
 
                 this.amadeus.push(temp);
-                this.amadeus = this.sortAmadeusData(this.amadeus, 1);
 
-                console.log(this.amadeus);
+                this.amadeus = this.sortAmadeusData(this.amadeus, 1);
               }
 
               $(".disclainer").removeClass("hide");

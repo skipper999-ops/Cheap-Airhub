@@ -913,7 +913,7 @@ export default {
     airportList: [],
     airportListArr: [],
     typingTimer: 0,
-    picked: "oneway",
+    picked: "roundtrip",
     source: "amadeus",
     isInternationDep: 0,
     isInternationArr: 0,

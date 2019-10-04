@@ -650,19 +650,23 @@
                   <div v-if="isInternationDep == 0">
                     <p
                       style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'"
-                    >Cabin: 7kg | Check-in: 15kg</p>
+                    >Cabin: 7kg | Check-in: 15kg | Refundable</p>
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
-                      <a href="tel:1844 842 9401">1844-842-9401</a>
+                      <a
+                        href="tel:1844 842 9401"
+                      >1844-842-9401</a>
                     </p>
                   </div>
                   <div v-if="isInternationDep == 1">
                     <p
                       style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'"
-                    >Cabin: 7kg | Check-in: 25kg</p>
+                    >Cabin: 7kg | Check-in: 25kg | Refundable</p>
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
-                      <a href="tel:1844 842 9401">1844-842-9401</a>
+                      <a
+                        href="tel:1844 842 9401"
+                      >1844-842-9401</a>
                     </p>
                   </div>
                   <p class="show_flight" @click="showDetail(index)">Flight Details</p>
@@ -860,7 +864,7 @@ export default {
     airportListArr: [],
     typingTimer: 0,
     typingTimer_to: 0,
-    picked: "oneway",
+    picked: "roundtrip",
     source: "amadeus",
     isInternationDep: 0,
     isInternationArr: 0,
@@ -952,7 +956,6 @@ export default {
       .datepicker({
         autoClose: true,
         onSelect: function onSelect(fd, date) {
-
           var day = fd.split(",")[0];
           var _date = fd.split(",")[1];
           var month = fd.split(",")[2];
@@ -1162,7 +1165,7 @@ export default {
             console.log(res.data.access_token);
             this.access_token = res.data.access_token;
             localStorage.setItem("access_token", res.data.access_token);
-             this.sendDisc();
+            this.sendDisc();
           })
           .catch(err => {
             console.log("error in request1", err.response.data.message);
@@ -1325,12 +1328,12 @@ export default {
               //     symbol = "₹";
               //     break;
               // }
-              console.log("databefore")
-              console.log(data)
+              console.log("databefore");
+              console.log(data);
 
               data.data = this.getSortedData(data.data, 1);
 
-              console.log(data)
+              console.log(data);
 
               for (var i = 0; i < data.data.length; i++) {
                 var temp = {};
@@ -1372,16 +1375,35 @@ export default {
                     ).detailedName
                   );
 
-                  tmp.dep_time = data.data[
+                  var a = data.data[
                     i
                   ].offerItems[0].services[0].segments[
                     j
                   ].flightSegment.departure.at
+
+
+                  var zone = " AM";
+
+                  var b = a
                     .split("T")
                     ["1"].split("-")
-                    ["0"].split(":")
-                    .slice(0, 2)
-                    .join(":");
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+
+                  tmp.dep_time = b.slice(0, 2).join(":") + zone
+
+
+
+
+
+
 
                   tmp.destination =
                     data.data[i].offerItems[0].services[0].segments[
@@ -1396,16 +1418,31 @@ export default {
                     ).detailedName
                   );
 
-                  tmp.arr_time = data.data[
-                    i
-                  ].offerItems[0].services[0].segments[
+
+
+                  var a = data.data[i].offerItems[0].services[0].segments[
                     j
                   ].flightSegment.arrival.at
+
+
+                  var zone = " AM";
+
+                  var b = a
                     .split("T")
                     ["1"].split("-")
-                    ["0"].split(":")
-                    .slice(0, 2)
-                    .join(":");
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  tmp.arr_time = b.slice(0, 2).join(":") + zone
+
+
+                  console.log(tmp.arr_time)
 
                   tmp.flight_number =
                     data.data[i].offerItems[0].services[0].segments[
@@ -1463,14 +1500,31 @@ export default {
                   ).detailedName
                 );
 
-                temp.dep_time = data.data[
+               var a = data.data[
                   i
                 ].offerItems[0].services[0].segments[0].flightSegment.departure.at
-                  .split("T")
-                  ["1"].split("-")
-                  ["0"].split(":")
-                  .slice(0, 2)
-                  .join(":");
+
+
+                                    var zone = " AM";
+
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  
+                  temp.dep_time = b.slice(0, 2).join(":") + zone
+
+
+
+
 
                 temp.destination =
                   data.data[i].offerItems[0].services[0].segments[
@@ -1486,14 +1540,54 @@ export default {
                   ).detailedName
                 );
 
-                temp.arr_time = data.data[i].offerItems[0].services[0].segments[
+
+                
+                  var a = data.data[i].offerItems[0].services[0].segments[
                   data.data[i].offerItems[0].services[0].segments.length - 1
                 ].flightSegment.arrival.at
-                  .split("T")
-                  ["1"].split("-")
-                  ["0"].split(":")
-                  .slice(0, 2)
-                  .join(":");
+
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  var zone = " AM";
+                  
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  temp.arr_time = b.slice(0, 2).join(":") + zone
+
+                var a = data.data[i].offerItems[0].services[0].segments[
+                  data.data[i].offerItems[0].services[0].segments.length - 1
+                ].flightSegment.arrival.at
+
+
+                
+                  var zone = " AM";
+                  
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  temp.arr_time = b.slice(0, 2).join(":") + zone
 
                 temp.price =
                   data.data[i].offerItems[0].price.total -
@@ -1541,16 +1635,29 @@ export default {
                       ).detailedName
                     );
 
-                    tmp.round_dep_time = data.data[
+                    var a = data.data[
                       i
                     ].offerItems[0].services[1].segments[
                       j
                     ].flightSegment.departure.at
-                      .split("T")
-                      ["1"].split("-")
-                      ["0"].split(":")
-                      .slice(0, 2)
-                      .join(":");
+
+                                                          var zone = " AM";
+
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  
+                  tmp.round_dep_time = b.slice(0, 2).join(":") + zone
+
 
                     tmp.round_destination =
                       data.data[i].offerItems[0].services[1].segments[
@@ -1565,16 +1672,33 @@ export default {
                       ).detailedName
                     );
 
-                    tmp.round_arr_time = data.data[
+
+ 
+                  var a =  data.data[
                       i
                     ].offerItems[0].services[1].segments[
                       j
                     ].flightSegment.arrival.at
-                      .split("T")
-                      ["1"].split("-")
-                      ["0"].split(":")
-                      .slice(0, 2)
-                      .join(":");
+
+                  var zone = " AM";
+                  
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  tmp.arr_time = b.slice(0, 2).join(":") + zone
+
+
+
+
 
                     tmp.round_flight_number =
                       data.data[i].offerItems[0].services[1].segments[
@@ -1597,7 +1721,6 @@ export default {
                     var seconds = day * 3600 * 24 + hour * 3600 + minute * 60;
 
                     round_duration = round_duration + seconds;
-
 
                     tmp.round_duration = this.seconds_to_date(seconds);
 
@@ -1634,14 +1757,29 @@ export default {
                     ).detailedName
                   );
 
-                  temp.round_dep_time = data.data[
+                  var a = data.data[
                     i
                   ].offerItems[0].services[1].segments[0].flightSegment.departure.at
+
+
+                    
+                                                          var zone = " AM";
+
+                  var b = a
                     .split("T")
                     ["1"].split("-")
-                    ["0"].split(":")
-                    .slice(0, 2)
-                    .join(":");
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  
+                  temp.round_dep_time = b.slice(0, 2).join(":") + zone
+                    
 
                   temp.round_destination =
                     data.data[i].offerItems[0].services[1].segments[
@@ -1663,11 +1801,48 @@ export default {
                   ].offerItems[0].services[1].segments[
                     data.data[i].offerItems[0].services[1].segments.length - 1
                   ].flightSegment.arrival.at
+
+
+                  
+                  var zone = " AM";
+                  
+                  var b = a
                     .split("T")
                     ["1"].split("-")
-                    ["0"].split(":")
-                    .slice(0, 2)
-                    .join(":");
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  temp.round_arr_time = b.slice(0, 2).join(":") + zone
+
+
+                                  var a =  data.data[
+                    i
+                  ].offerItems[0].services[1].segments[
+                    data.data[i].offerItems[0].services[1].segments.length - 1
+                  ].flightSegment.arrival.at
+
+
+                  var zone = " AM";
+                  
+                  var b = a
+                    .split("T")
+                    ["1"].split("-")
+                    ["0"].split(":");
+
+                  if (b[0] > 12) {
+                    b[0] = b[0] - 12;
+                    if(b[0] < 10){
+                      b[0] = "0" + b[0].toString()
+                    }
+                    zone = " PM"
+                  }
+                  temp.round_arr_time = b.slice(0, 2).join(":") + zone
 
                   temp.round_price =
                     data.data[i].offerItems[0].price.total -
@@ -1681,7 +1856,6 @@ export default {
                 this.amadeus.push(temp);
 
                 this.amadeus = this.sortAmadeusData(this.amadeus, 1);
-
               }
 
               // for (var i = 0; i < data.data.length; i++) {
@@ -1915,7 +2089,6 @@ export default {
               "&counter=0"
           })
             .then(res => {
-
               var data = res.data.data.onwardflights;
               var returnflights = res.data.data.returnflights;
 
@@ -1928,7 +2101,6 @@ export default {
 
               if (this.isInternationDep == 0) {
                 for (var i = 0; i < data.length; i++) {
-
                   if (parseInt(data[i].stops) == 0) {
                     var loop =
                       '<div class="card no-stops"> <div class="flight_name"> <p>' +
@@ -1979,9 +2151,6 @@ export default {
                 }
 
                 for (var i = 0; i < returnflights.length; i++) {
-
-
-
                   if (parseInt(returnflights[i].stops) == 0) {
                     var loop =
                       '<div class="card"> <div class="flight_name"> <p>' +
@@ -2058,7 +2227,6 @@ export default {
                     var d1 = document.getElementById("goibibo_internation");
                     d1.insertAdjacentHTML("beforeend", loop);
                   } else {
-
                     var onwardflights,
                       arrtime,
                       returnflights,
@@ -2072,7 +2240,6 @@ export default {
 
                       arrtime = data[i].arrtime;
                     } else {
-
                       onwardflights =
                         data[i].onwardflights[data[i].onwardflights.length - 1]
                           .destination;
@@ -2106,11 +2273,7 @@ export default {
                           );
                         }
 
-
-
                         for (var j = 0; j < origin_length; j++) {
-                          
-
                           originStops = originStops.concat(
                             " - " + data[i].onwardflights[j].origin
                           );
@@ -2187,19 +2350,14 @@ export default {
     getSortedData: function(data, isAsc) {
       return data.sort((a, b) => {
         return (
-          (a.offerItems[0].price.total < b.offerItems[0].price.total 
-            ? -1
-            : 1) * (isAsc ? 1 : -1)
+          (a.offerItems[0].price.total < b.offerItems[0].price.total ? -1 : 1) *
+          (isAsc ? 1 : -1)
         );
       });
     },
     sortAmadeusData: function(data, isAsc) {
       return data.sort((a, b) => {
-        return (
-          (a.price < b.price 
-            ? -1
-            : 1) * (isAsc ? 1 : -1)
-        );
+        return (a.price < b.price ? -1 : 1) * (isAsc ? 1 : -1);
       });
     },
     getSortedDataGo: function(data, isAsc) {
@@ -2210,12 +2368,7 @@ export default {
       });
     },
     capitalizeFirstLetter: function(string) {
-      
-      
-
       if (string != undefined && string != "") {
-
-
         return string
           .toLowerCase()
           .split(" ")
@@ -2282,7 +2435,6 @@ export default {
           }
         })
           .then(res => {
-            
             if (res.data.length == 0) {
               this.airportDepListError = true;
             } else {
@@ -2297,8 +2449,6 @@ export default {
       }
     },
     selectDep: function(id) {
-      
-
       if (this.airportList.filter(v => v.id == id).length > 0) {
         var data_ins = this.airportList.filter(v => v.id == id)[0].municipality;
 
