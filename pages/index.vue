@@ -1229,7 +1229,7 @@ export default {
         localStorage.setItem("to_arr", $("#to_arr").val());
         localStorage.setItem("to_airport", $(".to_airport").html());
 
-        this.$router.push("/flightsearch");
+        // this.$router.push("/flight/search?tripType=" + this.picked + "/");
       }
 
       // }
