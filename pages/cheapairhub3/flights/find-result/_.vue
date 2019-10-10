@@ -67,7 +67,7 @@
             <p
               style="padding-bottom:10px"
             >Call the below Toll free Number to confirm your booking at the lowest fare</p>
-            <p style="color:black;font-weight:bold">1844 842 9401</p>
+            <p style="color:black;font-weight:bold">1844-944-4491</p>
           </div>
         </div>
       </div>
@@ -638,11 +638,11 @@
                           style="width: 50px;height: 100%;object-fit: contain;"
                           src="~static/call-now.gif"
                         />
-                        <p style="font-size:25px;padding: 7px 15px;line-height:25px;height:25px">1844-842-9401</p>
+                        <p style="font-size:25px;padding: 7px 15px;line-height:25px;height:25px">1844-944-4491</p>
                       </div>
                       <a
                         class="btn"
-                        href="tel:18448429401"
+                        href="tel:1844-944-4491"
                         style="color:white; text-decoration:none;margin-top: 20px"
                       >Call Now</a>
                     </div>
@@ -708,8 +708,8 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:1844 842 9401"
-                      >1844-842-9401</a>
+                        href="tel:1844-944-4491"
+                      >1844-944-4491</a>
                     </p>
                   </div>
                   <div v-if="isInternationDep == 1">
@@ -719,8 +719,8 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:1844 842 9401"
-                      >1844-842-9401</a>
+                        href="tel:1844-944-4491"
+                      >1844-944-4491</a>
                     </p>
                   </div>
                   <p class="show_flight" @click="showDetail(index)">Flight Details</p>
@@ -943,7 +943,7 @@ export default {
 
   mounted() {
 
-        $(".telephone").attr("href" , '1844-944-4491')
+        $(".telephone").attr("href" , 'tel:1844-944-4491')
 
     $(".telephone").html('1844-944-4491')
 
@@ -1294,13 +1294,16 @@ export default {
       var rtn = 'oneway'
         if(this.picked == 'roundtrip'){
             rtn = 'return'
+        window.location.href = "/cheapairhub3/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html() + "&utm_source=skyscanner"
+        }else{
+          
+          window.location.href = "/cheapairhub3/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&cabin=" + $(".drop-down .selected .value").html() + "&utm_source=skyscanner"
         }
 
 
 
 
 
-        window.location.href = "/cheapairhub3/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html() + "&utm_source=skyscanner"
       
     },
     sendDisc: function(e) {

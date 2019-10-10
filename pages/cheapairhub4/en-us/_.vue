@@ -955,12 +955,11 @@ export default {
      var ori_ = second_part.OriginStation
      var des_ = second_part.DestinationStation
      var start_date_ = second_part.DepartureDate.split("/").reverse().join("-")
-     var end_date_ = second_part.ReturnDate.split("/").reverse().join("-")
 
     //  for (const [key, value] of Object.entries(second_part)) {
-
-         
-    //     console.log(key, value);
+      
+      
+      //     console.log(key, value);
     
     
     // }
@@ -973,6 +972,7 @@ export default {
 
 
             if(second_part.SearchType.toLowerCase() == 'return'){
+                var end_date_ = second_part.ReturnDate.split("/").reverse().join("-")
                 localStorage.setItem("way", 'roundtrip');
                 localStorage.setItem("return", end_date_);
             }else if(second_part.SearchType.toLowerCase() == 'oneway'){
@@ -981,7 +981,7 @@ export default {
             }
 
 
-          localStorage.setItem("travel_class", second_part.cabinclass.toUpperCase());
+          localStorage.setItem("travel_class", second_part.cabinclass);
           localStorage.setItem("adult", second_part.Adults);
           localStorage.setItem("children", second_part.Children);
           localStorage.setItem("infants", second_part.Infants);
@@ -1297,6 +1297,10 @@ console.log('rtnsssssssssssssssssssssssss')
       var rtn = "Oneway"
         if(this.picked == 'roundtrip'){
             rtn = "Return"
+         window.location.href = "/cheapairhub4/en-us/?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children="+ $(".drop-down2 .selected .value").html() +"&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html().toLowerCase()
+        }else{
+         window.location.href = "/cheapairhub4/en-us/?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children="+ $(".drop-down2 .selected .value").html() +"&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html().toLowerCase()
+
         }
 
         console.log('rtn')
@@ -1304,7 +1308,6 @@ console.log('rtnsssssssssssssssssssssssss')
 
         // https://booking.domain.com/en-us/selectflights?SearchType=Oneway&OriginStation=HKG&DestinationStation=NGO&DepartureDate=03/03/2017&Adults=1
 
-         window.location.href = "/cheapairhub4/en-us/?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children="+ $(".drop-down2 .selected .value").html() +"&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html()
 
 
     },
@@ -1451,7 +1454,7 @@ console.log('rtnsssssssssssssssssssssssss')
               "&currency=" +
               this.currency +
               "&travelClass=" +
-              this.travelClass +
+              this.travelClass.toUpperCase() +
               "";
           } else {
             url =
@@ -1475,7 +1478,7 @@ console.log('rtnsssssssssssssssssssssssss')
               "&currency=" +
               this.currency +
               "&travelClass=" +
-              this.travelClass +
+              this.travelClass.toUpperCase() +
               "";
           }
 

@@ -827,7 +827,7 @@
         >
           <div class="row">
             <div class="hide-on-med-and-down col s24 m24 l12 pic-call">
-            <a href="tel:18449444491 ">
+            <a href="tel:1844-944-4491">
                 <h1><i class="fa fa-phone-square"></i>&nbsp;CALL NOW</h1>
             </a>
         </div>
@@ -957,7 +957,7 @@ export default {
 
  
 
-    $(".telephone").attr("href" , '1844-944-4491')
+    $(".telephone").attr("href" , 'tel:1844-944-4491')
 
     $(".telephone").html('1844-944-4491')
 
@@ -1262,13 +1262,16 @@ export default {
       var rtn = 'oneway'
         if(this.picked == 'roundtrip'){
             rtn = 'return'
+        window.location.href = "/cheapairhub3/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
+        }else{
+        window.location.href = "/cheapairhub3/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
+
         }
 
 
 
 
 
-        window.location.href = "/cheapairhub3/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html() + "&utm_source=skyscanner"
        
     }
 

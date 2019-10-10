@@ -1256,14 +1256,26 @@ export default {
 
       var rtn = 'oneway'
         if(this.picked == 'roundtrip'){
+          
             rtn = 'return'
+
+          window.location.href = "/cheapairhub/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
+
+
+        }
+        else{
+          
+          
+          window.location.href = "/cheapairhub/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  + "&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
+          
+
+
         }
 
 
 
 
 
-        window.location.href = "/cheapairhub/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
        
 // https://www.cheapairhub.com/flights/find-result/?origin=sin&destination=syd&adult=1&child=0&infant_on_seat=1&triptype=return&departure=2019-10-25&return=2019-11-01&cabin=economy&utm_source=1026
        
