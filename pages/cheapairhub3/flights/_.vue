@@ -333,7 +333,25 @@
                                 <li>
                                   <p>
                                     6
-                                    <span class="value">5</span>
+                                    <span class="value">6</span>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    7
+                                    <span class="value">7</span>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    8
+                                    <span class="value">8</span>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    9
+                                    <span class="value">9</span>
                                   </p>
                                 </li>
                               </ul>
@@ -392,24 +410,6 @@
                                 <li>
                                   <p>
                                     6
-                                    <span class="value">5</span>
-                                  </p>
-                                </li>      
-                                <li>
-                                  <p>
-                                    7
-                                    <span class="value">5</span>
-                                  </p>
-                                </li>
-                                <li>
-                                  <p>
-                                    8
-                                    <span class="value">5</span>
-                                  </p>
-                                </li>
-                                <li>
-                                  <p>
-                                    9
                                     <span class="value">5</span>
                                   </p>
                                 </li>
@@ -497,7 +497,7 @@
               </div>-->
 
               <div class="col s24 l24 search_button" style="padding-top: 10px">
-                <button type="button" @click="getToken" class="btn bold">Search</button>
+                <button type="button" @click="newSearch" class="btn bold">Search</button>
               </div>
 
               <!-- <div class="col s24 l24">
@@ -539,9 +539,12 @@
       </div>
     </div>
 
+
     <div class id="result_section" style="background-color: #f1f1f1;padding-top:30px">
       <div class="container section">
         <!-- <h3>Search Results</h3> -->
+
+        <h3 style="text-align:center;color: red">Flat 30% Off on this Route. Only few tickets left. Calling this provider before booking is recommended.</h3>
 
         <div class="processing">
           <p style="text-align:center;padding-bottom: 20px">Fetching Data</p>
@@ -575,7 +578,8 @@
             <div id="amadeus">
               <div class="card oneseg" v-for="(p, index) in amadeus" :key="p.id">
                 <div class="oneway">
-                  <div class="flight_name">
+                  <div class="flight_data row">
+                                        <div class="flight_name  col s24  m12 l3">
                     <img
                       class="carrier_icon"
                       :src="
@@ -586,15 +590,14 @@
                     />
                     <p>{{ p.carrier_name }}</p>
                   </div>
-                  <div class="flight_data row">
-                    <div class="flight_price col s24 m5" style="text-align:center">
+                    <div class="flight_price col s24  m12 l4" style="text-align:center">
                       <h3 style="font-size:30px">
                         <span style="color:grey;font-size:12px">fr</span>
                         $ {{ p.price.toFixed(2) }}
                       </h3>
                       <p style="color:red;font-size:13px">Limited Time Offer*</p>
                     </div>
-                    <div class="flight_departure_time col s12 m5">
+                    <div class="flight_departure_time col s12  m12 l4">
                       <div class="flight_origin">
                         <h5>{{ p.origin }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.origin_fullname }}</p>
@@ -613,7 +616,7 @@
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >Non-stop</p>
                     </div>
-                    <div class="flight_arrival_time col s12 m5">
+                    <div class="flight_arrival_time col s12  m12 l4">
                       <div class="flight_origin">
                         <h5>{{ p.destination }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.destination_fullname }}</p>
@@ -645,7 +648,9 @@
                 <hr v-if="p.isRound == 1" class="dashed-line" />
 
                 <div class="return" v-if="p.isRound == 1">
-                  <div class="flight_name">
+
+                  <div class="flight_data row">
+                                        <div class="flight_name col s24 m12 l3">
                     <img
                       class="carrier_icon"
                       :src="
@@ -656,8 +661,7 @@
                     />
                     <p>{{ p.round_carrier_name }}</p>
                   </div>
-                  <div class="flight_data row">
-                    <div class="flight_price col s24 m5">
+                    <div class="flight_price col s24  m12 l4">
                       <h3 style="font-size:30px">
                         <span style="color:grey;font-size:12px">fr</span>
                         $ {{ p.round_price.toFixed(2) }}
@@ -665,7 +669,7 @@
                       <p style="color:red;font-size:13px">Limited Time Offer*</p>
                     </div>
 
-                    <div class="flight_departure_time col s12 m5">
+                    <div class="flight_departure_time col s12  m12 l4">
                       <div class="flight_origin">
                         <h5>{{ p.round_origin }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.round_origin_fullname }}</p>
@@ -676,7 +680,7 @@
                       <p style="font-size:11px;color:#b5b5b5">Flight Duration</p>
                       <h5>{{ p.round_duration }}</h5>
                     </div>
-                    <div class="flight_arrival_time col s12 m5">
+                    <div class="flight_arrival_time col s12 m4">
                       <div class="flight_origin">
                         <h5>{{ p.round_destination }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.round_destination_fullname }}</p>
@@ -934,6 +938,89 @@ export default {
   }),
 
   mounted() {
+
+        $(".telephone").attr("href" , '1844-944-4491')
+
+    $(".telephone").html('1844-944-4491')
+
+
+    console.log(this.$route.params.pathMatch)
+      console.log(this.$route.query)
+
+    var first_part = this.$route.params.pathMatch
+    var second_part = this.$route.query
+
+
+     var ori_ = first_part.split('/')[0]
+     var des_ = first_part.split('/')[1]
+     var start_date_ = first_part.split('/')[2]
+     var end_date_ = first_part.split('/')[3]
+
+    //  for (const [key, value] of Object.entries(second_part)) {
+
+         
+    //     console.log(key, value);
+    
+    
+    // }
+
+
+
+          localStorage.setItem("from", ori_);
+          localStorage.setItem("to", des_);
+          localStorage.setItem("departure", "20" + start_date_[0] + start_date_[1] + "-" + start_date_[2] + start_date_[3] + "-" + start_date_[4] + start_date_[5]);
+
+
+            if(second_part.rtn == 1){
+                localStorage.setItem("way", 'roundtrip');
+                localStorage.setItem("return", "20" + end_date_[0] + end_date_[1] + "-" + end_date_[2] + end_date_[3] + "-" + end_date_[4] + end_date_[5]);
+            }else if(second_part.rtn == 0){
+                localStorage.setItem("way", 'oneway');
+                localStorage.setItem("return", "20" + start_date_[0] + start_date_[1] + "-" + start_date_[2] + start_date_[3] + "-" + start_date_[4] + start_date_[5]);
+            }
+
+
+          localStorage.setItem("travel_class", second_part.cabinclass.toUpperCase());
+          localStorage.setItem("adult", second_part.adults);
+          localStorage.setItem("children", second_part.children);
+          localStorage.setItem("infants", second_part.infants);
+        //   localStorage.setItem("currency", second_part.currency);
+        //   localStorage.setItem("nonStop", second_part.nonStop);
+
+
+      axios({
+        method: "GET",
+        url: "https://www.cheapairhub.com/api/api.php?getAirport=getAirport&query=" + ori_,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
+      })
+        .then(res => {
+         console.log("resssssssssssssssssssssssss");
+         console.log("res", res.data.name);
+          
+          localStorage.setItem("from_airport", res.data.iata_code + " , " + res.data.name);
+          localStorage.setItem("from_des", res.data.municipality);
+
+          console.log("sdsds")
+
+
+
+      axios({
+        method: "GET",
+        url: "https://www.cheapairhub.com/api/api.php?getAirport=getAirport&query=" + des_,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
+      })
+        .then(res => {
+          console.log("res", res.data.name);
+          
+          localStorage.setItem("to_airport", res.data.iata_code + " , " + res.data.name);
+          localStorage.setItem("to_arr", res.data.municipality);
+
+
+
     if (
       localStorage.getItem("from") != null &&
       localStorage.getItem("from") != "" &&
@@ -990,18 +1077,7 @@ export default {
       $(".processing").addClass("hide");
     }
 
-    //  var dp = $(".datepicker-here").datepicker({
-    //     autoClose: true,
-    //     minDate: new Date()
-    //   }).data("datepicker")
 
-    //  var dp1 = $(".datepickerReturn").datepicker({
-    //     autoClose: true,
-    //     minDate: new Date()
-    //   }).data("datepicker")
-
-    //    dp.selectDate(new Date())
-    //    dp.selectDate(new Date())
 
     var dp1 = $(".datepickerReturn")
       .datepicker({
@@ -1173,9 +1249,55 @@ export default {
     //function init() here
 
     this.getToken();
+
+        })
+        .catch(err => {
+          console.log("error in request1", err.response.data.message);
+        });
+
+
+        })
+        .catch(err => {
+          console.log("error in request1", err.response.data.message);
+        });
+
+
+
+
+
+
+
+    //  var dp = $(".datepicker-here").datepicker({
+    //     autoClose: true,
+    //     minDate: new Date()
+    //   }).data("datepicker")
+
+    //  var dp1 = $(".datepickerReturn").datepicker({
+    //     autoClose: true,
+    //     minDate: new Date()
+    //   }).data("datepicker")
+
+    //    dp.selectDate(new Date())
+    //    dp.selectDate(new Date())
+
   },
 
   methods: {
+    newSearch: function(){
+
+
+
+        var newstring1 = $("#dep_date_hidden").val().substring(2).replace(/-/g, '')
+        var newstring2 = $("#ret_date_hidden").val().substring(2).replace(/-/g, '')
+
+      var rtn = 0
+        if(this.picked == 'roundtrip'){
+            rtn = 1
+        }
+
+        this.$router.push("/cheapairhub3/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" );
+   
+    },
     sendDisc: function(e) {
       axios({
         method: "GET",
@@ -1278,22 +1400,22 @@ export default {
 
           console.log("Thjis si also");
 
-          localStorage.setItem("from", this.origin);
-          localStorage.setItem("to", this.destination);
-          localStorage.setItem("departure", this.departureDate);
-          localStorage.setItem("return", this.returnDate);
-          localStorage.setItem("travel_class", this.travelClass);
-          localStorage.setItem("adult", this.adults);
-          localStorage.setItem("children", this.children);
-          localStorage.setItem("infants", this.infants);
-          localStorage.setItem("currency", this.currency);
-          localStorage.setItem("nonStop", this.nonStop);
+        //   localStorage.setItem("from", this.origin);
+        //   localStorage.setItem("to", this.destination);
+        //   localStorage.setItem("departure", this.departureDate);
+        //   localStorage.setItem("return", this.returnDate);
+        //   localStorage.setItem("travel_class", this.travelClass);
+        //   localStorage.setItem("adult", this.adults);
+        //   localStorage.setItem("children", this.children);
+        //   localStorage.setItem("infants", this.infants);
+        //   localStorage.setItem("currency", this.currency);
+        //   localStorage.setItem("nonStop", this.nonStop);
 
-          localStorage.setItem("from_des", $("#from_des").val());
-          localStorage.setItem("from_airport", $(".from_airport").html());
+        //   localStorage.setItem("from_des", $("#from_des").val());
+        //   localStorage.setItem("from_airport", $(".from_airport").html());
 
-          localStorage.setItem("to_arr", $("#to_arr").val());
-          localStorage.setItem("to_airport", $(".to_airport").html());
+        //   localStorage.setItem("to_arr", $("#to_arr").val());
+        //   localStorage.setItem("to_airport", $(".to_airport").html());
 
           var url = "";
 
@@ -2791,7 +2913,7 @@ export default {
 }
 
 .oneway {
-  padding-bottom: 40px;
+  padding-bottom: 0;
 }
 
 .roundtrip {

@@ -827,7 +827,7 @@
         >
           <div class="row">
             <div class="hide-on-med-and-down col s24 m24 l12 pic-call">
-            <a href="tel:1844 842 9401">
+            <a href="tel:1877-459-7986">
                 <h1><i class="fa fa-phone-square"></i>&nbsp;CALL NOW</h1>
             </a>
         </div>
@@ -836,7 +836,7 @@
     align-items: center;
     justify-content: center;">
     <div style="text-align:center">
-      <p style="color:white;font-size:45px">1844 842 9401</p>
+      <p style="color:white;font-size:45px">1877-459-7986</p>
       <p style="color:white">Call For Unpublished Cheap Flight Deals</p>
     </div>
           
@@ -952,6 +952,12 @@ export default {
     this.$nextTick(function() {
       this.onResize();
     });
+
+
+    
+            $(".telephone").attr("href" , 'tel:1877-459-7986')
+
+    $(".telephone").html('1877-459-7986')
 
     window.addEventListener("resize", this.onResize);
 
@@ -1251,15 +1257,18 @@ export default {
 
 
 
-        var newstring1 = $("#dep_date_hidden").val().substring(2).replace(/-/g, '')
-        var newstring2 = $("#ret_date_hidden").val().substring(2).replace(/-/g, '')
+        var newstring1 = $("#dep_date_hidden").val().split("-").reverse().join("/")
+        var newstring2 = $("#ret_date_hidden").val().split("-").reverse().join("/")
 
-      var rtn = 0
+      var rtn = "Oneway"
         if(this.picked == 'roundtrip'){
-            rtn = 1
+            rtn = "Return"
         }
 
-        this.$router.push("/cheapairhub/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" );
+        // https://booking.domain.com/en-us/selectflights?SearchType=Oneway&OriginStation=HKG&DestinationStation=NGO&DepartureDate=03/03/2017&Adults=1
+
+        this.$router.push("/cheapairhub5/en-us/?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children=2&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html())
+   // this.$router.push("/cheapairhub/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" );
       }
 
       // }

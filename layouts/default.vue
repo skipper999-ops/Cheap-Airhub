@@ -3,7 +3,24 @@
     <client-only>
 
       <div v-if="$nuxt.$route.name != 'booknow'" class="hide popup_banner">
-      <img style="z-index:100;border-radius:10px;width:100%; max-width: 660px;" src="~static/popup_banner.png">
+        <div style="    z-index: 999;
+    position: relative;">
+
+            <img style="z-index:100;border-radius:10px;width:100%; max-width: 660px;" src="~static/popup_banner.png">
+            <p @click="closePopup" style="width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    right: -14px;
+    display: flex;
+    top: -12px;
+    background-color: red;
+    border-radius: 20px;
+    color: white;
+    justify-content: center;
+    align-items: center;">x</p>
+        </div>
       </div>
 
       <Header v-if="$nuxt.$route.name != 'login'" />
@@ -23,19 +40,60 @@ export default {
     Footer,
     Header
   },
+  data(){
+    return{
+        popupTimer: 0
+    }
+  },
   mounted() {
+$(".popup_banner").removeClass('hide')
 
-$(document).mouseleave(function () {
+
+    var TIME_OUT = 45000;
+
+// function that displays the popup
+function displayPopup() {
+    // display the popup here
      $(".popup_banner").removeClass('hide')
+}
+
+// Set the timeout to display the popup
+this.popupTimer = setTimeout(displayPopup, TIME_OUT);
+
+// attch events to the document object
+// you can add more events here based on
+// what events you want to track
+$(document).on('click change keypress mouseover resize scroll', function() {
+
+  // clear the timeout whenever the event is handled
+  console.log("clcxkcxkcnxk")
+  clearTimeout(this.popupTimer);
+
+  // Reset the timer
+  this.popupTimer = setTimeout(displayPopup, TIME_OUT);
 });
 
-
-$(document).mouseenter(function () {
-    $(".popup_banner").addClass('hide')
-});
-
+// $(document).mouseleave(function () {
+//      $(".popup_banner").removeClass('hide')
+// });
 
 
+// $(document).mouseenter(function () {
+//     $(".popup_banner").addClass('hide')
+// });
+
+
+
+  },
+  methods:{
+    closePopup: function(){
+
+
+           $(".popup_banner").addClass('hide')
+
+            clearTimeout(this.popupTimer);
+
+    }
   }
 };
 </script>
@@ -387,8 +445,8 @@ input[type="email"]:focus {
 }
 
 .flight_data {
-  line-height: 25px;
-  padding-top: 15px;
+  line-height: 19px;
+  padding-top: 0;
   padding-bottom: 0;
 }
 
@@ -450,6 +508,7 @@ li {
   border: 0;
   border-top: 1px dashed #bdbdbd !important;
   margin: 20px 0;
+  width: 70%
 }
 
 .flight_change h5 {

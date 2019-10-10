@@ -316,6 +316,30 @@
                                     <span class="value">5</span>
                                   </p>
                                 </li>
+                                                                <li>
+                                  <p>
+                                    6
+                                    <span class="value">6</span>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    7
+                                    <span class="value">7</span>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    8
+                                    <span class="value">8</span>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    9
+                                    <span class="value">9</span>
+                                  </p>
+                                </li>
                               </ul>
                             </div>
                           </div>
@@ -366,12 +390,6 @@
                                 <li>
                                   <p>
                                     5
-                                    <span class="value">5</span>
-                                  </p>
-                                </li>
-                                <li>
-                                  <p>
-                                    6
                                     <span class="value">5</span>
                                   </p>
                                 </li>
@@ -1209,17 +1227,17 @@ export default {
         this.currency = "USD";
         this.travelClass = $(".drop-down .selected .value").html();
 
-        localStorage.setItem("from", this.origin);
-        localStorage.setItem("to", this.destination);
-        localStorage.setItem("departure", this.departureDate);
-        localStorage.setItem("return", this.returnDate);
-        localStorage.setItem("travel_class", this.travelClass);
-        localStorage.setItem("adult", this.adults);
-        localStorage.setItem("children", this.children);
-        localStorage.setItem("infants", this.infants);
-        localStorage.setItem("currency", this.currency);
-        localStorage.setItem("nonStop", this.nonStop);
-        localStorage.setItem("way", this.picked);
+        // localStorage.setItem("from", this.origin);
+        // localStorage.setItem("to", this.destination);
+        // localStorage.setItem("departure", this.departureDate);
+        // localStorage.setItem("return", this.returnDate);
+        // localStorage.setItem("travel_class", this.travelClass);
+        // localStorage.setItem("adult", this.adults);
+        // localStorage.setItem("children", this.children);
+        // localStorage.setItem("infants", this.infants);
+        // localStorage.setItem("currency", this.currency);
+        // localStorage.setItem("nonStop", this.nonStop);
+        // localStorage.setItem("way", this.picked);
 
         //all data
 
@@ -1229,7 +1247,22 @@ export default {
         localStorage.setItem("to_arr", $("#to_arr").val());
         localStorage.setItem("to_airport", $(".to_airport").html());
 
-        // this.$router.push("/flight/search?tripType=" + this.picked + "/");
+        // this.$router.push("/cheapairhub/cheapflightresults");
+
+
+        var newstring1 = $("#dep_date_hidden").val().split("-").reverse().join("/")
+        var newstring2 = $("#ret_date_hidden").val().split("-").reverse().join("/")
+
+      var rtn = "Oneway"
+        if(this.picked == 'roundtrip'){
+            rtn = "Return"
+        }
+
+        // https://booking.domain.com/en-us/selectflights?SearchType=Oneway&OriginStation=HKG&DestinationStation=NGO&DepartureDate=03/03/2017&Adults=1
+
+        this.$router.push("/en-us/?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring1 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children=2&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html())
+
+        // this.$router.push("/cheapairhub/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" );
       }
 
       // }

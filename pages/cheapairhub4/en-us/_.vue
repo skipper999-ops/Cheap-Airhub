@@ -44,7 +44,7 @@
           </div>
           <div class="col s24">
             <div style="display: flex; justify-content: flex-end;margin-top:25px">
-              <button class="btn" type="submit" @click="submitForm">Submit</button>
+              <button class="btn" type="submit" @click="newSearch">Submit</button>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
             <p
               style="padding-bottom:10px"
             >Call the below Toll free Number to confirm your booking at the lowest fare</p>
-            <p style="color:black;font-weight:bold">1844 842 9401</p>
+            <p style="color:black;font-weight:bold">18772560005 </p>
           </div>
         </div>
       </div>
@@ -333,7 +333,25 @@
                                 <li>
                                   <p>
                                     6
-                                    <span class="value">5</span>
+                                    <span class="value">6</span>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    7
+                                    <span class="value">7</span>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    8
+                                    <span class="value">8</span>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    9
+                                    <span class="value">9</span>
                                   </p>
                                 </li>
                               </ul>
@@ -392,24 +410,6 @@
                                 <li>
                                   <p>
                                     6
-                                    <span class="value">5</span>
-                                  </p>
-                                </li>      
-                                <li>
-                                  <p>
-                                    7
-                                    <span class="value">5</span>
-                                  </p>
-                                </li>
-                                <li>
-                                  <p>
-                                    8
-                                    <span class="value">5</span>
-                                  </p>
-                                </li>
-                                <li>
-                                  <p>
-                                    9
                                     <span class="value">5</span>
                                   </p>
                                 </li>
@@ -497,7 +497,7 @@
               </div>-->
 
               <div class="col s24 l24 search_button" style="padding-top: 10px">
-                <button type="button" @click="getToken" class="btn bold">Search</button>
+                <button type="button" @click="newSearch" class="btn bold">Search</button>
               </div>
 
               <!-- <div class="col s24 l24">
@@ -539,9 +539,12 @@
       </div>
     </div>
 
+
     <div class id="result_section" style="background-color: #f1f1f1;padding-top:30px">
       <div class="container section">
         <!-- <h3>Search Results</h3> -->
+
+        <h3 style="text-align:center;color: red">Flat 30% Off on this Route. Only few tickets left. Calling this provider before booking is recommended.</h3>
 
         <div class="processing">
           <p style="text-align:center;padding-bottom: 20px">Fetching Data</p>
@@ -575,7 +578,8 @@
             <div id="amadeus">
               <div class="card oneseg" v-for="(p, index) in amadeus" :key="p.id">
                 <div class="oneway">
-                  <div class="flight_name">
+                  <div class="flight_data row">
+                                        <div class="flight_name  col s24  m12 l3">
                     <img
                       class="carrier_icon"
                       :src="
@@ -586,15 +590,14 @@
                     />
                     <p>{{ p.carrier_name }}</p>
                   </div>
-                  <div class="flight_data row">
-                    <div class="flight_price col s24 m5" style="text-align:center">
+                    <div class="flight_price col s24  m12 l4" style="text-align:center">
                       <h3 style="font-size:30px">
                         <span style="color:grey;font-size:12px">fr</span>
                         $ {{ p.price.toFixed(2) }}
                       </h3>
                       <p style="color:red;font-size:13px">Limited Time Offer*</p>
                     </div>
-                    <div class="flight_departure_time col s12 m5">
+                    <div class="flight_departure_time col s12  m12 l4">
                       <div class="flight_origin">
                         <h5>{{ p.origin }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.origin_fullname }}</p>
@@ -613,7 +616,7 @@
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >Non-stop</p>
                     </div>
-                    <div class="flight_arrival_time col s12 m5">
+                    <div class="flight_arrival_time col s12  m12 l4">
                       <div class="flight_origin">
                         <h5>{{ p.destination }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.destination_fullname }}</p>
@@ -631,11 +634,11 @@
                           style="width: 50px;height: 100%;object-fit: contain;"
                           src="~static/call-now.gif"
                         />
-                        <p style="font-size:25px;padding: 7px 15px;line-height:25px;height:25px">1844-842-9401</p>
+                        <p style="font-size:25px;padding: 7px 15px;line-height:25px;height:25px">1877-256-0005</p>
                       </div>
                       <a
                         class="btn"
-                        href="tel:18448429401"
+                        href="tel:1877-256-0005"
                         style="color:white; text-decoration:none;margin-top: 20px"
                       >Call Now</a>
                     </div>
@@ -645,7 +648,9 @@
                 <hr v-if="p.isRound == 1" class="dashed-line" />
 
                 <div class="return" v-if="p.isRound == 1">
-                  <div class="flight_name">
+
+                  <div class="flight_data row">
+                                        <div class="flight_name col s24 m12 l3">
                     <img
                       class="carrier_icon"
                       :src="
@@ -656,8 +661,7 @@
                     />
                     <p>{{ p.round_carrier_name }}</p>
                   </div>
-                  <div class="flight_data row">
-                    <div class="flight_price col s24 m5">
+                    <div class="flight_price col s24  m12 l4">
                       <h3 style="font-size:30px">
                         <span style="color:grey;font-size:12px">fr</span>
                         $ {{ p.round_price.toFixed(2) }}
@@ -665,7 +669,7 @@
                       <p style="color:red;font-size:13px">Limited Time Offer*</p>
                     </div>
 
-                    <div class="flight_departure_time col s12 m5">
+                    <div class="flight_departure_time col s12  m12 l4">
                       <div class="flight_origin">
                         <h5>{{ p.round_origin }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.round_origin_fullname }}</p>
@@ -676,7 +680,7 @@
                       <p style="font-size:11px;color:#b5b5b5">Flight Duration</p>
                       <h5>{{ p.round_duration }}</h5>
                     </div>
-                    <div class="flight_arrival_time col s12 m5">
+                    <div class="flight_arrival_time col s12 m4">
                       <div class="flight_origin">
                         <h5>{{ p.round_destination }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.round_destination_fullname }}</p>
@@ -700,8 +704,8 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:1844 842 9401"
-                      >1844-842-9401</a>
+                        href="tel:1877-256-0005"
+                      >1877-256-0005</a>
                     </p>
                   </div>
                   <div v-if="isInternationDep == 1">
@@ -711,8 +715,8 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:1844 842 9401"
-                      >1844-842-9401</a>
+                        href="tel:1877-256-0005"
+                      >1877-256-0005</a>
                     </p>
                   </div>
                   <p class="show_flight" @click="showDetail(index)">Flight Details</p>
@@ -934,6 +938,86 @@ export default {
   }),
 
   mounted() {
+
+
+            $(".telephone").attr("href" , 'tel:1877-256-0005')
+
+    $(".telephone").html('1877-256-0005')
+
+
+    var second_part = this.$route.query
+
+
+     var ori_ = second_part.OriginStation
+     var des_ = second_part.DestinationStation
+     var start_date_ = second_part.DepartureDate.split("-").reverse().join("/")
+     var end_date_ = second_part.ReturnDate.split("-").reverse().join("/")
+
+    //  for (const [key, value] of Object.entries(second_part)) {
+
+         
+    //     console.log(key, value);
+    
+    
+    // }
+
+
+
+          localStorage.setItem("from", ori_);
+          localStorage.setItem("to", des_);
+          localStorage.setItem("departure", start_date_);
+
+
+            if(second_part.SearchType.toLowerCase() == 'return'){
+                localStorage.setItem("way", 'roundtrip');
+                localStorage.setItem("return", end_date_);
+            }else if(second_part.SearchType.toLowerCase() == 'oneway'){
+                localStorage.setItem("way", 'oneway');
+                localStorage.setItem("return",  start_date_);
+            }
+
+
+          localStorage.setItem("travel_class", second_part.cabinclass.toUpperCase());
+          localStorage.setItem("adult", second_part.Adults);
+          localStorage.setItem("children", second_part.Children);
+          localStorage.setItem("infants", second_part.Infants);
+        //   localStorage.setItem("currency", second_part.currency);
+        //   localStorage.setItem("nonStop", second_part.nonStop);
+
+
+      axios({
+        method: "GET",
+        url: "https://www.cheapairhub.com/api/api.php?getAirport=getAirport&query=" + ori_,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
+      })
+        .then(res => {
+         console.log("resssssssssssssssssssssssss");
+         console.log("res", res.data.name);
+          
+          localStorage.setItem("from_airport", res.data.iata_code + " , " + res.data.name);
+          localStorage.setItem("from_des", res.data.municipality);
+
+          console.log("sdsds")
+
+
+
+      axios({
+        method: "GET",
+        url: "https://www.cheapairhub.com/api/api.php?getAirport=getAirport&query=" + des_,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
+      })
+        .then(res => {
+          console.log("res", res.data.name);
+          
+          localStorage.setItem("to_airport", res.data.iata_code + " , " + res.data.name);
+          localStorage.setItem("to_arr", res.data.municipality);
+
+
+
     if (
       localStorage.getItem("from") != null &&
       localStorage.getItem("from") != "" &&
@@ -990,18 +1074,7 @@ export default {
       $(".processing").addClass("hide");
     }
 
-    //  var dp = $(".datepicker-here").datepicker({
-    //     autoClose: true,
-    //     minDate: new Date()
-    //   }).data("datepicker")
 
-    //  var dp1 = $(".datepickerReturn").datepicker({
-    //     autoClose: true,
-    //     minDate: new Date()
-    //   }).data("datepicker")
-
-    //    dp.selectDate(new Date())
-    //    dp.selectDate(new Date())
 
     var dp1 = $(".datepickerReturn")
       .datepicker({
@@ -1173,9 +1246,66 @@ export default {
     //function init() here
 
     this.getToken();
+
+        })
+        .catch(err => {
+          console.log("error in request1", err.response.data.message);
+        });
+
+
+        })
+        .catch(err => {
+          console.log("error in request1", err.response.data.message);
+        });
+
+
+
+
+
+
+
+    //  var dp = $(".datepicker-here").datepicker({
+    //     autoClose: true,
+    //     minDate: new Date()
+    //   }).data("datepicker")
+
+    //  var dp1 = $(".datepickerReturn").datepicker({
+    //     autoClose: true,
+    //     minDate: new Date()
+    //   }).data("datepicker")
+
+    //    dp.selectDate(new Date())
+    //    dp.selectDate(new Date())
+
   },
 
-  methods: {
+
+methods: {
+  
+    newSearch: function(){
+
+
+console.log('rtnsssssssssssssssssssssssss')
+
+        var newstring1 = $("#dep_date_hidden").val().split("-").reverse().join("/")
+        var newstring2 = $("#ret_date_hidden").val().split("-").reverse().join("/")
+
+      var rtn = "Oneway"
+        if(this.picked == 'roundtrip'){
+            rtn = "Return"
+        }
+
+        console.log('rtn')
+        console.log(rtn)
+
+        // https://booking.domain.com/en-us/selectflights?SearchType=Oneway&OriginStation=HKG&DestinationStation=NGO&DepartureDate=03/03/2017&Adults=1
+
+        this.$router.go("/cheapairhub4/en-us/?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children=2&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html())
+
+
+    },
+
+
     sendDisc: function(e) {
       axios({
         method: "GET",
@@ -1278,22 +1408,22 @@ export default {
 
           console.log("Thjis si also");
 
-          localStorage.setItem("from", this.origin);
-          localStorage.setItem("to", this.destination);
-          localStorage.setItem("departure", this.departureDate);
-          localStorage.setItem("return", this.returnDate);
-          localStorage.setItem("travel_class", this.travelClass);
-          localStorage.setItem("adult", this.adults);
-          localStorage.setItem("children", this.children);
-          localStorage.setItem("infants", this.infants);
-          localStorage.setItem("currency", this.currency);
-          localStorage.setItem("nonStop", this.nonStop);
+        //   localStorage.setItem("from", this.origin);
+        //   localStorage.setItem("to", this.destination);
+        //   localStorage.setItem("departure", this.departureDate);
+        //   localStorage.setItem("return", this.returnDate);
+        //   localStorage.setItem("travel_class", this.travelClass);
+        //   localStorage.setItem("adult", this.adults);
+        //   localStorage.setItem("children", this.children);
+        //   localStorage.setItem("infants", this.infants);
+        //   localStorage.setItem("currency", this.currency);
+        //   localStorage.setItem("nonStop", this.nonStop);
 
-          localStorage.setItem("from_des", $("#from_des").val());
-          localStorage.setItem("from_airport", $(".from_airport").html());
+        //   localStorage.setItem("from_des", $("#from_des").val());
+        //   localStorage.setItem("from_airport", $(".from_airport").html());
 
-          localStorage.setItem("to_arr", $("#to_arr").val());
-          localStorage.setItem("to_airport", $(".to_airport").html());
+        //   localStorage.setItem("to_arr", $("#to_arr").val());
+        //   localStorage.setItem("to_airport", $(".to_airport").html());
 
           var url = "";
 
@@ -2791,7 +2921,7 @@ export default {
 }
 
 .oneway {
-  padding-bottom: 40px;
+  padding-bottom: 0;
 }
 
 .roundtrip {

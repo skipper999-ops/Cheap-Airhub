@@ -394,6 +394,24 @@
                                     6
                                     <span class="value">5</span>
                                   </p>
+                                </li>      
+                                <li>
+                                  <p>
+                                    7
+                                    <span class="value">5</span>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    8
+                                    <span class="value">5</span>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    9
+                                    <span class="value">5</span>
+                                  </p>
                                 </li>
                               </ul>
                             </div>
@@ -569,14 +587,21 @@
                     <p>{{ p.carrier_name }}</p>
                   </div>
                   <div class="flight_data row">
-                    <div class="flight_departure_time col s12 m6">
+                    <div class="flight_price col s24 m5" style="text-align:center">
+                      <h3 style="font-size:30px">
+                        <span style="color:grey;font-size:12px">fr</span>
+                        $ {{ p.price.toFixed(2) }}
+                      </h3>
+                      <p style="color:red;font-size:13px">Limited Time Offer*</p>
+                    </div>
+                    <div class="flight_departure_time col s12 m5">
                       <div class="flight_origin">
                         <h5>{{ p.origin }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.origin_fullname }}</p>
                       </div>
                       <p class="flight_departure">{{ p.dep_time }}</p>
                     </div>
-                    <div class="extra_duration extar_flight_origin center col s12 m6">
+                    <div class="extra_duration extar_flight_origin center col s12 m3">
                       <p style="font-size:11px;color:#b5b5b5">Flight Duration</p>
                       <h5>{{ p.duration }}</h5>
                       <p
@@ -588,18 +613,31 @@
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >Non-stop</p>
                     </div>
-                    <div class="flight_arrival_time col s12 m6">
+                    <div class="flight_arrival_time col s12 m5">
                       <div class="flight_origin">
                         <h5>{{ p.destination }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.destination_fullname }}</p>
                       </div>
                       <p class="flight_arrival">{{ p.arr_time }}</p>
                     </div>
-                    <div class="flight_price col s12 m3">
-                      <h3>$ {{ p.price.toFixed(2) }}</h3>
-                    </div>
-                    <div class="flight_book col s24 m3" style="display: flex;align-items: center;">
-                      <button type="button" @click="open_form(p)" class="btn">Book Now</button>
+
+                    <div
+                      class="flight_book col s24 m6"
+                      style="display: flex;align-items: center;flex-direction:column;height: inherit;"
+                    >
+                      <p style="padding-left: 10px;line-height:25px;height:25px">Phone only offer</p>
+                      <div style="display:flex;align-items:center">
+                        <img
+                          style="width: 50px;height: 100%;object-fit: contain;"
+                          src="~static/call-now.gif"
+                        />
+                        <p style="font-size:25px;padding: 7px 15px;line-height:25px;height:25px">1844-842-9401</p>
+                      </div>
+                      <a
+                        class="btn"
+                        href="tel:18448429401"
+                        style="color:white; text-decoration:none;margin-top: 20px"
+                      >Call Now</a>
                     </div>
                   </div>
                 </div>
@@ -619,34 +657,42 @@
                     <p>{{ p.round_carrier_name }}</p>
                   </div>
                   <div class="flight_data row">
-                    <div class="flight_departure_time col s12 m6">
+                    <div class="flight_price col s24 m5">
+                      <h3 style="font-size:30px">
+                        <span style="color:grey;font-size:12px">fr</span>
+                        $ {{ p.round_price.toFixed(2) }}
+                      </h3>
+                      <p style="color:red;font-size:13px">Limited Time Offer*</p>
+                    </div>
+
+                    <div class="flight_departure_time col s12 m5">
                       <div class="flight_origin">
                         <h5>{{ p.round_origin }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.round_origin_fullname }}</p>
                       </div>
                       <p class="flight_departure">{{ p.round_dep_time }}</p>
                     </div>
-                    <div class="extra_duration extar_flight_origin center col s12 m6">
+                    <div class="extra_duration extar_flight_origin center col s12 m3">
                       <p style="font-size:11px;color:#b5b5b5">Flight Duration</p>
                       <h5>{{ p.round_duration }}</h5>
                     </div>
-                    <div class="flight_arrival_time col s12 m6">
+                    <div class="flight_arrival_time col s12 m5">
                       <div class="flight_origin">
                         <h5>{{ p.round_destination }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.round_destination_fullname }}</p>
                       </div>
                       <p class="flight_arrival">{{ p.round_arr_time }}</p>
                     </div>
-                    <div class="flight_price col s12 m3">
-                      <h3>$ {{ p.round_price.toFixed(2) }}</h3>
-                    </div>
-                    <div class="flight_book col s12 m3">
+
+                    <div class="flight_book col s12 m4">
                       <button type="button" style="opacity:0" class="btn">Book Now</button>
                     </div>
                   </div>
                 </div>
 
-                <div style="display:flex;justify-content: space-between;padding-right:20px">
+                <div
+                  style="display:flex;justify-content: space-between;padding-right:20px;padding-top: 20px"
+                >
                   <div v-if="isInternationDep == 0">
                     <p
                       style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'"
@@ -835,6 +881,11 @@
           </div>
         </div>
         </div>-->
+        <p
+          class
+          style="font-size: 12px;
+    color: #9f9f9f;"
+        >*Offer valid for selected dates | Subject to Availability | Terms and Conditions Apply</p>
       </div>
     </div>
   </div>
@@ -853,7 +904,6 @@ export default {
     origin: "",
     destination: "",
     departureDate: "",
-    disc: 0,
     nonStop: "",
     adults: 1,
     children: 0,
@@ -865,6 +915,7 @@ export default {
     typingTimer: 0,
     typingTimer_to: 0,
     picked: "roundtrip",
+    disc: 0,
     source: "amadeus",
     isInternationDep: 0,
     isInternationArr: 0,
@@ -883,11 +934,6 @@ export default {
   }),
 
   mounted() {
-
-
-      console.log(this.$route.params.pathMatch)
-      console.log(this.$route.query.adults)
-
     if (
       localStorage.getItem("from") != null &&
       localStorage.getItem("from") != "" &&
@@ -961,6 +1007,8 @@ export default {
       .datepicker({
         autoClose: true,
         onSelect: function onSelect(fd, date) {
+          console.log(fd);
+
           var day = fd.split(",")[0];
           var _date = fd.split(",")[1];
           var month = fd.split(",")[2];
@@ -1128,9 +1176,6 @@ export default {
   },
 
   methods: {
-    onResize: function() {
-      // $(".bg-image").height("100%");
-    },
     sendDisc: function(e) {
       axios({
         method: "GET",
@@ -1146,8 +1191,10 @@ export default {
         })
         .catch(err => {
           console.log("error in request1", err.response.data.message);
-          this.submit();
         });
+    },
+    onResize: function() {
+      // $(".bg-image").height("100%");
     },
     getToken: function() {
       if ($("#from_iata").val() == "") {
@@ -1170,6 +1217,7 @@ export default {
             console.log(res.data.access_token);
             this.access_token = res.data.access_token;
             localStorage.setItem("access_token", res.data.access_token);
+
             this.sendDisc();
           })
           .catch(err => {
@@ -1333,12 +1381,8 @@ export default {
               //     symbol = "₹";
               //     break;
               // }
-              console.log("databefore");
-              console.log(data);
 
               data.data = this.getSortedData(data.data, 1);
-
-              console.log(data);
 
               for (var i = 0; i < data.data.length; i++) {
                 var temp = {};
@@ -1863,6 +1907,8 @@ export default {
                 this.amadeus = this.sortAmadeusData(this.amadeus, 1);
               }
 
+              $(".disclainer").removeClass("hide");
+
               // for (var i = 0; i < data.data.length; i++) {
 
               //             this.amadeusReturn.push(temp);
@@ -2014,6 +2060,7 @@ export default {
 
               $("#error_log").removeClass("hide");
               $(".processing").addClass("hide");
+              $(".disclainer").addClass("hide");
 
               switch (err.response.status) {
                 case 400:
@@ -2094,6 +2141,8 @@ export default {
               "&counter=0"
           })
             .then(res => {
+              console.log("res", res.data.data.onwardflights);
+
               var data = res.data.data.onwardflights;
               var returnflights = res.data.data.returnflights;
 
@@ -2106,6 +2155,10 @@ export default {
 
               if (this.isInternationDep == 0) {
                 for (var i = 0; i < data.length; i++) {
+                  console.log("one");
+
+                  console.log(parseInt(data[i].stops));
+
                   if (parseInt(data[i].stops) == 0) {
                     var loop =
                       '<div class="card no-stops"> <div class="flight_name"> <p>' +
@@ -2156,6 +2209,10 @@ export default {
                 }
 
                 for (var i = 0; i < returnflights.length; i++) {
+                  console.log("one");
+
+                  console.log(parseInt(returnflights[i].stops));
+
                   if (parseInt(returnflights[i].stops) == 0) {
                     var loop =
                       '<div class="card"> <div class="flight_name"> <p>' +
@@ -2208,6 +2265,7 @@ export default {
                 console.log("Internation result");
 
                 for (var i = 0; i < data.length; i++) {
+                  console.log(data[i].returnfl.length);
                   if (data[i].returnfl.length == 0) {
                     var loop =
                       '<div class="card"> <div class="flight_name"> <p>' +
@@ -2232,6 +2290,9 @@ export default {
                     var d1 = document.getElementById("goibibo_internation");
                     d1.insertAdjacentHTML("beforeend", loop);
                   } else {
+                    console.log(data[i].returnfl[0].destination);
+                    console.log(i);
+
                     var onwardflights,
                       arrtime,
                       returnflights,
@@ -2245,6 +2306,8 @@ export default {
 
                       arrtime = data[i].arrtime;
                     } else {
+                      console.log(data[i].onwardflights.length - 1);
+
                       onwardflights =
                         data[i].onwardflights[data[i].onwardflights.length - 1]
                           .destination;
@@ -2278,7 +2341,12 @@ export default {
                           );
                         }
 
+                        console.log("origin_length");
+                        console.log(origin_length);
+
                         for (var j = 0; j < origin_length; j++) {
+                          console.log(originStops);
+
                           originStops = originStops.concat(
                             " - " + data[i].onwardflights[j].origin
                           );
@@ -2355,14 +2423,19 @@ export default {
     getSortedData: function(data, isAsc) {
       return data.sort((a, b) => {
         return (
-          (a.offerItems[0].price.total < b.offerItems[0].price.total ? -1 : 1) *
-          (isAsc ? 1 : -1)
+          (a.offerItems[0].price < b.offerItems[0].price.total 
+            ? -1
+            : 1) * (isAsc ? 1 : -1)
         );
       });
     },
     sortAmadeusData: function(data, isAsc) {
       return data.sort((a, b) => {
-        return (a.price < b.price ? -1 : 1) * (isAsc ? 1 : -1);
+        return (
+          (a.price < b.price 
+            ? -1
+            : 1) * (isAsc ? 1 : -1)
+        );
       });
     },
     getSortedDataGo: function(data, isAsc) {
@@ -2373,7 +2446,14 @@ export default {
       });
     },
     capitalizeFirstLetter: function(string) {
+      console.log("char");
+      console.log(string);
+
       if (string != undefined && string != "") {
+        console.log(
+          "ss" + string.charAt(0).toUpperCase() + string.toLowerCase().slice(1)
+        );
+
         return string
           .toLowerCase()
           .split(" ")
@@ -2440,6 +2520,8 @@ export default {
           }
         })
           .then(res => {
+            console.log("res", res);
+            console.log("Token Generated");
             if (res.data.length == 0) {
               this.airportDepListError = true;
             } else {
@@ -2454,6 +2536,8 @@ export default {
       }
     },
     selectDep: function(id) {
+      console.log(id);
+
       if (this.airportList.filter(v => v.id == id).length > 0) {
         var data_ins = this.airportList.filter(v => v.id == id)[0].municipality;
 
@@ -2504,6 +2588,8 @@ export default {
               this.airportArrListError = false;
             }
 
+            console.log(res);
+
             $(".arr").removeClass("hide");
           })
           .catch(err => {
@@ -2512,6 +2598,8 @@ export default {
       }
     },
     selectArr: function(id) {
+      console.log(id);
+
       if (this.airportListArr.filter(v => v.id == id).length > 0) {
         var data_ins = this.airportListArr.filter(v => v.id == id)[0]
           .municipality;
@@ -2545,6 +2633,9 @@ export default {
       }
     },
     getJSONKeyValue: function(json, value) {
+      console.log("value");
+      console.log(value);
+
       for (var i in json) {
         var key = i;
         var val = json[i];
@@ -2594,6 +2685,7 @@ export default {
       })
         .then(res => {
           console.log("res", res);
+          console.log("Info Added");
 
           this.transaction_id = res.data.transaction_id;
 
@@ -2698,6 +2790,10 @@ export default {
   content: "'";
 }
 
+.oneway {
+  padding-bottom: 40px;
+}
+
 .roundtrip {
   background-color: #dddddd !important;
   opacity: 1;
@@ -2747,6 +2843,7 @@ export default {
 @media only screen and (min-width: 1024px) {
   .flight_price {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 75px;

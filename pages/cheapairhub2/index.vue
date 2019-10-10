@@ -827,7 +827,7 @@
         >
           <div class="row">
             <div class="hide-on-med-and-down col s24 m24 l12 pic-call">
-            <a href="tel:1844 842 9401">
+            <a href="tel:18449444491 ">
                 <h1><i class="fa fa-phone-square"></i>&nbsp;CALL NOW</h1>
             </a>
         </div>
@@ -836,7 +836,7 @@
     align-items: center;
     justify-content: center;">
     <div style="text-align:center">
-      <p style="color:white;font-size:45px">1844 842 9401</p>
+      <p style="color:white;font-size:45px">1844-944-4491</p>
       <p style="color:white">Call For Unpublished Cheap Flight Deals</p>
     </div>
           
@@ -952,6 +952,14 @@ export default {
     this.$nextTick(function() {
       this.onResize();
     });
+
+
+
+ 
+
+    $(".telephone").attr("href" , '1844-944-4491')
+
+    $(".telephone").html('1844-944-4491')
 
     window.addEventListener("resize", this.onResize);
 
@@ -1259,7 +1267,7 @@ export default {
             rtn = 1
         }
 
-        this.$router.push("/cheapairhub/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" );
+        this.$router.push("/cheapairhub2/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" );
       }
 
       // }
