@@ -497,7 +497,7 @@
               </div>-->
 
               <div class="col s24 l24 search_button" style="padding-top: 10px">
-                <button type="button" @click="getToken" class="btn bold">Search</button>
+                <button type="button" @click="newSearch" class="btn bold">Search</button>
               </div>
 
               <!-- <div class="col s24 l24">
@@ -942,11 +942,14 @@ export default {
 
     var second_part = this.$route.query
 
+    console.log(second_part)
+
 
      var ori_ = second_part.OriginStation
      var des_ = second_part.DestinationStation
-     var start_date_ = second_part.DepartureDate.split("-").reverse().join("/")
-     var end_date_ = second_part.ReturnDate.split("-").reverse().join("/")
+     var start_date_ = second_part.DepartureDate.split("/").reverse().join("-")
+     var end_date_ = second_part.ReturnDate.split("/").reverse().join("-")
+
 
     //  for (const [key, value] of Object.entries(second_part)) {
 
@@ -963,7 +966,7 @@ export default {
           localStorage.setItem("departure", start_date_);
 
 
-            if(second_part.SearchType.toLowerCase() == 'Return'){
+            if(second_part.SearchType.toLowerCase() == 'return'){
                 localStorage.setItem("way", 'roundtrip');
                 localStorage.setItem("return", end_date_);
             }else if(second_part.SearchType.toLowerCase() == 'oneway'){
@@ -1275,6 +1278,30 @@ export default {
   },
 
   methods: {
+
+            newSearch: function(){
+
+
+console.log('rtnsssssssssssssssssssssssss')
+
+        var newstring1 = $("#dep_date_hidden").val().split("-").reverse().join("/")
+        var newstring2 = $("#ret_date_hidden").val().split("-").reverse().join("/")
+
+      var rtn = "Oneway"
+        if(this.picked == 'roundtrip'){
+            rtn = "Return"
+        }
+
+        console.log('rtn')
+        console.log(newstring2)
+
+        // https://booking.domain.com/en-us/selectflights?SearchType=Oneway&OriginStation=HKG&DestinationStation=NGO&DepartureDate=03/03/2017&Adults=1
+
+         window.location.href = "/en-us/?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children=2&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html()
+        // this.$router.go("/cheapairhub6/en-us/?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children=2&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html())
+
+
+    },
     sendDisc: function(e) {
       axios({
         method: "GET",
