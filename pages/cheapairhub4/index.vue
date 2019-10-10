@@ -1265,7 +1265,7 @@ export default {
 
         // https://booking.domain.com/en-us/selectflights?SearchType=Oneway&OriginStation=HKG&DestinationStation=NGO&DepartureDate=03/03/2017&Adults=1
 
-        this.$router.push("/cheapairhub4/en-us/?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children=2&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html())
+        this.$router.push("/cheapairhub4/en-us/?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children="+ $(".drop-down2 .selected .value").html() +"&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html())
 
         // this.$router.push("/cheapairhub/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" );
       }
