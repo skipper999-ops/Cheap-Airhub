@@ -218,7 +218,7 @@
                       </span>
                     </p>
 
-                    <p>{{travelClass}}</p>
+                    <p class="travel_class">{{travelClass}}</p>
                   </label>
 
                   <div
@@ -240,7 +240,7 @@
                             <div class="selected">
                               <p>
                                 <span>Economy</span>
-                                <span class="value">ECONOMY</span>
+                                <span class="value">Economy</span>
                               </p>
                             </div>
                             <div class="options">
@@ -248,19 +248,19 @@
                                 <li>
                                   <p>
                                     Economy
-                                    <span class="value">ECONOMY</span>
+                                    <span class="value">Economy</span>
                                   </p>
                                 </li>
                                 <li>
                                   <p>
                                     Business
-                                    <span class="value">BUSINESS</span>
+                                    <span class="value">Business</span>
                                   </p>
                                 </li>
                                 <li>
                                   <p>
                                     First
-                                    <span class="value">FIRST</span>
+                                    <span class="value">First</span>
                                   </p>
                                 </li>
                               </ul>
@@ -1254,12 +1254,22 @@ export default {
         var newstring1 = $("#dep_date_hidden").val().substring(2).replace(/-/g, '')
         var newstring2 = $("#ret_date_hidden").val().substring(2).replace(/-/g, '')
 
-      var rtn = 0
+      var rtn = 'oneway'
         if(this.picked == 'roundtrip'){
-            rtn = 1
+            rtn = 'return'
         }
 
-        this.$router.push("/cheapairhub/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" );
+
+
+
+
+        window.location.href = "/cheapairhub/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
+       
+// https://www.cheapairhub.com/flights/find-result/?origin=sin&destination=syd&adult=1&child=0&infant_on_seat=1&triptype=return&departure=2019-10-25&return=2019-11-01&cabin=economy&utm_source=1026
+       
+       
+       
+      //  this.$router.push("/cheapairhub/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" );
       }
 
       // }

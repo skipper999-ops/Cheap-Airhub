@@ -176,6 +176,11 @@ body {
   margin: 0;
 }
 
+.travel_class{
+      text-transform: capitalize;
+}
+
+
 .button--green {
   display: inline-block;
   border-radius: 4px;

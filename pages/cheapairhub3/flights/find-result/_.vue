@@ -238,7 +238,7 @@
                       </span>
                     </p>
 
-                    <p>{{travelClass}}</p>
+                    <p class="travel_class">{{travelClass}}</p>
                   </label>
 
                   <div
@@ -260,7 +260,7 @@
                             <div class="selected">
                               <p>
                                 <span>Economy</span>
-                                <span class="value">ECONOMY</span>
+                                <span class="value">Economy</span>
                               </p>
                             </div>
                             <div class="options">
@@ -268,19 +268,19 @@
                                 <li>
                                   <p>
                                     Economy
-                                    <span class="value">ECONOMY</span>
+                                    <span class="value">Economy</span>
                                   </p>
                                 </li>
                                 <li>
                                   <p>
                                     Business
-                                    <span class="value">BUSINESS</span>
+                                    <span class="value">Business</span>
                                   </p>
                                 </li>
                                 <li>
                                   <p>
                                     First
-                                    <span class="value">FIRST</span>
+                                    <span class="value">First</span>
                                   </p>
                                 </li>
                               </ul>
@@ -948,48 +948,40 @@ export default {
     $(".telephone").html('1844-944-4491')
 
 
-    console.log(this.$route.params.pathMatch)
-      console.log(this.$route.query)
 
-    var first_part = this.$route.params.pathMatch
     var second_part = this.$route.query
 
+  console.log(second_part)
 
-     var ori_ = first_part.split('/')[0]
-     var des_ = first_part.split('/')[1]
-     var start_date_ = first_part.split('/')[2]
-     var end_date_ = first_part.split('/')[3]
-
-    //  for (const [key, value] of Object.entries(second_part)) {
-
-         
-    //     console.log(key, value);
-    
-    
-    // }
-
+     var ori_ = second_part.origin
+     var des_ = second_part.destination
+     var start_date_ = second_part.departure
+     var end_date_ = second_part.return
+     var rtn = second_part.triptype
 
 
           localStorage.setItem("from", ori_);
           localStorage.setItem("to", des_);
-          localStorage.setItem("departure", "20" + start_date_[0] + start_date_[1] + "-" + start_date_[2] + start_date_[3] + "-" + start_date_[4] + start_date_[5]);
+          localStorage.setItem("departure", start_date_);
 
 
-            if(second_part.rtn == 1){
+            if(rtn == 'return'){
                 localStorage.setItem("way", 'roundtrip');
-                localStorage.setItem("return", "20" + end_date_[0] + end_date_[1] + "-" + end_date_[2] + end_date_[3] + "-" + end_date_[4] + end_date_[5]);
-            }else if(second_part.rtn == 0){
+                localStorage.setItem("return", end_date_);
+            }else if(rtn == 'oneway'){
                 localStorage.setItem("way", 'oneway');
-                localStorage.setItem("return", "20" + start_date_[0] + start_date_[1] + "-" + start_date_[2] + start_date_[3] + "-" + start_date_[4] + start_date_[5]);
+                localStorage.setItem("return", start_date_);
             }
 
 
-          localStorage.setItem("travel_class", second_part.cabinclass.toUpperCase());
-          localStorage.setItem("adult", second_part.adults);
-          localStorage.setItem("children", second_part.children);
-          localStorage.setItem("infants", second_part.infants);
+          localStorage.setItem("travel_class", second_part.cabin);
+          localStorage.setItem("adult", second_part.adult);
+          localStorage.setItem("children", second_part.child);
+          localStorage.setItem("infants", second_part.infant_on_seat);
         //   localStorage.setItem("currency", second_part.currency);
         //   localStorage.setItem("nonStop", second_part.nonStop);
+
+
 
 
       axios({
@@ -1291,16 +1283,25 @@ export default {
 
 
 
+
+
+
         var newstring1 = $("#dep_date_hidden").val().substring(2).replace(/-/g, '')
         var newstring2 = $("#ret_date_hidden").val().substring(2).replace(/-/g, '')
 
-      var rtn = 0
+
+
+      var rtn = 'oneway'
         if(this.picked == 'roundtrip'){
-            rtn = 1
+            rtn = 'return'
         }
 
-        window.location.href = "/cheapairhub3/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" 
-   
+
+
+
+
+        window.location.href = "/cheapairhub3/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html() + "&utm_source=skyscanner"
+      
     },
     sendDisc: function(e) {
       axios({
@@ -1443,7 +1444,7 @@ export default {
               "&currency=" +
               this.currency +
               "&travelClass=" +
-              this.travelClass +
+              this.travelClass.toUpperCase() +
               "";
           } else {
             url =
@@ -1467,7 +1468,7 @@ export default {
               "&currency=" +
               this.currency +
               "&travelClass=" +
-              this.travelClass +
+              this.travelClass.toUpperCase() +
               "";
           }
 

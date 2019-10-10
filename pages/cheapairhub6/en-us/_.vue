@@ -238,7 +238,7 @@
                       </span>
                     </p>
 
-                    <p>{{travelClass}}</p>
+                    <p class="travel_class">{{travelClass}}</p>
                   </label>
 
                   <div
@@ -260,7 +260,7 @@
                             <div class="selected">
                               <p>
                                 <span>Economy</span>
-                                <span class="value">ECONOMY</span>
+                                <span class="value">Economy</span>
                               </p>
                             </div>
                             <div class="options">
@@ -268,19 +268,19 @@
                                 <li>
                                   <p>
                                     Economy
-                                    <span class="value">ECONOMY</span>
+                                    <span class="value">Economy</span>
                                   </p>
                                 </li>
                                 <li>
                                   <p>
                                     Business
-                                    <span class="value">BUSINESS</span>
+                                    <span class="value">Business</span>
                                   </p>
                                 </li>
                                 <li>
                                   <p>
                                     First
-                                    <span class="value">FIRST</span>
+                                    <span class="value">First</span>
                                   </p>
                                 </li>
                               </ul>
@@ -1455,7 +1455,7 @@ console.log('rtnsssssssssssssssssssssssss')
               "&currency=" +
               this.currency +
               "&travelClass=" +
-              this.travelClass +
+              this.travelClass.toUpperCase() +
               "";
           } else {
             url =
@@ -1479,7 +1479,7 @@ console.log('rtnsssssssssssssssssssssssss')
               "&currency=" +
               this.currency +
               "&travelClass=" +
-              this.travelClass +
+              this.travelClass.toUpperCase() +
               "";
           }
 
