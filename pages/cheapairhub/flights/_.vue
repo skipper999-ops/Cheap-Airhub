@@ -67,7 +67,7 @@
             <p
               style="padding-bottom:10px"
             >Call the below Toll free Number to confirm your booking at the lowest fare</p>
-            <p style="color:black;font-weight:bold">1844-944-4491</p>
+            <p style="color:black;font-weight:bold">1844-944-9401</p>
           </div>
         </div>
       </div>
@@ -591,11 +591,14 @@
                     <p>{{ p.carrier_name }}</p>
                   </div>
                     <div class="flight_price col s24  m12 l4" style="text-align:center">
-                      <h3 style="font-size:30px">
+                      <h3 style="font-size:30px" v-if="p.isRound == 0">
                         <span style="color:grey;font-size:12px">fr</span>
                         $ {{ p.price.toFixed(2) }}
                       </h3>
-                      <p style="color:red;font-size:13px">Limited Time Offer*</p>
+                                     <h3 style="font-size:30px" v-if="p.isRound == 1">
+                        <span style="color:grey;font-size:12px">fr</span>
+                        $ {{ parseInt(p.price.toFixed(2)) + parseInt(p.round_price.toFixed(2)) }}
+                      </h3>
                     </div>
                     <div class="flight_departure_time col s12  m12 l4">
                       <div class="flight_origin">
@@ -634,11 +637,11 @@
                           style="width: 50px;height: 100%;object-fit: contain;"
                           src="~static/call-now.gif"
                         />
-                        <p style="font-size:25px;padding: 7px 15px;line-height:25px;height:25px">1844-944-4491</p>
+                        <p style="font-size:25px;padding: 7px 15px;line-height:25px;height:25px">1844-944-9401</p>
                       </div>
                       <a
                         class="btn"
-                        href="tel:18449444491 "
+                        href="tel:1844-944-9401 "
                         style="color:white; text-decoration:none;margin-top: 20px"
                       >Call Now</a>
                     </div>
@@ -662,11 +665,11 @@
                     <p>{{ p.round_carrier_name }}</p>
                   </div>
                     <div class="flight_price col s24  m12 l4">
-                      <h3 style="font-size:30px">
+                      <h3 style="font-size:30px" v-if="false">
                         <span style="color:grey;font-size:12px">fr</span>
                         $ {{ p.round_price.toFixed(2) }}
                       </h3>
-                      <p style="color:red;font-size:13px">Limited Time Offer*</p>
+                      <p style="color:red;font-size:13px" v-if="false">Limited Time Offer*</p>
                     </div>
 
                     <div class="flight_departure_time col s12  m12 l4">
@@ -704,8 +707,8 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:18449444491 "
-                      >1844-944-4491</a>
+                        href="tel:1844-944-9401 "
+                      >1844-944-9401</a>
                     </p>
                   </div>
                   <div v-if="isInternationDep == 1">
@@ -715,8 +718,8 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:18449444491 "
-                      >1844-944-4491</a>
+                        href="tel:1844-944-9401 "
+                      >1844-944-9401</a>
                     </p>
                   </div>
                   <p class="show_flight" @click="showDetail(index)">Flight Details</p>
@@ -941,9 +944,9 @@ export default {
 
 
 
-        $(".telephone").attr("href" , '1844-944-4491')
+        $(".telephone").attr("href" , '1844-944-9401')
 
-    $(".telephone").html('1844-944-4491')
+    $(".telephone").html('1844-944-9401')
 
 
 

@@ -591,9 +591,13 @@
                     <p>{{ p.carrier_name }}</p>
                   </div>
                     <div class="flight_price col s24  m12 l4" style="text-align:center">
-                      <h3 style="font-size:30px">
+                      <h3 style="font-size:30px" v-if="p.isRound == 0">
                         <span style="color:grey;font-size:12px">fr</span>
                         $ {{ p.price.toFixed(2) }}
+                      </h3>
+                      <h3 style="font-size:30px" v-if="p.isRound == 1">
+                        <span style="color:grey;font-size:12px">fr</span>
+                        $ {{ parseInt(p.price.toFixed(2)) + parseInt(p.round_price.toFixed(2)) }}
                       </h3>
                       <p style="color:red;font-size:13px">Limited Time Offer*</p>
                     </div>
@@ -662,11 +666,11 @@
                     <p>{{ p.round_carrier_name }}</p>
                   </div>
                     <div class="flight_price col s24  m12 l4">
-                      <h3 style="font-size:30px">
+                      <h3 style="font-size:30px" v-if="false">
                         <span style="color:grey;font-size:12px">fr</span>
                         $ {{ p.round_price.toFixed(2) }}
                       </h3>
-                      <p style="color:red;font-size:13px">Limited Time Offer*</p>
+                      <p style="color:red;font-size:13px" v-if="false">Limited Time Offer*</p>
                     </div>
 
                     <div class="flight_departure_time col s12  m12 l4">
