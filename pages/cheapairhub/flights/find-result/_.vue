@@ -595,19 +595,19 @@
                         <span style="color:grey;font-size:12px">fr</span>
                         $ {{ p.price.toFixed(2) }}
                       </h3>
-                                     <h3 style="font-size:30px" v-if="p.isRound == 1">
-                        <span style="color:grey;font-size:12px">fr</span>
+                        <h3 style="font-size:30px" v-if="p.isRound == 1">
+                          <span style="color:grey;font-size:12px">fr</span>
                         $ {{ parseInt(p.price.toFixed(2)) + parseInt(p.round_price.toFixed(2)) }}
                       </h3>
                     </div>
-                    <div class="flight_departure_time col s12  m12 l4">
+                    <div class="flight_departure_time col s8  m12 l4">
                       <div class="flight_origin">
                         <h5>{{ p.origin }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.origin_fullname }}</p>
                       </div>
                       <p class="flight_departure">{{ p.dep_time }}</p>
                     </div>
-                    <div class="extra_duration extar_flight_origin center col s12 m3">
+                    <div class="extra_duration extar_flight_origin center col s8 m3">
                       <p style="font-size:11px;color:#b5b5b5">Flight Duration</p>
                       <h5>{{ p.duration }}</h5>
                       <p
@@ -619,7 +619,7 @@
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >Non-stop</p>
                     </div>
-                    <div class="flight_arrival_time col s12  m12 l4">
+                    <div class="flight_arrival_time col s8  m12 l4">
                       <div class="flight_origin">
                         <h5>{{ p.destination }}</h5>
                         <p class="clamp1" style="width: 130px;">{{ p.destination_fullname }}</p>
@@ -2868,6 +2868,10 @@ export default {
   .contact {
     line-height: 25px;
     flex-direction: column;
+  }
+  .card{
+    padding: 10px;
+    text-align: center
   }
 }
 
