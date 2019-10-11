@@ -969,7 +969,7 @@ export default {
             if(rtn == 'return'){
                 localStorage.setItem("way", 'roundtrip');
                 localStorage.setItem("return", end_date_);
-            }else if(rtn == 'oneway'){
+            }else if(rtn == 'one-way'){
                 localStorage.setItem("way", 'oneway');
                 localStorage.setItem("return", start_date_);
             }
@@ -1287,7 +1287,7 @@ export default {
 
 
 
-      var rtn = 'oneway'
+      var rtn = 'one-way'
         if(this.picked == 'roundtrip'){
             rtn = 'return'
           window.location.href = "/cheapairhub/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html() + "&utm_source=skyscanner"

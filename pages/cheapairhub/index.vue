@@ -1254,7 +1254,7 @@ export default {
         var newstring1 = $("#dep_date_hidden").val().substring(2).replace(/-/g, '')
         var newstring2 = $("#ret_date_hidden").val().substring(2).replace(/-/g, '')
 
-      var rtn = 'oneway'
+      var rtn = 'one-way'
         if(this.picked == 'roundtrip'){
           
             rtn = 'return'
