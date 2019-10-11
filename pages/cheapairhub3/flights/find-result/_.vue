@@ -579,7 +579,7 @@
               <div class="card oneseg" v-for="(p, index) in amadeus" :key="p.id">
                 <div class="oneway">
                   <div class="flight_data row">
-                                        <div class="flight_name  col s24  m12 l3">
+                                        <div class="flight_name  col s8  m8 l3">
                     <img
                       class="carrier_icon"
                       :src="
@@ -590,46 +590,55 @@
                     />
                     <p>{{ p.carrier_name }}</p>
                   </div>
-                    <div class="flight_price col s24  m12 l4" style="text-align:center">
+                    <div class="flight_price hide-on-med-and-down col s4 m4 l4" style="text-align:center">
                       <h3 style="font-size:30px" v-if="p.isRound == 0">
                         <span style="color:grey;font-size:12px">fr</span>
                         $ {{ p.price.toFixed(2) }}
                       </h3>
-                      <h3 style="font-size:30px" v-if="p.isRound == 1">
-                        <span style="color:grey;font-size:12px">fr</span>
+                        <h3 style="font-size:30px" v-if="p.isRound == 1">
+                          <span style="color:grey;font-size:12px">fr</span>
                         $ {{ parseInt(p.price.toFixed(2)) + parseInt(p.round_price.toFixed(2)) }}
                       </h3>
-                      <p style="color:red;font-size:13px">Limited Time Offer*</p>
                     </div>
-                    <div class="flight_departure_time col s12  m12 l4">
+                    <div class="flight_departure_time col s8  m8 l4">
                       <div class="flight_origin">
                         <h5>{{ p.origin }}</h5>
-                        <p class="clamp1" style="width: 130px;">{{ p.origin_fullname }}</p>
+                        <p class="clamp1 hide-on-med-and-down" style="width: 130px;">{{ p.origin_fullname }}</p>
                       </div>
                       <p class="flight_departure">{{ p.dep_time }}</p>
+                        <p class="hide-on-large-only" style="font-size:11px;color:#b5b5b5">{{ p.duration }}</p>
                     </div>
-                    <div class="extra_duration extar_flight_origin center col s12 m3">
-                      <p style="font-size:11px;color:#b5b5b5">Flight Duration</p>
-                      <h5>{{ p.duration }}</h5>
-                      <p
+                    <div class="extra_duration extar_flight_origin center col s8 m2 hide-on-med-and-down">
+                      <p class="hide-on-med-and-down" style="font-size:11px;color:#b5b5b5">Flight Duration</p>
+                      
+                      <h5 class="hide-on-med-and-down">{{ p.duration }}</h5>
+                      <p class="hide-on-med-and-down"
                         v-if="p.seg.length - 1 > 0"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >{{ p.seg.length - 1 }} stop(s)</p>
-                      <p
+                      <p class="hide-on-med-and-down"
                         v-if="p.seg.length - 1 == 0"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >Non-stop</p>
                     </div>
-                    <div class="flight_arrival_time col s12  m12 l4">
+                    <div class="flight_arrival_time col s8  m8 l4">
                       <div class="flight_origin">
                         <h5>{{ p.destination }}</h5>
-                        <p class="clamp1" style="width: 130px;">{{ p.destination_fullname }}</p>
+                        <p class="clamp1 hide-on-med-and-down" style="width: 130px;">{{ p.destination_fullname }}</p>
                       </div>
                       <p class="flight_arrival">{{ p.arr_time }}</p>
+                                            <p class="hide-on-large-only"
+                        v-if="p.seg.length - 1 > 0"
+                        style="font-size: 11px;color: rgb(181, 181, 181);"
+                      >{{ p.seg.length - 1 }} stop(s)</p>
+                      <p class="hide-on-large-only"
+                        v-if="p.seg.length - 1 == 0"
+                        style="font-size: 11px;color: rgb(181, 181, 181);"
+                      >Non-stop</p>
                     </div>
 
                     <div
-                      class="flight_book col s24 m6"
+                      class="flight_book col s12 m4 hide-on-med-and-down"
                       style="display: flex;align-items: center;flex-direction:column;height: inherit;"
                     >
                       <p style="padding-left: 10px;line-height:25px;height:25px">Phone only offer</p>
@@ -638,7 +647,7 @@
                           style="width: 50px;height: 100%;object-fit: contain;"
                           src="~static/call-now.gif"
                         />
-                        <p style="font-size:25px;padding: 7px 15px;line-height:25px;height:25px">1844-944-4491</p>
+                        <p style="font-size:25px;white-space: pre;padding: 7px 15px;line-height:25px;height:25px">1844-944-4491</p>
                       </div>
                       <a
                         class="btn"
@@ -654,7 +663,7 @@
                 <div class="return" v-if="p.isRound == 1">
 
                   <div class="flight_data row">
-                                        <div class="flight_name col s24 m12 l3">
+                                        <div class="flight_name col s8 m8 l3">
                     <img
                       class="carrier_icon"
                       :src="
@@ -665,7 +674,7 @@
                     />
                     <p>{{ p.round_carrier_name }}</p>
                   </div>
-                    <div class="flight_price col s24  m12 l4">
+                    <div class="flight_price hide-on-med-and-down col s4  m8 l4">
                       <h3 style="font-size:30px" v-if="false">
                         <span style="color:grey;font-size:12px">fr</span>
                         $ {{ p.round_price.toFixed(2) }}
@@ -673,30 +682,76 @@
                       <p style="color:red;font-size:13px" v-if="false">Limited Time Offer*</p>
                     </div>
 
-                    <div class="flight_departure_time col s12  m12 l4">
+                    <div class="flight_departure_time col s8  m8 l4">
                       <div class="flight_origin">
                         <h5>{{ p.round_origin }}</h5>
-                        <p class="clamp1" style="width: 130px;">{{ p.round_origin_fullname }}</p>
+                        <p class="clamp1 hide-on-med-and-down" style="width: 130px;">{{ p.round_origin_fullname }}</p>
                       </div>
                       <p class="flight_departure">{{ p.round_dep_time }}</p>
+                                                                  <p class="hide-on-med-and-down"
+                        v-if="p.round_seg.length - 1 > 0"
+                        style="font-size: 11px;color: rgb(181, 181, 181);"
+                      >{{ p.seg.length - 1 }} stop(s)</p>
+                      <p class="hide-on-med-and-down"
+                        v-if="p.round_seg.length - 1 == 0"
+                        style="font-size: 11px;color: rgb(181, 181, 181);"
+                      >Non-stop</p>
                     </div>
-                    <div class="extra_duration extar_flight_origin center col s12 m3">
+                    <div class="extra_duration extar_flight_origin center col s12 m3 hide-on-med-and-down">
                       <p style="font-size:11px;color:#b5b5b5">Flight Duration</p>
                       <h5>{{ p.round_duration }}</h5>
+                                            <p class="hide-on-med-and-down"
+                        v-if="p.round_seg.length - 1 > 0"
+                        style="font-size: 11px;color: rgb(181, 181, 181);"
+                      >{{ p.seg.length - 1 }} stop(s)</p>
+                      <p class="hide-on-med-and-down"
+                        v-if="p.round_seg.length - 1 == 0"
+                        style="font-size: 11px;color: rgb(181, 181, 181);"
+                      >Non-stop</p>
                     </div>
-                    <div class="flight_arrival_time col s12 m4">
+                    <div class="flight_arrival_time col s8 m8">
                       <div class="flight_origin">
                         <h5>{{ p.round_destination }}</h5>
-                        <p class="clamp1" style="width: 130px;">{{ p.round_destination_fullname }}</p>
+                        <p class="clamp1 hide-on-med-and-down" style="width: 130px;">{{ p.round_destination_fullname }}</p>
                       </div>
                       <p class="flight_arrival">{{ p.round_arr_time }}</p>
                     </div>
 
-                    <div class="flight_book col s12 m4">
+                    <div class="flight_book col s12 m4 hide-on-med-and-down">
                       <button type="button" style="opacity:0" class="btn">Book Now</button>
                     </div>
                   </div>
                 </div>
+
+                                     <div
+                      class="flight_book col s12 m12 hide-on-large-only" style="
+    text-align: center;
+"
+                    >
+
+                   <h3 style="font-size:30px" v-if="p.isRound == 1">
+                          <span style="color:grey;font-size:12px">fr</span>
+                        $ {{ parseInt(p.price.toFixed(2)) + parseInt(p.round_price.toFixed(2)) }}
+                      </h3>
+                     </div>
+                    <div
+                      class="flight_book col s12 m12 hide-on-large-only"
+                      style="display: flex;align-items: center;flex-direction:column;height: inherit;"
+                    >
+                      <p style="padding-left: 10px;line-height:25px;height:25px">Phone only offer</p>
+                      <div style="display:flex;align-items:center">
+                        <img
+                          style="width: 50px;height: 100%;object-fit: contain;"
+                          src="~static/call-now.gif"
+                        />
+                        <p style="font-size:25px;white-space: pre;padding: 7px 15px;line-height:25px;height:25px">1844-944-4491</p>
+                      </div>
+                      <a
+                        class="btn"
+                        href="tel:1844-944-4491 "
+                        style="color:white; text-decoration:none;margin-top: 20px"
+                      >Call Now</a>
+                    </div>
 
                 <div
                   style="display:flex;justify-content: space-between;padding-right:20px;padding-top: 20px"
@@ -708,7 +763,7 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:1844-944-4491"
+                        href="tel:1844-944-4491 "
                       >1844-944-4491</a>
                     </p>
                   </div>
@@ -719,7 +774,7 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:1844-944-4491"
+                        href="tel:1844-944-4491 "
                       >1844-944-4491</a>
                     </p>
                   </div>
@@ -731,7 +786,7 @@
                     <div v-for="(q, qIndex) in amadeus[index].seg" :key="q.id">
                       <hr v-if="qIndex != 0" class="dashed-line" />
                       <div class="extra_flight_data row">
-                        <div class="extra_flight_name col s12 m6">
+                        <div class="extra_flight_name col s12 m3">
                           <img
                             class="extra_carrier_icon"
                             :src="
@@ -743,18 +798,18 @@
                           <p>{{ q.carrier_name }}</p>
                           <p>{{ q.carrier_icon }} - {{ q.flight_number }}</p>
                         </div>
-                        <div class="flight_departure_time col s12 m6">
+                        <div class="flight_departure_time col s12 m5 offset-l3">
                           <div class="extar_flight_origin">
                             <h5>{{ q.origin }}</h5>
                             <p class="extra_flight_departure">{{ q.dep_time }}</p>
                           </div>
                           <p class="extra_destination">{{ q.origin_fullname }}</p>
                         </div>
-                        <div class="extra_duration extar_flight_origin center col s12 m6">
+                        <div class="extra_duration extar_flight_origin center col s12 m5">
                           <p style="font-size:11px;color:#b5b5b5">Flight Duration</p>
                           <h5>{{ q.duration }}</h5>
                         </div>
-                        <div class="flight_arrival_time col s12 m6">
+                        <div class="flight_arrival_time col s12 m5">
                           <div class="f extar_flight_origin">
                             <h5>{{ q.destination }}</h5>
                             <p class="extra_flight_arrival">{{ q.arr_time }}</p>
@@ -762,15 +817,18 @@
 
                           <p class="extra_destination">{{ q.destination_fullname }}</p>
                         </div>
+                        <div class="col s24 m3">
+                          <p class="flight_details--price">$ {{ p.price.toFixed(2) }}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
 
                   <div v-if="p.isRound == 1" class="flight_details_border">
                     <div v-for="(q, qIndex) in amadeus[index].round_seg" :key="q.id">
-                      <hr v-if="qIndex != 0" class="dashed-line" />
+                      <hr v-if="qIndex != 0" class="dashed-line-details" />
                       <div class="extra_flight_data row">
-                        <div class="extra_flight_name col s12 m6">
+                        <div class="extra_flight_name col s12 m3">
                           <img
                             class="extra_carrier_icon"
                             :src="
@@ -785,23 +843,26 @@
                             {{ q.round_flight_number }}
                           </p>
                         </div>
-                        <div class="flight_departure_time col s12 m6">
+                        <div class="flight_departure_time col s12 m5 offset-l3">
                           <div class="extar_flight_origin">
                             <h5>{{ q.round_origin }}</h5>
                             <p class="extra_flight_departure">{{ q.round_dep_time }}</p>
                           </div>
                           <p class="extra_destination">{{ q.round_origin_fullname }}</p>
                         </div>
-                        <div class="extra_duration extar_flight_origin center col s12 m6">
+                        <div class="extra_duration extar_flight_origin center col s12 m5">
                           <p style="font-size:11px;color:#b5b5b5">Flight Duration</p>
                           <h5>{{ q.round_duration }}</h5>
                         </div>
-                        <div class="flight_arrival_time col s12 m6">
+                        <div class="flight_arrival_time col s12 m5">
                           <div class="extar_flight_origin">
                             <h5>{{ q.round_destination }}</h5>
                             <p class="extra_flight_arrival">{{ q.round_arr_time }}</p>
                           </div>
                           <p class="extra_destination">{{ q.round_destination_fullname }}</p>
+                        </div>
+                        <div class="col s24 m3">
+                          <p class="flight_details--price" v-if="qIndex==0">$ {{ p.round_price.toFixed(2) }}</p>
                         </div>
                       </div>
                     </div>
@@ -857,6 +918,7 @@
             </div>
           </div>
         </div>
+
 
         <!-- <div id="loop_here">
          <div class="card">
@@ -2947,7 +3009,7 @@ export default {
 
 @media only screen and (max-width: 600px) {
   .flight_book {
-    height: 40px !important;
+    /* height: 40px !important; */
   }
 
   .flight_data {

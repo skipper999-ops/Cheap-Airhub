@@ -54,7 +54,7 @@ $(".popup_banner").removeClass('hide')
 // function that displays the popup
 function displayPopup() {
     // display the popup here
-     $(".popup_banner").removeClass('hide')
+    //  $(".popup_banner").removeClass('hide')
 }
 
 // Set the timeout to display the popup
@@ -404,6 +404,10 @@ label {
   font-weight: bold;
 }
 
+.makemytrip-border label, .airportName{
+  text-align: left;
+}
+
 input[type="text"],
 input[type="email"] {
   outline: 0;
@@ -435,6 +439,7 @@ input[type="email"]:focus {
   letter-spacing: 0.2px;
   color: #666;
   display: flex;
+  flex-direction: column;
 }
 
 .flex-between {
@@ -457,7 +462,8 @@ input[type="email"]:focus {
 
 .extra_flight_data {
   line-height: 25px;
-  padding-top: 10px;
+  margin-bottom:0;
+  padding-top: 0px;
 }
 
 .pl-5 {
@@ -475,7 +481,7 @@ input[type="email"]:focus {
 
 .flight_departure,
 .flight_arrival {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .dropdown {
@@ -509,11 +515,22 @@ li {
   cursor: pointer;
 }
 
+.flight_data.row{
+  margin-bottom: 0
+}
+
 .dashed-line {
   border: 0;
   border-top: 1px dashed #bdbdbd !important;
   margin: 20px 0;
-  width: 70%
+  width: 100%
+}
+
+.dashed-line-details {
+  border: 0;
+  border-top: 1px dashed #bdbdbd !important;
+  margin: 5px 0;
+  width: 100%
 }
 
 .flight_change h5 {
@@ -531,10 +548,37 @@ li {
 }
 
 .carrier_icon {
-  width: 55px;
-  height: 100%;
+  width: 100%;
+  height: 30px;
   object-fit: contain;
   margin-right: 15px;
+}
+
+#amadeus .oneway .col,
+#amadeus .return .col {
+  height: initial!important;
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .carrier_icon {
+  height: 100%;
+  width: 30px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+.dashed-line{
+  margin: 0px 0 15px!important
+}
+.flight_departure, .flight_arrival{
+  font-size: 11px
+}
+.oneseg .row .col{
+  padding: 0
+}
+.flight_price h3{
+    font-size: 13px!important
+}
 }
 
 .extra_carrier_icon {
@@ -846,5 +890,10 @@ p {
   position: absolute;
   top: 60px;
   width: 59px;
+}
+
+
+.flight_details--price{
+  font-size:16px; padding-top: 30px;font-weight:bold
 }
 </style>
