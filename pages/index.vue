@@ -197,7 +197,7 @@
                       :disabled="picked != 'roundtrip'"
                       type="text"
                       class="datepickerReturn datepickerstyle location"
-                      data-position="bottom left"
+                      data-position="bottom right"
                       data-language="en"
                       data-date-format="DD,d,M,yyyy,dd,mm"
                       placeholder="Return"

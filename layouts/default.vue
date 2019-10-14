@@ -560,6 +560,13 @@ li {
 }
 
 
+@media only screen and (min-width: 1024px) {
+
+.flight_price h3{
+  padding-top: 20px
+}
+
+}
 @media only screen and (max-width: 1024px) {
   .carrier_icon {
   height: 100%;
@@ -895,5 +902,32 @@ p {
 
 .flight_details--price{
   font-size:16px; padding-top: 30px;font-weight:bold
+}
+
+
+.flight__phone{
+  font-size:25px;white-space: pre;padding: 7px 15px;line-height:25px;height:25px
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+
+  .flight_book h3{
+    padding-top: 20px
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .flight_book {
+    /* height: 40px !important; */
+    padding-top: 22px!important
+  }
+}
+
+@media only screen and (max-width: 600px){
+.flight_data {
+    padding-bottom: 10px;
+    text-align: center;
+}
 }
 </style>

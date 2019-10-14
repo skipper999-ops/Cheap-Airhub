@@ -217,7 +217,7 @@
                       :disabled="picked != 'roundtrip'"
                       type="text"
                       class="datepickerReturn datepickerstyle location"
-                      data-position="bottom left"
+                      data-position="bottom right"
                       data-language="en"
                       data-date-format="DD,d,M,yyyy,dd,mm"
                       placeholder="Return"
@@ -608,7 +608,7 @@
                       <p class="flight_departure">{{ p.dep_time }}</p>
                         <p class="hide-on-large-only" style="font-size:11px;color:#b5b5b5">{{ p.duration }}</p>
                     </div>
-                    <div class="extra_duration extar_flight_origin center col s8 m2 hide-on-med-and-down">
+                    <div class="extra_duration extar_flight_origin center col s8 m3 hide-on-med-and-down">
                       <p class="hide-on-med-and-down" style="font-size:11px;color:#b5b5b5">Flight Duration</p>
                       
                       <h5 class="hide-on-med-and-down">{{ p.duration }}</h5>
@@ -638,16 +638,16 @@
                     </div>
 
                     <div
-                      class="flight_book col s12 m4 hide-on-med-and-down"
+                      class="flight_book col s12 m6 hide-on-med-and-down"
                       style="display: flex;align-items: center;flex-direction:column;height: inherit;"
                     >
-                      <p style="padding-left: 10px;line-height:25px;height:25px">Phone only offer</p>
+                      <p style="padding-left: 10px;white-space:pre;line-height:25px;height:25px">Phone only offer</p>
                       <div style="display:flex;align-items:center">
                         <img
                           style="width: 50px;height: 100%;object-fit: contain;"
                           src="~static/call-now.gif"
                         />
-                        <p style="font-size:25px;white-space: pre;padding: 7px 15px;line-height:25px;height:25px">1877-256-0005</p>
+                          <p class="flight__phone">1877-256-0005</p>
                       </div>
                       <a
                         class="btn"
@@ -724,7 +724,7 @@
                 </div>
 
                                      <div
-                      class="flight_book col s12 m12 hide-on-large-only" style="
+                      class="flight_book col s24 m12 hide-on-large-only" style="
     text-align: center;
 "
                     >
@@ -735,16 +735,16 @@
                       </h3>
                      </div>
                     <div
-                      class="flight_book col s12 m12 hide-on-large-only"
+                      class="flight_book col s24 m12 hide-on-large-only"
                       style="display: flex;align-items: center;flex-direction:column;height: inherit;"
                     >
-                      <p style="padding-left: 10px;line-height:25px;height:25px">Phone only offer</p>
+                      <p style="padding-left: 10px;white-space:pre;line-height:25px;height:25px">Phone only offer</p>
                       <div style="display:flex;align-items:center">
                         <img
                           style="width: 50px;height: 100%;object-fit: contain;"
                           src="~static/call-now.gif"
                         />
-                        <p style="font-size:25px;white-space: pre;padding: 7px 15px;line-height:25px;height:25px">1877-256-0005</p>
+                          <p class="flight__phone">1877-256-0005</p>
                       </div>
                       <a
                         class="btn"
@@ -1014,7 +1014,7 @@ export default {
 
      var ori_ = second_part.OriginStation
      var des_ = second_part.DestinationStation
-     var start_date_ = second_part.DepartureDate.split("/").reverse().join("-")
+     var start_date_ = second_part.DepartureDate.split("/").reverse().join(",")
 
     //  for (const [key, value] of Object.entries(second_part)) {
       
@@ -1032,7 +1032,7 @@ export default {
 
 
             if(second_part.SearchType.toLowerCase() == 'return'){
-                var end_date_ = second_part.ReturnDate.split("/").reverse().join("-")
+                var end_date_ = second_part.ReturnDate.split("/").reverse().join(",")
                 localStorage.setItem("way", 'roundtrip');
                 localStorage.setItem("return", end_date_);
             }else if(second_part.SearchType.toLowerCase() == 'oneway'){
