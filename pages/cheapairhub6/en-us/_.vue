@@ -1064,8 +1064,17 @@ export default {
          console.log("resssssssssssssssssssssssss");
          console.log("res", res.data.name);
           
-          localStorage.setItem("from_airport", res.data.iata_code + " , " + res.data.name);
-          localStorage.setItem("from_des", res.data.municipality);
+   
+         if( res.data.name != undefined){
+              localStorage.setItem("from_airport", res.data.iata_code + " , " + res.data.name);
+              localStorage.setItem("from_des", res.data.municipality);
+
+         }else{
+
+              localStorage.setItem("from_airport", ori_);
+              localStorage.setItem("from_des", ori_);
+
+         }
 
           console.log("sdsds")
 
@@ -1081,8 +1090,17 @@ export default {
         .then(res => {
           console.log("res", res.data.name);
           
+            if( res.data.name != undefined){
+          
           localStorage.setItem("to_airport", res.data.iata_code + " , " + res.data.name);
           localStorage.setItem("to_arr", res.data.municipality);
+
+            }else{
+              
+              localStorage.setItem("to_airport", des_);
+              localStorage.setItem("to_arr",  des_);
+
+            }
 
 
 
