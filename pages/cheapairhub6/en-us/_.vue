@@ -67,7 +67,7 @@
             <p
               style="padding-bottom:10px"
             >Call the below Toll free Number to confirm your booking at the lowest fare</p>
-            <p style="color:black;font-weight:bold">1877-593-2194</p>
+            <p style="color:black;font-weight:bold">1888-959-4847</p>
           </div>
         </div>
       </div>
@@ -647,11 +647,11 @@
                           style="width: 50px;height: 100%;object-fit: contain;"
                           src="~static/call-now.gif"
                         />
-                          <p class="flight__phone">1877-593-2194</p>
+                          <p class="flight__phone">1888-959-4847</p>
                       </div>
                       <a
                         class="btn"
-                        href="tel:1877-593-2194 "
+                        href="tel:1888-959-4847 "
                         style="color:white; text-decoration:none;margin-top: 20px"
                       >Call Now</a>
                     </div>
@@ -744,11 +744,11 @@
                           style="width: 50px;height: 100%;object-fit: contain;"
                           src="~static/call-now.gif"
                         />
-                          <p class="flight__phone">1877-593-2194</p>
+                          <p class="flight__phone">1888-959-4847</p>
                       </div>
                       <a
                         class="btn"
-                        href="tel:1877-593-2194 "
+                        href="tel:1888-959-4847 "
                         style="color:white; text-decoration:none;margin-top: 20px"
                       >Call Now</a>
                     </div>
@@ -763,8 +763,8 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:1877-593-2194 "
-                      >1877-593-2194</a>
+                        href="tel:1888-959-4847 "
+                      >1888-959-4847</a>
                     </p>
                   </div>
                   <div v-if="isInternationDep == 1">
@@ -774,8 +774,8 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:1877-593-2194 "
-                      >1877-593-2194</a>
+                        href="tel:1888-959-4847 "
+                      >1888-959-4847</a>
                     </p>
                   </div>
                   <p class="show_flight" @click="showDetail(index)">Flight Details</p>
@@ -1005,9 +1005,9 @@ export default {
   mounted() {
 
 
-       $(".telephone").attr("href" , 'tel:1877-593-2194')
+       $(".telephone").attr("href" , 'tel:1888-959-4847')
 
-    $(".telephone").html('1877-593-2194')
+    $(".telephone").html('1888-959-4847')
 
     var second_part = this.$route.query
 
