@@ -1,13 +1,16 @@
 <template>
   <div>
     <client-only>
-
       <div v-if="$nuxt.$route.name != 'booknow'" class="hide popup_banner">
         <div style="    z-index: 999;
     position: relative;">
-
-            <img style="z-index:100;border-radius:10px;width:100%; max-width: 660px;" src="~static/popup_banner.png">
-            <p @click="closePopup" style="width: 30px;
+          <img
+            style="z-index:100;border-radius:10px;width:100%; max-width: 660px;"
+            src="~static/popup_banner.png"
+          />
+          <p
+            @click="closePopup"
+            style="width: 30px;
     height: 30px;
     cursor: pointer;
     z-index: 999;
@@ -19,7 +22,8 @@
     border-radius: 20px;
     color: white;
     justify-content: center;
-    align-items: center;">x</p>
+    align-items: center;"
+          >x</p>
         </div>
       </div>
 
@@ -40,59 +44,49 @@ export default {
     Footer,
     Header
   },
-  data(){
-    return{
-        popupTimer: 0
-    }
+  data() {
+    return {
+      popupTimer: 0
+    };
   },
   mounted() {
-$(".popup_banner").removeClass('hide')
-
+    $(".popup_banner").removeClass("hide");
 
     var TIME_OUT = 45000;
 
-// function that displays the popup
-function displayPopup() {
-    // display the popup here
-    //  $(".popup_banner").removeClass('hide')
-}
+    // function that displays the popup
+    function displayPopup() {
+      // display the popup here
+      //  $(".popup_banner").removeClass('hide')
+    }
 
-// Set the timeout to display the popup
-this.popupTimer = setTimeout(displayPopup, TIME_OUT);
+    // Set the timeout to display the popup
+    this.popupTimer = setTimeout(displayPopup, TIME_OUT);
 
-// attch events to the document object
-// you can add more events here based on
-// what events you want to track
-$(document).on('click change keypress mouseover resize scroll', function() {
+    // attch events to the document object
+    // you can add more events here based on
+    // what events you want to track
+    $(document).on("click change keypress mouseover resize scroll", function() {
+      // clear the timeout whenever the event is handled
+      clearTimeout(this.popupTimer);
 
-  // clear the timeout whenever the event is handled
-  console.log("clcxkcxkcnxk")
-  clearTimeout(this.popupTimer);
+      // Reset the timer
+      this.popupTimer = setTimeout(displayPopup, TIME_OUT);
+    });
 
-  // Reset the timer
-  this.popupTimer = setTimeout(displayPopup, TIME_OUT);
-});
+    // $(document).mouseleave(function () {
+    //      $(".popup_banner").removeClass('hide')
+    // });
 
-// $(document).mouseleave(function () {
-//      $(".popup_banner").removeClass('hide')
-// });
-
-
-// $(document).mouseenter(function () {
-//     $(".popup_banner").addClass('hide')
-// });
-
-
-
+    // $(document).mouseenter(function () {
+    //     $(".popup_banner").addClass('hide')
+    // });
   },
-  methods:{
-    closePopup: function(){
+  methods: {
+    closePopup: function() {
+      $(".popup_banner").addClass("hide");
 
-
-           $(".popup_banner").addClass('hide')
-
-            clearTimeout(this.popupTimer);
-
+      clearTimeout(this.popupTimer);
     }
   }
 };
@@ -112,44 +106,44 @@ $(document).on('click change keypress mouseover resize scroll', function() {
   src: url("~static/Sailec-Regular.woff") format("woff");
 }
 
-.popup_banner{
-       position: fixed;
-       padding: 10px;
-    z-index: 99;
-    /* left: 0; */
-    /* right: 0; */
-    /* top: 0; */
-    /* bottom: 0; */
-    margin: auto;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+.popup_banner {
+  position: fixed;
+  padding: 10px;
+  z-index: 99;
+  /* left: 0; */
+  /* right: 0; */
+  /* top: 0; */
+  /* bottom: 0; */
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-.faremon > .col{
+.faremon > .col {
   height: 160px;
 }
 
-.popup_banner:after{
+.popup_banner:after {
   content: "";
   background-color: rgba(0, 0, 0, 0.63);
 
-       position: fixed;
-    z-index: 99;
-    /* left: 0; */
-    /* right: 0; */
-    /* top: 0; */
-    /* bottom: 0; */
-    margin: auto;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+  position: fixed;
+  z-index: 99;
+  /* left: 0; */
+  /* right: 0; */
+  /* top: 0; */
+  /* bottom: 0; */
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 html {
@@ -176,10 +170,9 @@ body {
   margin: 0;
 }
 
-.travel_class{
-      text-transform: capitalize;
+.travel_class {
+  text-transform: capitalize;
 }
-
 
 .button--green {
   display: inline-block;
@@ -404,7 +397,8 @@ label {
   font-weight: bold;
 }
 
-.makemytrip-border label, .airportName{
+.makemytrip-border label,
+.airportName {
   text-align: left;
 }
 
@@ -462,7 +456,7 @@ input[type="email"]:focus {
 
 .extra_flight_data {
   line-height: 25px;
-  margin-bottom:0;
+  margin-bottom: 0;
   padding-top: 0px;
 }
 
@@ -515,22 +509,22 @@ li {
   cursor: pointer;
 }
 
-.flight_data.row{
-  margin-bottom: 0
+.flight_data.row {
+  margin-bottom: 0;
 }
 
 .dashed-line {
   border: 0;
   border-top: 1px dashed #bdbdbd !important;
   margin: 20px 0;
-  width: 100%
+  width: 100%;
 }
 
 .dashed-line-details {
   border: 0;
   border-top: 1px dashed #bdbdbd !important;
   margin: 5px 0;
-  width: 100%
+  width: 100%;
 }
 
 .flight_change h5 {
@@ -556,36 +550,34 @@ li {
 
 #amadeus .oneway .col,
 #amadeus .return .col {
-  height: initial!important;
+  height: initial !important;
 }
-
 
 @media only screen and (min-width: 1024px) {
-
-.flight_price h3{
-  padding-top: 20px
-}
-
+  .flight_price h3 {
+    padding-top: 20px;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .carrier_icon {
-  height: 100%;
-  width: 30px;
-  object-fit: contain;
-  margin-right: 15px;
-}
-.dashed-line{
-  margin: 0px 0 15px!important
-}
-.flight_departure, .flight_arrival{
-  font-size: 11px
-}
-.oneseg .row .col{
-  padding: 0
-}
-.flight_price h3{
-    font-size: 13px!important
-}
+    height: 100%;
+    width: 30px;
+    object-fit: contain;
+    margin-right: 15px;
+  }
+  .dashed-line {
+    margin: 0px 0 15px !important;
+  }
+  .flight_departure,
+  .flight_arrival {
+    font-size: 11px;
+  }
+  .oneseg .row .col {
+    padding: 0;
+  }
+  .flight_price h3 {
+    font-size: 13px !important;
+  }
 }
 
 .extra_carrier_icon {
@@ -899,35 +891,37 @@ p {
   width: 59px;
 }
 
-
-.flight_details--price{
-  font-size:16px; padding-top: 30px;font-weight:bold
+.flight_details--price {
+  font-size: 16px;
+  padding-top: 30px;
+  font-weight: bold;
 }
 
-
-.flight__phone{
-  font-size:25px;white-space: pre;padding: 7px 15px;line-height:25px;height:25px
+.flight__phone {
+  font-size: 25px;
+  white-space: pre;
+  padding: 7px 15px;
+  line-height: 25px;
+  height: 25px;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1023px) {
-
-  .flight_book h3{
-    padding-top: 20px
+  .flight_book h3 {
+    padding-top: 20px;
   }
-
 }
 
 @media only screen and (max-width: 600px) {
   .flight_book {
     /* height: 40px !important; */
-    padding-top: 22px!important
+    padding-top: 22px !important;
   }
 }
 
-@media only screen and (max-width: 600px){
-.flight_data {
+@media only screen and (max-width: 600px) {
+  .flight_data {
     padding-bottom: 10px;
     text-align: center;
-}
+  }
 }
 </style>

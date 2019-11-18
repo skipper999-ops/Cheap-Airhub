@@ -88,7 +88,7 @@
             <div class="row">
               <div class="col s24 m12 l6 makemytrip-border">
                 <div class="form">
-                  <label>FROM</label>
+                  <label>From</label>
                   <input
                     id="from_des"
                     @keydown="clearCountdown"
@@ -1237,7 +1237,7 @@ export default {
     getSortedData: function(data, isAsc) {
       return data.sort((a, b) => {
         return (
-          (a.offerItems[0].price.total < b.offerItems[0].price.total &&
+          (a.offerItems[0].pricePerAdult.total < b.offerItems[0].pricePerAdult.total &&
           a.offerItems[0].services[0].segments[0].flightSegment.departure ==
             $("#from_iata").val()
             ? -1

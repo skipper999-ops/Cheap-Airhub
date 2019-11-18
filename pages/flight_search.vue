@@ -1141,7 +1141,7 @@ export default {
                 .slice(0, 2)
                 .join(":");
 
-              temp.price = data.data[i].offerItems[0].price.total;
+              temp.price = data.data[i].offerItems[0].pricePerAdult.total;
 
               temp.seg = seg;
 
@@ -1310,7 +1310,7 @@ export default {
                   .slice(0, 2)
                   .join(":");
 
-                temp.round_price = data.data[i].offerItems[0].price.total;
+                temp.round_price = data.data[i].offerItems[0].pricePerAdult.total;
 
                 temp.round_seg = round_seg;
               }
@@ -1328,7 +1328,7 @@ export default {
             //           }
 
             // for (var i = 0; i < data.data.length; i++) {
-            //   var pricing = data.data[i].offerItems[0].price.total;
+            //   var pricing = data.data[i].offerItems[0].pricePerAdult.total;
 
             //   if (data.data[i].offerItems[0].services[0].segments.length == 1) {
             //     console.log("one");
@@ -1795,7 +1795,7 @@ export default {
     getSortedData: function(data, isAsc) {
       return data.sort((a, b) => {
         return (
-          (a.offerItems[0].price.total < b.offerItems[0].price.total &&
+          (a.offerItems[0].pricePerAdult.total < b.offerItems[0].pricePerAdult.total &&
           a.offerItems[0].services[0].segments[0].flightSegment.departure ==
             $("#from_iata").val()
             ? -1

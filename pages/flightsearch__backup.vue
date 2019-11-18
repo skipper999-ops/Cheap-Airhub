@@ -109,7 +109,7 @@
             <div class="row" style="box-shadow:0px 9px 13px 0px #1a1a1a52">
               <div class="col s24 m12 l6 makemytrip-border">
                 <div class="form">
-                  <label>FROM</label>
+                  <label>From</label>
                   <input
                     id="from_des"
                     @keydown="clearCountdown"
@@ -1590,9 +1590,9 @@ export default {
                   temp.arr_time = b.slice(0, 2).join(":") + zone
 
                 temp.price =
-                  data.data[i].offerItems[0].price.total -
+                  data.data[i].offerItems[0].pricePerAdult.total -
                   parseFloat(
-                    (this.disc / 100) * data.data[i].offerItems[0].price.total
+                    (this.disc / 100) * data.data[i].offerItems[0].pricePerAdult.total
                   ).toFixed(2);
 
                 temp.seg = seg;
@@ -1845,9 +1845,9 @@ export default {
                   temp.round_arr_time = b.slice(0, 2).join(":") + zone
 
                   temp.round_price =
-                    data.data[i].offerItems[0].price.total -
+                    data.data[i].offerItems[0].pricePerAdult.total -
                     parseFloat(
-                      (this.disc / 100) * data.data[i].offerItems[0].price.total
+                      (this.disc / 100) * data.data[i].offerItems[0].pricePerAdult.total
                     ).toFixed(2);
 
                   temp.round_seg = round_seg;
@@ -1866,7 +1866,7 @@ export default {
               //           }
 
               // for (var i = 0; i < data.data.length; i++) {
-              //   var pricing = data.data[i].offerItems[0].price.total;
+              //   var pricing = data.data[i].offerItems[0].pricePerAdult.total;
 
               //   if (data.data[i].offerItems[0].services[0].segments.length == 1) {
               //     console.log("one");
@@ -2350,7 +2350,7 @@ export default {
     getSortedData: function(data, isAsc) {
       return data.sort((a, b) => {
         return (
-          (a.offerItems[0].price.total < b.offerItems[0].price.total ? -1 : 1) *
+          (a.offerItems[0].pricePerAdult.total < b.offerItems[0].pricePerAdult.total ? -1 : 1) *
           (isAsc ? 1 : -1)
         );
       });
