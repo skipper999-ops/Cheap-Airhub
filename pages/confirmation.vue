@@ -20,8 +20,8 @@
     margin-bottom: 30px;
 "> {{ transaction_id }} </p>
             <p style="padding-bottom:10px">Call the below Toll free Number to confirm your booking at the lowest fare</p>
-            <p style="color:black;font-weight:bold"> <a href="tel:1844 842 9401">
-                1844 842 9401
+            <p style="color:black;font-weight:bold"> <a href="tel:1888-959-4847">
+                1888-959-4847
             </a></p>
           </div>
         </div>

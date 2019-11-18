@@ -67,7 +67,7 @@
             <p
               style="padding-bottom:10px"
             >Call the below Toll free Number to confirm your booking at the lowest fare</p>
-            <p style="color:black;font-weight:bold">1844 842 9401</p>
+            <p style="color:black;font-weight:bold">1888-959-4847</p>
           </div>
         </div>
       </div>
@@ -654,7 +654,7 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:1844 842 9401"
+                        href="tel:1888-959-4847"
                       >1888-959-4847</a>
                     </p>
                   </div>
@@ -665,7 +665,7 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:1844 842 9401"
+                        href="tel:1888-959-4847"
                       >1888-959-4847</a>
                     </p>
                   </div>
