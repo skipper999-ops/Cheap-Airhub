@@ -749,7 +749,7 @@
                       style="display: flex;align-items: center;flex-direction:column;height: inherit;"
                     >
                       <p
-                        style="padding-left: 10px;white-space:pre;height:30px"
+                        style="padding-left: 10px;"
                       >
                         Phone only offer
                       </p>
@@ -886,7 +886,7 @@
                   style="display: flex;align-items: center;flex-direction:column;height: inherit;"
                 >
                   <p
-                    style="padding-left: 10px;white-space:pre;height:30px"
+                    style="padding-left: 10px;"
                   >
                     Phone only offer
                   </p>

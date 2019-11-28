@@ -641,7 +641,7 @@
                       class="flight_book col s12 m6 hide-on-med-and-down"
                       style="display: flex;align-items: center;flex-direction:column;height: inherit;"
                     >
-                      <p style="padding-left: 10px;white-space:pre;height:30px">Phone only offer</p>
+                      <p style="padding-left: 10px;">Phone only offer</p>
                       <div style="display:flex;align-items:center">
                         <img
                           style="width: 50px;height: 100%;object-fit: contain;"
@@ -738,7 +738,7 @@
                       class="flight_book col s24 m12 hide-on-large-only"
                       style="display: flex;align-items: center;flex-direction:column;height: inherit;"
                     >
-                      <p style="padding-left: 10px;white-space:pre;height:30px">Phone only offer</p>
+                      <p style="padding-left: 10px;">Phone only offer</p>
                       <div style="display:flex;align-items:center">
                         <img
                           style="width: 50px;height: 100%;object-fit: contain;"
