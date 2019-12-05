@@ -936,7 +936,7 @@ export default {
     isInternationDep: 0,
     isInternationArr: 0,
     // base_url: "http://localhost",
-    base_url: "https://www.cheapairhub.com",
+    base_url: "https://www.cheapestairfare.com",
     amadeus: [],
     amadeusReturn: [],
     carrier_list: [],
@@ -1252,7 +1252,7 @@ export default {
         localStorage.setItem("to_arr", $("#to_arr").val());
         localStorage.setItem("to_airport", $(".to_airport").html());
 
-        // this.$router.push("/cheapairhub/cheapflightresults");
+        // this.$router.push("/cheapestairfare/cheapflightresults");
 
 
         var newstring1 = $("#dep_date_hidden").val().split("-").reverse().join("/")
@@ -1261,16 +1261,16 @@ export default {
       var rtn = "Oneway"
         if(this.picked == 'roundtrip'){
             rtn = "Return"
-          window.location.href = "/cheapairhub4/en-us/searchflight?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children="+ $(".drop-down2 .selected .value").html() +"&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html().toLowerCase()
+          window.location.href = "/cheapestairfare4/en-us/searchflight?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children="+ $(".drop-down2 .selected .value").html() +"&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html().toLowerCase()
         }else{
           
-          window.location.href = "/cheapairhub4/en-us/searchflight?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children="+ $(".drop-down2 .selected .value").html() +"&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html().toLowerCase()
+          window.location.href = "/cheapestairfare4/en-us/searchflight?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children="+ $(".drop-down2 .selected .value").html() +"&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html().toLowerCase()
         }
 
         // https://booking.domain.com/en-us/selectflights?SearchType=Oneway&OriginStation=HKG&DestinationStation=NGO&DepartureDate=03/03/2017&Adults=1
 
 
-        // this.$router.push("/cheapairhub/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" );
+        // this.$router.push("/cheapestairfare/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" );
       }
 
       // }

@@ -1,7 +1,7 @@
 {
-  "name": "CheapAirHub",
+  "name": "CheapestAirfare",
   "version": "1.0.0",
-  "description": "Cheap ticket to everywhere,You can find Low cost airline and save more money on airline tickets to your travel. CheapAirHub.com offers cheap airfare to every destination in the world.",
+  "description": "Cheap ticket to everywhere,You can find Low cost airline and save more money on airline tickets to your travel. CheapestAirfare.com offers cheap airfare to every destination in the world.",
   "author": "skip",
   "private": true,
   "scripts": {

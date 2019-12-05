@@ -936,7 +936,7 @@ export default {
     isInternationDep: 0,
     isInternationArr: 0,
     // base_url: "http://localhost",
-    base_url: "https://www.cheapairhub.com",
+    base_url: "https://www.cheapestairfare.com",
     amadeus: [],
     amadeusReturn: [],
     carrier_list: [],
@@ -1247,7 +1247,7 @@ export default {
         localStorage.setItem("to_arr", $("#to_arr").val());
         localStorage.setItem("to_airport", $(".to_airport").html());
 
-        // this.$router.push("/cheapairhub/cheapflightresults");
+        // this.$router.push("/cheapestairfare/cheapflightresults");
 
 
 
@@ -1259,14 +1259,14 @@ export default {
           
             rtn = 'return'
 
-          window.location.href = "/cheapairhub/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
+          window.location.href = "/cheapestairfare/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
 
 
         }
         else{
           
           
-          window.location.href = "/cheapairhub/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  + "&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
+          window.location.href = "/cheapestairfare/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  + "&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
           
 
 
@@ -1277,11 +1277,11 @@ export default {
 
 
        
-// https://www.cheapairhub.com/flights/find-result/?origin=sin&destination=syd&adult=1&child=0&infant_on_seat=1&triptype=return&departure=2019-10-25&return=2019-11-01&cabin=economy&utm_source=1026
+// https://www.cheapestairfare.com/flights/find-result/?origin=sin&destination=syd&adult=1&child=0&infant_on_seat=1&triptype=return&departure=2019-10-25&return=2019-11-01&cabin=economy&utm_source=1026
        
        
        
-      //  this.$router.push("/cheapairhub/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" );
+      //  this.$router.push("/cheapestairfare/flights/" + $("#from_iata").val().toLowerCase()  + "/" + $("#to_iata").val().toLowerCase() + "/" + newstring1 + "/" + newstring2 + "/?adults=" + $(".drop-down1 .selected .value").html() + "&children=" + $(".drop-down2 .selected .value").html() + "&infants=" + $(".drop-down3 .selected .value").html() + "&cabinclass=" + $(".drop-down .selected .value").html() + "&rtn=" + rtn + "&utm_campaign=skyscanner" );
       }
 
       // }

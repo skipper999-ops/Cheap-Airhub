@@ -936,7 +936,7 @@ export default {
     isInternationDep: 0,
     isInternationArr: 0,
     // base_url: "http://localhost",
-    base_url: "https://www.cheapairhub.com",
+    base_url: "https://www.cheapestairfare.com",
     amadeus: [],
     amadeusReturn: [],
     carrier_list: [],
@@ -1255,7 +1255,7 @@ export default {
         localStorage.setItem("to_arr", $("#to_arr").val());
         localStorage.setItem("to_airport", $(".to_airport").html());
 
-        // this.$router.push("/cheapairhub/cheapflightresults");
+        // this.$router.push("/cheapestairfare/cheapflightresults");
 
 
 
@@ -1265,9 +1265,9 @@ export default {
       var rtn = 'one-way'
         if(this.picked == 'roundtrip'){
             rtn = 'return'
-        window.location.href = "/cheapairhub2/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
+        window.location.href = "/cheapestairfare2/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
         }else{
-        window.location.href = "/cheapairhub2/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
+        window.location.href = "/cheapestairfare2/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&cabin=" + $(".drop-down .selected .value").html().toLowerCase() + "&utm_source=skyscanner"
 
         }
 

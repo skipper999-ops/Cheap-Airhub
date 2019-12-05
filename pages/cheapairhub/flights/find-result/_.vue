@@ -989,7 +989,7 @@ export default {
     isInternationDep: 0,
     isInternationArr: 0,
     // base_url: "http://localhost",
-    base_url: "https://www.cheapairhub.com",
+    base_url: "https://www.cheapestairfare.com",
     amadeus: [],
     amadeusReturn: [],
     carrier_list: [],
@@ -1047,7 +1047,7 @@ export default {
 
       axios({
         method: "GET",
-        url: "https://www.cheapairhub.com/api/api.php?getAirport=getAirport&query=" + ori_,
+        url: "https://www.cheapestairfare.com/api/api.php?getAirport=getAirport&query=" + ori_,
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         }
@@ -1074,7 +1074,7 @@ export default {
 
       axios({
         method: "GET",
-        url: "https://www.cheapairhub.com/api/api.php?getAirport=getAirport&query=" + des_,
+        url: "https://www.cheapestairfare.com/api/api.php?getAirport=getAirport&query=" + des_,
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         }
@@ -1371,9 +1371,9 @@ export default {
       var rtn = 'one-way'
         if(this.picked == 'roundtrip'){
             rtn = 'return'
-          window.location.href = "/cheapairhub/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html() + "&utm_source=skyscanner"
+          window.location.href = "/cheapestairfare/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&return="+ $("#ret_date_hidden").val() +"&cabin=" + $(".drop-down .selected .value").html() + "&utm_source=skyscanner"
         }else{
-          window.location.href = "/cheapairhub/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&cabin=" + $(".drop-down .selected .value").html() + "&utm_source=skyscanner"
+          window.location.href = "/cheapestairfare/flights/find-result/?origin=" + $("#from_iata").val().toLowerCase()  + "&destination=" + $("#to_iata").val().toLowerCase() + "&adult=" + $(".drop-down1 .selected .value").html() + "&child=" + $(".drop-down2 .selected .value").html() + "&infant_on_seat=" + $(".drop-down3 .selected .value").html() + "&triptype=" + rtn + "&departure="+ $("#dep_date_hidden").val()  +"&cabin=" + $(".drop-down .selected .value").html() + "&utm_source=skyscanner"
         }
 
 
@@ -1386,7 +1386,7 @@ export default {
     sendDisc: function(e) {
       axios({
         method: "GET",
-        url: "https://www.cheapairhub.com/api/api.php?sendDisc=sendDisc",
+        url: "https://www.cheapestairfare.com/api/api.php?sendDisc=sendDisc",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         }
@@ -2288,7 +2288,7 @@ export default {
                 case 401:
                   console.log("Token Expired");
                   $("#error_log p").html(
-                    "Access Token Expired. Please contact support@cheapairhub.com. ( Error code 401 )"
+                    "Access Token Expired. Please contact support@cheapestairfare.com. ( Error code 401 )"
                   );
                   break;
 
@@ -2302,13 +2302,13 @@ export default {
                 case 500:
                   console.log("Not found");
                   $("#error_log p").html(
-                    "System error has occured. Please contact support@cheapairhub.com. ( Error code 500 )"
+                    "System error has occured. Please contact support@cheapestairfare.com. ( Error code 500 )"
                   );
                   break;
 
                 default:
                   $("#error_log p").html(
-                    "Something is wrong. Please contact support@cheapairhub.com. ( Error code 503 )"
+                    "Something is wrong. Please contact support@cheapestairfare.com. ( Error code 503 )"
                   );
               }
             });

@@ -48,9 +48,9 @@
           <p>
             If you have any questions regarding use of cookies or other technologies, send us an email at
             <a
-              href="mailto:support@cheapairhub.com"
+              href="mailto:support@cheapestairfare.com"
               target="_top"
-            >support@cheapairhub.com</a>.
+            >support@cheapestairfare.com</a>.
           </p>
           <br />
         </div>

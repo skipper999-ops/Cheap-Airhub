@@ -25,7 +25,7 @@
         <h5>
           <strong>How do I contact a Travel consultant?</strong>
         </h5>
-        <p>You can call on our Toll free number 1888-959-4847 for assistance on your air reservation. Our Customer Service Team is available 24x7, 365 Days. You may also email your questions/ comments/ concerns to customerservice@CheapAirHub.com</p>
+        <p>You can call on our Toll free number 1888-959-4847 for assistance on your air reservation. Our Customer Service Team is available 24x7, 365 Days. You may also email your questions/ comments/ concerns to customerservice@CheapestAirfare.com</p>
         <br />
         <h5>
           <strong>How do I add additional passengers to an existing reservation?</strong>
@@ -152,7 +152,7 @@
         <h5>
           <strong>I have a non US, non Canadian credit card, can I use it?</strong>
         </h5>
-        <p>CheapAirHub.com has recently started allowing credit cards issued outside the US/Canada to be used as a form of payment for certain itineraries. There are some stipulations involved and in even rarer cases additional fees collected. If CheapAirHub.com does require certain documents and/or charge a fee you will be prompted on the site prior to you accepting and clicking purchase. If you have further questions please call on our Toll free number 1888-959-4847 or email us at customerservice@CheapAirHub.com</p>
+        <p>CheapestAirfare.com has recently started allowing credit cards issued outside the US/Canada to be used as a form of payment for certain itineraries. There are some stipulations involved and in even rarer cases additional fees collected. If CheapestAirfare.com does require certain documents and/or charge a fee you will be prompted on the site prior to you accepting and clicking purchase. If you have further questions please call on our Toll free number 1888-959-4847 or email us at customerservice@CheapestAirfare.com</p>
         <br />
         <h5>
           <strong>Why was my credit card declined?</strong>
