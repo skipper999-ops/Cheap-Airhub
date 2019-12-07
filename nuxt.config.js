@@ -5,7 +5,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: 'Cheap Air Hub | Ultimate Cheap Flight, Airline Tickets & Airfare by Cheapestairfare.com',
+    title: 'Cheapest Airfare | Ultimate Cheap Flight, Airline Tickets & Airfare by Cheapestairfare.com',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
