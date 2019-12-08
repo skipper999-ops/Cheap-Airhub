@@ -918,7 +918,7 @@ export default {
     isInternationDep: 0,
     isInternationArr: 0,
     // base_url: "http://localhost",
-    base_url: "https://www.cheapestairfare.com",
+    base_url: "https://www.cheapestairfare.online",
     amadeus: [],
     amadeusReturn: [],
     carrier_list: [],

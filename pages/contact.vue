@@ -13,7 +13,7 @@
                 7thFloor, Sector-132,
                 Noida UP 201301</p>
               <p><span style="font-weight:bold">Phone Number :</span> +91 0120-4203761</p>
-              <p><span style="font-weight:bold">Email : </span>support@cheapestairfare.com</p>
+              <p><span style="font-weight:bold">Email : </span>support@cheapestairfare.online</p>
               <p><span style="font-weight:bold">Customer Service Number</span> <span>Toll Free :</span> 1888-959-4847</p>
               <p
                 v-if="form_submitted"
@@ -142,7 +142,7 @@ export default {
         method: "POST",
         data: bodyFormData,
         url:
-          "https://www.cheapestairfare.com/api/api.php?sendformContact=sendformContact",
+          "https://www.cheapestairfare.online/api/api.php?sendformContact=sendformContact",
 
         headers: {
           "Access-Control-Allow-Origin": "*"

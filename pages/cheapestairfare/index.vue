@@ -936,7 +936,7 @@ export default {
     isInternationDep: 0,
     isInternationArr: 0,
     // base_url: "http://localhost",
-    base_url: "https://www.cheapestairfare.com",
+    base_url: "https://www.cheapestairfare.online",
     amadeus: [],
     amadeusReturn: [],
     carrier_list: [],
@@ -1277,7 +1277,7 @@ export default {
 
 
        
-// https://www.cheapestairfare.com/flights/find-result/?origin=sin&destination=syd&adult=1&child=0&infant_on_seat=1&triptype=return&departure=2019-10-25&return=2019-11-01&cabin=economy&utm_source=1026
+// https://www.cheapestairfare.online/flights/find-result/?origin=sin&destination=syd&adult=1&child=0&infant_on_seat=1&triptype=return&departure=2019-10-25&return=2019-11-01&cabin=economy&utm_source=1026
        
        
        

@@ -98,7 +98,7 @@ export default {
       axios({
         method: "GET",
         url:
-          "https://www.cheapestairfare.com/api/api.php?checkSession=checkSession&token=" +
+          "https://www.cheapestairfare.online/api/api.php?checkSession=checkSession&token=" +
           localStorage.getItem("random"),
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
@@ -122,7 +122,7 @@ export default {
     getData: function() {
       axios({
         method: "GET",
-        url: "https://www.cheapestairfare.com/api/api.php?getData=getData",
+        url: "https://www.cheapestairfare.online/api/api.php?getData=getData",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         }
@@ -139,7 +139,7 @@ export default {
       axios({
         method: "GET",
         url:
-          "https://www.cheapestairfare.com/api/api.php?getDataContact=getDataContact",
+          "https://www.cheapestairfare.online/api/api.php?getDataContact=getDataContact",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         }
@@ -156,7 +156,7 @@ export default {
       axios({
         method: "POST",
         url:
-          "https://www.cheapestairfare.com/api/api.php?sendformDelete=sendformDelete&id=" +
+          "https://www.cheapestairfare.online/api/api.php?sendformDelete=sendformDelete&id=" +
           e +
           "&token=" +
           localStorage.getItem("random"),
@@ -176,7 +176,7 @@ export default {
       axios({
         method: "POST",
         url:
-          "https://www.cheapestairfare.com/api/api.php?saveDisc=saveDisc&id=" +
+          "https://www.cheapestairfare.online/api/api.php?saveDisc=saveDisc&id=" +
   
           "&discount=" +
           this.disc,
@@ -196,7 +196,7 @@ export default {
       axios({
         method: "GET",
         url:
-          "https://www.cheapestairfare.com/api/api.php?sendDisc=sendDisc",
+          "https://www.cheapestairfare.online/api/api.php?sendDisc=sendDisc",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         }
@@ -217,7 +217,7 @@ export default {
       axios({
         method: "POST",
         url:
-          "https://www.cheapestairfare.com/api/api.php?contactDelete=contactDelete&id=" +
+          "https://www.cheapestairfare.online/api/api.php?contactDelete=contactDelete&id=" +
           e +
           "&token=" +
           localStorage.getItem("random"),

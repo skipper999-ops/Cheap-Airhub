@@ -1181,7 +1181,7 @@ export default {
     isInternationDep: 0,
     isInternationArr: 0,
     // base_url: "http://localhost",
-    base_url: "https://www.cheapestairfare.com",
+    base_url: "https://www.cheapestairfare.online",
     amadeus: [],
     amadeusReturn: [],
     carrier_list: [],
@@ -1242,7 +1242,7 @@ export default {
     axios({
       method: "GET",
       url:
-        "https://www.cheapestairfare.com/api/api.php?getAirport=getAirport&query=" +
+        "https://www.cheapestairfare.online/api/api.php?getAirport=getAirport&query=" +
         ori_,
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -1268,7 +1268,7 @@ export default {
         axios({
           method: "GET",
           url:
-            "https://www.cheapestairfare.com/api/api.php?getAirport=getAirport&query=" +
+            "https://www.cheapestairfare.online/api/api.php?getAirport=getAirport&query=" +
             des_,
           headers: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -1633,7 +1633,7 @@ export default {
     sendDisc: function(e) {
       axios({
         method: "GET",
-        url: "https://www.cheapestairfare.com/api/api.php?sendDisc=sendDisc",
+        url: "https://www.cheapestairfare.online/api/api.php?sendDisc=sendDisc",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         }
@@ -2497,7 +2497,7 @@ export default {
                 case 401:
                   console.log("Token Expired");
                   $("#error_log p").html(
-                    "Access Token Expired. Please contact support@cheapestairfare.com. ( Error code 401 )"
+                    "Access Token Expired. Please contact support@cheapestairfare.online. ( Error code 401 )"
                   );
                   break;
 
@@ -2511,13 +2511,13 @@ export default {
                 case 500:
                   console.log("Not found");
                   $("#error_log p").html(
-                    "System error has occured. Please contact support@cheapestairfare.com. ( Error code 500 )"
+                    "System error has occured. Please contact support@cheapestairfare.online. ( Error code 500 )"
                   );
                   break;
 
                 default:
                   $("#error_log p").html(
-                    "Something is wrong. Please contact support@cheapestairfare.com. ( Error code 503 )"
+                    "Something is wrong. Please contact support@cheapestairfare.online. ( Error code 503 )"
                   );
               }
             });

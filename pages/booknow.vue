@@ -357,7 +357,7 @@ export default {
       axios({
         method: "GET",
         url:
-          "https://www.cheapestairfare.com/api/api.php?getCountries=getCountries",
+          "https://www.cheapestairfare.online/api/api.php?getCountries=getCountries",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         },
@@ -377,7 +377,7 @@ export default {
       axios({
         method: "GET",
         url:
-          "https://www.cheapestairfare.com/api/api.php?getStates=getStates&country_id=" +
+          "https://www.cheapestairfare.online/api/api.php?getStates=getStates&country_id=" +
           this.country_id,
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
@@ -434,7 +434,7 @@ export default {
       axios({
         method: "POST",
         data: bodyFormData,
-        url: "https://www.cheapestairfare.com/api/api.php?sendform=sendform",
+        url: "https://www.cheapestairfare.online/api/api.php?sendform=sendform",
 
         headers: {
           "Access-Control-Allow-Origin": "*"
