@@ -649,7 +649,7 @@
                       <img
                         class="carrier_icon"
                         :src="
-                          'https://www.amadeus.net/assets/img/static/airlines/medium/' +
+                          'https://c.fareportal.com/n/common/air/3x/' +
                             p.carrier_icon +
                             '.png'
                         "
@@ -778,7 +778,7 @@
                       <img
                         class="carrier_icon"
                         :src="
-                          'https://www.amadeus.net/assets/img/static/airlines/medium/' +
+                          'https://c.fareportal.com/n/common/air/3x/' +
                             p.round_carrier_icon +
                             '.png'
                         "
@@ -950,7 +950,7 @@
                           <img
                             class="extra_carrier_icon"
                             :src="
-                              'https://www.amadeus.net/assets/img/static/airlines/medium/' +
+                              'https://c.fareportal.com/n/common/air/3x/' +
                                 q.carrier_icon +
                                 '.png'
                             "
@@ -1007,7 +1007,7 @@
                           <img
                             class="extra_carrier_icon"
                             :src="
-                              'https://www.amadeus.net/assets/img/static/airlines/medium/' +
+                              'https://c.fareportal.com/n/common/air/3x/' +
                                 q.round_carrier_icon +
                                 '.png'
                             "

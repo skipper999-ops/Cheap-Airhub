@@ -436,7 +436,7 @@
                   <div class="flight_name">
                     <img
                       class="carrier_icon"
-                      :src="'https://www.amadeus.net/assets/img/static/airlines/medium/' + p.carrier_icon + '.png'"
+                      :src="'https://c.fareportal.com/n/common/air/3x/' + p.carrier_icon + '.png'"
                     />
                     <p>{{ p.carrier_name }}</p>
                   </div>
@@ -474,7 +474,7 @@
                   <div class="flight_name">
                     <img
                       class="carrier_icon"
-                      :src="'https://www.amadeus.net/assets/img/static/airlines/medium/' + p.round_carrier_icon + '.png'"
+                      :src="'https://c.fareportal.com/n/common/air/3x/' + p.round_carrier_icon + '.png'"
                     />
                     <p>{{ p.round_carrier_name }}</p>
                   </div>
@@ -524,7 +524,7 @@
                         <div class="extra_flight_name">
                           <img
                             class="extra_carrier_icon"
-                            :src="'https://www.amadeus.net/assets/img/static/airlines/medium/' + q.carrier_icon + '.png'"
+                            :src="'https://c.fareportal.com/n/common/air/3x/' + q.carrier_icon + '.png'"
                           />
                           <p>{{ q.carrier_name }}</p>
                           <p>{{ q.carrier_icon }} - {{ q.flight_number }}</p>
@@ -565,7 +565,7 @@
                         <div class="extra_flight_name">
                           <img
                             class="extra_carrier_icon"
-                            :src="'https://www.amadeus.net/assets/img/static/airlines/medium/' + q.round_carrier_icon + '.png'"
+                            :src="'https://c.fareportal.com/n/common/air/3x/' + q.round_carrier_icon + '.png'"
                           />
                           <p>{{ q.round_carrier_name }}</p>
                           <p>{{ q.round_carrier_icon }} - {{ q.round_flight_number }}</p>
