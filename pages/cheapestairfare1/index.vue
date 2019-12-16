@@ -42,7 +42,7 @@
             <h4>Please save the transaction ID for future reference</h4>
             <p>Transaction ID: {{ transaction_id }}</p>
             <p>Call the below number to confirm your booking at the lowest fare</p>
-            <p>1888-959-4847</p>
+            <p>1888-655-0791</p>
           </div>
         </div>
       </div>
@@ -827,7 +827,7 @@
         >
           <div class="row">
             <div class="hide-on-med-and-down col s24 m24 l12 pic-call">
-            <a href="tel:1888-959-4847">
+            <a href="tel:1888-655-0791">
                 <h1><i class="fa fa-phone-square"></i>&nbsp;CALL NOW</h1>
             </a>
         </div>
@@ -836,7 +836,7 @@
     align-items: center;
     justify-content: center;">
     <div style="text-align:center">
-      <p style="color:white;font-size:45px">1888-959-4847</p>
+      <p style="color:white;font-size:45px">1888-655-0791</p>
       <p style="color:white">Call For Unpublished Cheap Flight Deals</p>
     </div>
           
@@ -955,9 +955,9 @@ export default {
 
 
     
-            $(".telephone").attr("href" , 'tel:1888-959-4847')
+            $(".telephone").attr("href" , 'tel:1888-655-0791')
 
-    $(".telephone").html('1888-959-4847')
+    $(".telephone").html('1888-655-0791')
 
     window.addEventListener("resize", this.onResize);
 
@@ -1263,10 +1263,10 @@ export default {
       var rtn = "Oneway"
         if(this.picked == 'roundtrip'){
             rtn = "Return"
-        window.location.href = "/cheapestairfare6/en-us/searchflight?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children="+ $(".drop-down2 .selected .value").html() +"&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html().toLowerCase()
+        window.location.href = "/cheapestairfare1/en-us/searchflight?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children="+ $(".drop-down2 .selected .value").html() +"&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html().toLowerCase()
         }else{
           
-          window.location.href = "/cheapestairfare6/en-us/searchflight?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children="+ $(".drop-down2 .selected .value").html() +"&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html().toLowerCase()
+          window.location.href = "/cheapestairfare1/en-us/searchflight?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children="+ $(".drop-down2 .selected .value").html() +"&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html().toLowerCase()
         }
 
         // https://booking.domain.com/en-us/selectflights?SearchType=Oneway&OriginStation=HKG&DestinationStation=NGO&DepartureDate=03/03/2017&Adults=1
