@@ -962,6 +962,7 @@
                                 q.carrier_icon +
                                 '.png'
                             "
+                            @error="setFallbackImageUrl"
                           />
                           <p>{{ q.carrier_name }}</p>
                           <p>{{ q.carrier_icon }} - {{ q.flight_number }}</p>
@@ -1562,6 +1563,11 @@ export default {
   },
 
   methods: {
+            setFallbackImageUrl(event) {
+              alert("Image Error")
+            console.log('Image failed to load, setting fallback.')
+            event.target.src = '/images/adv_1.png'
+        },
     newSearch: function() {
       console.log("rtnsssssssssssssssssssssssss");
 
