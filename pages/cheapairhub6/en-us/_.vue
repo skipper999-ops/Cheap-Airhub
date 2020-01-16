@@ -1564,9 +1564,9 @@ export default {
 
   methods: {
             setFallbackImageUrl(event) {
-              alert("Image Error")
-            console.log('Image failed to load, setting fallback.')
-            event.target.src = '/images/adv_1.png'
+              // alert("Image Error")
+            // console.log('Image failed to load, setting fallback.')
+            // event.target.src = '/images/adv_1.png'
         },
     newSearch: function() {
       console.log("rtnsssssssssssssssssssssssss");
