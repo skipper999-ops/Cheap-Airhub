@@ -727,7 +727,10 @@
                       class="flight_book col s24 m12 hide-on-large-only" style="
     text-align: center;
 "
-                    >
+                    >                      <h3 style="font-size:30px" v-if="p.isRound == 0">
+                        <span style="color:grey;font-size:12px">fr</span>
+                        $ {{ p.price.toFixed(2) }}
+                      </h3>
 
                    <h3 style="font-size:30px" v-if="p.isRound == 1">
                           <span style="color:grey;font-size:12px">fr</span>
