@@ -672,6 +672,8 @@
                             parseInt(p.round_price.toFixed(2))
                         }}
                       </h3>
+                      <p style="padding-top: 5px">Per Adult</p>
+                      <p style="color:red;padding-top: 5px">Limited Time Offer</p>
                     </div>
                     <div class="flight_departure_time col s8  m8 l4">
                       <div class="flight_origin">
@@ -748,9 +750,7 @@
                       class="flight_book col s12 m6 hide-on-med-and-down"
                       style="display: flex;align-items: center;flex-direction:column;height: inherit;"
                     >
-                      <p
-                        style="padding-left: 10px;"
-                      >
+                      <p style="padding-left: 10px;">
                         Phone only offer
                       </p>
                       <div style="display:flex;align-items:center">
@@ -868,14 +868,12 @@
 
                 <div
                   class="flight_book col s24 m12 hide-on-large-only"
-                  style="
-    text-align: center;
-"
+                  style="text-align: center;"
                 >
-                                      <h3 style="font-size:30px" v-if="p.isRound == 0">
-                        <span style="color:grey;font-size:12px">fr</span>
-                        $ {{ p.price.toFixed(2) }}
-                      </h3>
+                  <h3 style="font-size:30px" v-if="p.isRound == 0">
+                    <span style="color:grey;font-size:12px">fr</span>
+                    $ {{ p.price.toFixed(2) }}
+                  </h3>
                   <h3 style="font-size:30px" v-if="p.isRound == 1">
                     <span style="color:grey;font-size:12px">fr</span>
                     $
@@ -884,14 +882,16 @@
                         parseInt(p.round_price.toFixed(2))
                     }}
                   </h3>
+                                        <p style="padding-top: 5px">Per Adult</p>
+                      <p style="color:red;padding-top: 5px">Limited Time Offer</p>
+                     
+                        <p class="hide-on-med-and-up" style="padding-bottom: 10px">For more details, ask our Travel Consultant</p>
                 </div>
                 <div
                   class="flight_book col s24 m12 hide-on-large-only"
                   style="display: flex;align-items: center;flex-direction:column;height: inherit;"
                 >
-                  <p
-                    style="padding-left: 10px;"
-                  >
+                  <p style="padding-left: 10px;">
                     Phone only offer
                   </p>
                   <div style="display:flex;align-items:center">
@@ -913,6 +913,8 @@
                   style="display:flex;justify-content: space-between;padding-right:20px;padding-top: 20px"
                 >
                   <div v-if="isInternationDep == 0">
+                    
+                    <p class="hide-on-small-only" style="padding-bottom: 10px">For more details, ask our Travel Consultant</p>
                     <p
                       style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'"
                     >
@@ -927,6 +929,8 @@
                     </p>
                   </div>
                   <div v-if="isInternationDep == 1">
+                    
+                     <p class="hide-on-small-only" style="padding-bottom: 10px">For more details, ask our Travel Consultant</p>
                     <p
                       style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'"
                     >
@@ -1296,7 +1300,7 @@ export default {
               localStorage.getItem("from") != null &&
               localStorage.getItem("from") != "" &&
               localStorage.getItem("to") != null &&
-                localStorage.getItem("to") != ""
+              localStorage.getItem("to") != ""
             ) {
               $(".processing").removeClass("hide");
 
@@ -1449,8 +1453,8 @@ export default {
               })
               .data("datepicker");
 
-              console.log(localStorage.getItem("departure"))
-              console.log(localStorage.getItem("return"))
+            console.log(localStorage.getItem("departure"));
+            console.log(localStorage.getItem("return"));
 
             dp.selectDate(new Date(localStorage.getItem("departure")));
             dp1.selectDate(new Date(localStorage.getItem("return")));

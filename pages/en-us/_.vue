@@ -5,7 +5,9 @@
         <p
           @click="close_popup"
           style="position:absolute;right:10px;top:0;font-size:25px;cursor:pointer"
-        >x</p>
+        >
+          x
+        </p>
         <div class="row">
           <div class="col s24">
             <nuxt-link to="/">
@@ -16,35 +18,61 @@
             </nuxt-link>
           </div>
           <div class="col s24">
-            <h4 style="padding-bottom:20px">Fill up this form for the best offers</h4>
+            <h4 style="padding-bottom:20px">
+              Fill up this form for the best offers
+            </h4>
           </div>
           <div class="col s12">
             <div class="form">
               <label>First Name</label>
-              <input id="first_name" type="text" placeholder="First Name" autocomplete="off" />
+              <input
+                id="first_name"
+                type="text"
+                placeholder="First Name"
+                autocomplete="off"
+              />
             </div>
           </div>
           <div class="col s12">
             <div class="form">
               <label>last Name</label>
-              <input id="last_name" type="text" placeholder="Last Name" autocomplete="off" />
+              <input
+                id="last_name"
+                type="text"
+                placeholder="Last Name"
+                autocomplete="off"
+              />
             </div>
           </div>
           <div class="col s12">
             <div class="form">
               <label>Email</label>
-              <input id="email" type="email" autocomplete="off" placeholder="Email Address" />
+              <input
+                id="email"
+                type="email"
+                autocomplete="off"
+                placeholder="Email Address"
+              />
             </div>
           </div>
           <div class="col s12">
             <div class="form">
               <label>Phone Number</label>
-              <input id="phone" type="text" autocomplete="off" placeholder="Phone Number" />
+              <input
+                id="phone"
+                type="text"
+                autocomplete="off"
+                placeholder="Phone Number"
+              />
             </div>
           </div>
           <div class="col s24">
-            <div style="display: flex; justify-content: flex-end;margin-top:25px">
-              <button class="btn" type="submit" @click="submitForm">Submit</button>
+            <div
+              style="display: flex; justify-content: flex-end;margin-top:25px"
+            >
+              <button class="btn" type="submit" @click="submitForm">
+                Submit
+              </button>
             </div>
           </div>
         </div>
@@ -56,18 +84,25 @@
         <p
           @click="close_popup_after"
           style="position:absolute;right:10px;top:0;font-size:25px;cursor:pointer"
-        >x</p>
+        >
+          x
+        </p>
         <div class="row">
           <div class="col s24">
-            <h4 style="padding-bottom:10px">Please save the transaction ID for future reference</h4>
+            <h4 style="padding-bottom:10px">
+              Please save the transaction ID for future reference
+            </h4>
             <p style="padding-bottom:10px">
               Transaction ID:
-              <span style="color:black;font-weight:bold">{{ transaction_id }}</span>
+              <span style="color:black;font-weight:bold">{{
+                transaction_id
+              }}</span>
             </p>
-            <p
-              style="padding-bottom:10px"
-            >Call the below Toll free Number to confirm your booking at the lowest fare</p>
-            <p style="color:black;font-weight:bold">1888-959-4847</p>
+            <p style="padding-bottom:10px">
+              Call the below Toll free Number to confirm your booking at the
+              lowest fare
+            </p>
+            <p style="color:black;font-weight:bold">1888-220-3565</p>
           </div>
         </div>
       </div>
@@ -130,9 +165,15 @@
                         :id="'airport_dep-' + p.id"
                         @click="selectDep(p.id)"
                       >
-                        <div style="display:flex;flex-direction:column;margin-bottom: 10px">
+                        <div
+                          style="display:flex;flex-direction:column;margin-bottom: 10px"
+                        >
                           <div>{{ p.municipality }},{{ p.iso_country }}</div>
-                          <div style="font-size:12px;line-height:12px;color:#666">{{ p.name }}</div>
+                          <div
+                            style="font-size:12px;line-height:12px;color:#666"
+                          >
+                            {{ p.name }}
+                          </div>
                         </div>
                       </li>
                     </ul>
@@ -168,9 +209,15 @@
                         :id="'airport_dep-' + p.id"
                         @click="selectArr(p.id)"
                       >
-                        <div style="display:flex;flex-direction:column;margin-bottom: 10px">
+                        <div
+                          style="display:flex;flex-direction:column;margin-bottom: 10px"
+                        >
                           <div>{{ p.municipality }},{{ p.iso_country }}</div>
-                          <div style="font-size:12px;line-height:12px;color:#666">{{ p.name }}</div>
+                          <div
+                            style="font-size:12px;line-height:12px;color:#666"
+                          >
+                            {{ p.name }}
+                          </div>
                         </div>
                       </li>
                     </ul>
@@ -205,7 +252,7 @@
                 </div>
               </div>
               <div
-                v-bind:class="[ picked != 'roundtrip' ? 'roundtrip' : '']"
+                v-bind:class="[picked != 'roundtrip' ? 'roundtrip' : '']"
                 class="col s12 m8 l4 makemytrip-border"
               >
                 <div class="form">
@@ -234,11 +281,12 @@
                     <span>Travellers & Class</span>
                     <p class="font20 code">
                       <span class="appendRight10">
-                        <span class="font30 latoBlack">{{traveller}}</span> Traveller
+                        <span class="font30 latoBlack">{{ traveller }}</span>
+                        Traveller
                       </span>
                     </p>
 
-                    <p class="travel_class">{{travelClass}}</p>
+                    <p class="travel_class">{{ travelClass }}</p>
                   </label>
 
                   <div
@@ -450,7 +498,13 @@
                     </div>
                     <div class="row" style="margin-bottom: 0; margin-top: 10px">
                       <div class="col s24">
-                        <button type="button" @click="saveChanges" class="btn bold">Apply</button>
+                        <button
+                          type="button"
+                          @click="saveChanges"
+                          class="btn bold"
+                        >
+                          Apply
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -497,7 +551,9 @@
               </div>-->
 
               <div class="col s24 l24 search_button" style="padding-top: 10px">
-                <button type="button" @click="newSearch" class="btn bold">Search</button>
+                <button type="button" @click="newSearch" class="btn bold">
+                  Search
+                </button>
               </div>
 
               <!-- <div class="col s24 l24">
@@ -539,12 +595,18 @@
       </div>
     </div>
 
-
-    <div class id="result_section" style="background-color: #f1f1f1;padding-top:30px">
+    <div
+      class
+      id="result_section"
+      style="background-color: #f1f1f1;padding-top:30px"
+    >
       <div class="container section">
         <!-- <h3>Search Results</h3> -->
 
-        <h3 style="text-align:center;color: red">Flat 30% Off on this Route. Only few tickets left. Calling this provider before booking is recommended.</h3>
+        <h3 style="text-align:center;color: red">
+          Flat 30% Off on this Route. Only few tickets left. Calling this
+          provider before booking is recommended.
+        </h3>
 
         <div class="processing">
           <p style="text-align:center;padding-bottom: 20px">Fetching Data</p>
@@ -576,65 +638,112 @@
         <div class="row">
           <div class="col s24">
             <div id="amadeus">
-              <div class="card oneseg" v-for="(p, index) in amadeus" :key="p.id">
+              <div
+                class="card oneseg"
+                v-for="(p, index) in amadeus"
+                :key="p.id"
+              >
                 <div class="oneway">
                   <div class="flight_data row">
-                                        <div class="flight_name  col s8  m8 l3">
-                    <img
-                      class="carrier_icon"
-                      :src="
-                        'https://c.fareportal.com/n/common/air/3x/' +
-                          p.carrier_icon +
-                          '.png'
-                      "
-                    />
-                    <p>{{ p.carrier_name }}</p>
-                  </div>
-                    <div class="flight_price hide-on-med-and-down col s4 m4 l4" style="text-align:center">
+                    <div class="flight_name  col s8  m8 l3">
+                      <img
+                        class="carrier_icon"
+                        :src="
+                          'https://c.fareportal.com/n/common/air/3x/' +
+                            p.carrier_icon +
+                            '.png'
+                        "
+                      />
+                      <p>{{ p.carrier_name }}</p>
+                    </div>
+                    <div
+                      class="flight_price hide-on-med-and-down col s4 m4 l4"
+                      style="text-align:center"
+                    >
                       <h3 style="font-size:30px" v-if="p.isRound == 0">
                         <span style="color:grey;font-size:12px">fr</span>
                         $ {{ p.price.toFixed(2) }}
                       </h3>
-                        <h3 style="font-size:30px" v-if="p.isRound == 1">
-                          <span style="color:grey;font-size:12px">fr</span>
-                        $ {{ parseInt(p.price.toFixed(2)) + parseInt(p.round_price.toFixed(2)) }}
+                      <h3 style="font-size:30px" v-if="p.isRound == 1">
+                        <span style="color:grey;font-size:12px">fr</span>
+                        $
+                        {{
+                          parseInt(p.price.toFixed(2)) +
+                            parseInt(p.round_price.toFixed(2))
+                        }}
                       </h3>
+                       <p style="padding-top: 5px">Per Adult</p>
+                      <p style="color:red;padding-top: 5px">Limited Time Offer</p>
                     </div>
                     <div class="flight_departure_time col s8  m8 l4">
                       <div class="flight_origin">
                         <h5>{{ p.origin }}</h5>
-                        <p class="clamp1 hide-on-med-and-down" style="width: 130px;">{{ p.origin_fullname }}</p>
+                        <p
+                          class="clamp1 hide-on-med-and-down"
+                          style="width: 130px;"
+                        >
+                          {{ p.origin_fullname }}
+                        </p>
                       </div>
                       <p class="flight_departure">{{ p.dep_time }}</p>
-                        <p class="hide-on-large-only" style="font-size:11px;color:#b5b5b5">{{ p.duration }}</p>
+                      <p
+                        class="hide-on-large-only"
+                        style="font-size:11px;color:#b5b5b5"
+                      >
+                        {{ p.duration }}
+                      </p>
                     </div>
-                    <div class="extra_duration extar_flight_origin center col s8 m3 hide-on-med-and-down">
-                      <p class="hide-on-med-and-down" style="font-size:11px;color:#b5b5b5">Flight Duration</p>
-                      
+                    <div
+                      class="extra_duration extar_flight_origin center col s8 m3 hide-on-med-and-down"
+                    >
+                      <p
+                        class="hide-on-med-and-down"
+                        style="font-size:11px;color:#b5b5b5"
+                      >
+                        Flight Duration
+                      </p>
+
                       <h5 class="hide-on-med-and-down">{{ p.duration }}</h5>
-                      <p class="hide-on-med-and-down"
+                      <p
+                        class="hide-on-med-and-down"
                         v-if="p.seg.length - 1 > 0"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
-                      >{{ p.seg.length - 1 }} stop(s)</p>
-                      <p class="hide-on-med-and-down"
+                      >
+                        {{ p.seg.length - 1 }} stop(s)
+                      </p>
+                      <p
+                        class="hide-on-med-and-down"
                         v-if="p.seg.length - 1 == 0"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
-                      >Non-stop</p>
+                      >
+                        Non-stop
+                      </p>
                     </div>
                     <div class="flight_arrival_time col s8  m8 l4">
                       <div class="flight_origin">
                         <h5>{{ p.destination }}</h5>
-                        <p class="clamp1 hide-on-med-and-down" style="width: 130px;">{{ p.destination_fullname }}</p>
+                        <p
+                          class="clamp1 hide-on-med-and-down"
+                          style="width: 130px;"
+                        >
+                          {{ p.destination_fullname }}
+                        </p>
                       </div>
                       <p class="flight_arrival">{{ p.arr_time }}</p>
-                                            <p class="hide-on-large-only"
+                      <p
+                        class="hide-on-large-only"
                         v-if="p.seg.length - 1 > 0"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
-                      >{{ p.seg.length - 1 }} stop(s)</p>
-                      <p class="hide-on-large-only"
+                      >
+                        {{ p.seg.length - 1 }} stop(s)
+                      </p>
+                      <p
+                        class="hide-on-large-only"
                         v-if="p.seg.length - 1 == 0"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
-                      >Non-stop</p>
+                      >
+                        Non-stop
+                      </p>
                     </div>
 
                     <div
@@ -647,13 +756,14 @@
                           style="width: 50px;height: 100%;object-fit: contain;"
                           src="~static/call-now.gif"
                         />
-                          <p class="flight__phone">1888-959-4847</p>
+                        <p class="flight__phone">1888-220-3565</p>
                       </div>
                       <a
                         class="btn"
-                        href="tel:1888-959-4847"
+                        href="tel:1888-220-3565"
                         style="color:white; text-decoration:none;margin-top: 20px"
-                      >Call Now</a>
+                        >Call Now</a
+                      >
                     </div>
                   </div>
                 </div>
@@ -661,127 +771,176 @@
                 <hr v-if="p.isRound == 1" class="dashed-line" />
 
                 <div class="return" v-if="p.isRound == 1">
-
                   <div class="flight_data row">
-                                        <div class="flight_name col s8 m8 l3">
-                    <img
-                      class="carrier_icon"
-                      :src="
-                        'https://c.fareportal.com/n/common/air/3x/' +
-                          p.round_carrier_icon +
-                          '.png'
-                      "
-                    />
-                    <p>{{ p.round_carrier_name }}</p>
-                  </div>
-                    <div class="flight_price hide-on-med-and-down col s4  m8 l4">
+                    <div class="flight_name col s8 m8 l3">
+                      <img
+                        class="carrier_icon"
+                        :src="
+                          'https://c.fareportal.com/n/common/air/3x/' +
+                            p.round_carrier_icon +
+                            '.png'
+                        "
+                      />
+                      <p>{{ p.round_carrier_name }}</p>
+                    </div>
+                    <div
+                      class="flight_price hide-on-med-and-down col s4  m8 l4"
+                    >
                       <h3 style="font-size:30px" v-if="false">
                         <span style="color:grey;font-size:12px">fr</span>
                         $ {{ p.round_price.toFixed(2) }}
                       </h3>
-                      <p style="color:red;font-size:13px" v-if="false">Limited Time Offer*</p>
+                      <p style="color:red;font-size:13px" v-if="false">
+                        Limited Time Offer*
+                      </p>
                     </div>
 
                     <div class="flight_departure_time col s8  m8 l4">
                       <div class="flight_origin">
                         <h5>{{ p.round_origin }}</h5>
-                        <p class="clamp1 hide-on-med-and-down" style="width: 130px;">{{ p.round_origin_fullname }}</p>
+                        <p
+                          class="clamp1 hide-on-med-and-down"
+                          style="width: 130px;"
+                        >
+                          {{ p.round_origin_fullname }}
+                        </p>
                       </div>
                       <p class="flight_departure">{{ p.round_dep_time }}</p>
-                                                                  <p class="hide-on-med-and-down"
+                      <p
+                        class="hide-on-med-and-down"
                         v-if="p.round_seg.length - 1 > 0"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
-                      >{{ p.seg.length - 1 }} stop(s)</p>
-                      <p class="hide-on-med-and-down"
+                      >
+                        {{ p.seg.length - 1 }} stop(s)
+                      </p>
+                      <p
+                        class="hide-on-med-and-down"
                         v-if="p.round_seg.length - 1 == 0"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
-                      >Non-stop</p>
+                      >
+                        Non-stop
+                      </p>
                     </div>
-                    <div class="extra_duration extar_flight_origin center col s12 m3 hide-on-med-and-down">
-                      <p style="font-size:11px;color:#b5b5b5">Flight Duration</p>
+                    <div
+                      class="extra_duration extar_flight_origin center col s12 m3 hide-on-med-and-down"
+                    >
+                      <p style="font-size:11px;color:#b5b5b5">
+                        Flight Duration
+                      </p>
                       <h5>{{ p.round_duration }}</h5>
-                                            <p class="hide-on-med-and-down"
+                      <p
+                        class="hide-on-med-and-down"
                         v-if="p.round_seg.length - 1 > 0"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
-                      >{{ p.seg.length - 1 }} stop(s)</p>
-                      <p class="hide-on-med-and-down"
+                      >
+                        {{ p.seg.length - 1 }} stop(s)
+                      </p>
+                      <p
+                        class="hide-on-med-and-down"
                         v-if="p.round_seg.length - 1 == 0"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
-                      >Non-stop</p>
+                      >
+                        Non-stop
+                      </p>
                     </div>
                     <div class="flight_arrival_time col s8 m8">
                       <div class="flight_origin">
                         <h5>{{ p.round_destination }}</h5>
-                        <p class="clamp1 hide-on-med-and-down" style="width: 130px;">{{ p.round_destination_fullname }}</p>
+                        <p
+                          class="clamp1 hide-on-med-and-down"
+                          style="width: 130px;"
+                        >
+                          {{ p.round_destination_fullname }}
+                        </p>
                       </div>
                       <p class="flight_arrival">{{ p.round_arr_time }}</p>
                     </div>
 
                     <div class="flight_book col s12 m4 hide-on-med-and-down">
-                      <button type="button" style="opacity:0" class="btn">Book Now</button>
+                      <button type="button" style="opacity:0" class="btn">
+                        Book Now
+                      </button>
                     </div>
                   </div>
                 </div>
 
-                                     <div
-                      class="flight_book col s24 m12 hide-on-large-only" style="text-align: center;"
-                    >
+                <div
+                  class="flight_book col s24 m12 hide-on-large-only"
+                  style="text-align: center;"
+                >
+                  <h3 style="font-size:30px" v-if="p.isRound == 0">
+                    <span style="color:grey;font-size:12px">fr</span>
+                    $ {{ p.price.toFixed(2) }}
+                  </h3>
 
-                      <h3 style="font-size:30px" v-if="p.isRound == 0">
-                        <span style="color:grey;font-size:12px">fr</span>
-                        $ {{ p.price.toFixed(2) }}
-                      </h3>
-
-                   <h3 style="font-size:30px" v-if="p.isRound == 1">
-                          <span style="color:grey;font-size:12px">fr</span>
-                        $ {{ parseInt(p.price.toFixed(2)) + parseInt(p.round_price.toFixed(2)) }}
-                      </h3>
-                     </div>
-                    <div
-                      class="flight_book col s24 m12 hide-on-large-only"
-                      style="display: flex;align-items: center;flex-direction:column;height: inherit;"
-                    >
-                      <p style="padding-left: 10px;">Phone only offer</p>
-                      <div style="display:flex;align-items:center">
-                        <img
-                          style="width: 50px;height: 100%;object-fit: contain;"
-                          src="~static/call-now.gif"
-                        />
-                          <p class="flight__phone">1888-959-4847</p>
-                      </div>
-                      <a
-                        class="btn"
-                        href="tel:1888-959-4847"
-                        style="color:white; text-decoration:none;margin-top: 20px"
-                      >Call Now</a>
-                    </div>
+                  <h3 style="font-size:30px" v-if="p.isRound == 1">
+                    <span style="color:grey;font-size:12px">fr</span>
+                    $
+                    {{
+                      parseInt(p.price.toFixed(2)) +
+                        parseInt(p.round_price.toFixed(2))
+                    }}
+                  </h3>
+                      <p style="padding-top: 5px">Per Adult</p>
+                      <p style="color:red;padding-top: 5px">Limited Time Offer</p>
+                       <p class="hide-on-med-and-up" style="padding-bottom: 10px">For more details, ask our Travel Consultant</p>
+                </div>
+                <div
+                  class="flight_book col s24 m12 hide-on-large-only"
+                  style="display: flex;align-items: center;flex-direction:column;height: inherit;"
+                >
+                  <p style="padding-left: 10px;">Phone only offer</p>
+                  <div style="display:flex;align-items:center">
+                    <img
+                      style="width: 50px;height: 100%;object-fit: contain;"
+                      src="~static/call-now.gif"
+                    />
+                    <p class="flight__phone">1888-220-3565</p>
+                  </div>
+                  <a
+                    class="btn"
+                    href="tel:1888-220-3565"
+                    style="color:white; text-decoration:none;margin-top: 20px"
+                    >Call Now</a
+                  >
+                </div>
 
                 <div
                   style="display:flex;justify-content: space-between;padding-right:20px;padding-top: 20px"
                 >
                   <div v-if="isInternationDep == 0">
+                      <p class="hide-on-small-only" style="padding-bottom: 10px">For more details, ask our Travel Consultant</p>
                     <p
                       style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'"
-                    >Cabin: 7kg | Check-in: 15kg | Refundable</p>
-                    <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
-                      Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
-                      <a
-                        href="tel:1888-959-4847"
-                      >1888-959-4847</a>
+                    >
+                      Cabin: 7kg | Check-in: 15kg | Refundable
+                    </p>
+                    <p
+                      style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'"
+                    >
+                      Seems not found what you are looking for ? Call Now For
+                      Dirt Cheap Fares
+                      <a href="tel:1888-220-3565">1888-220-3565</a>
                     </p>
                   </div>
                   <div v-if="isInternationDep == 1">
+                      <p class="hide-on-small-only" style="padding-bottom: 10px">For more details, ask our Travel Consultant</p>
                     <p
                       style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'"
-                    >Cabin: 7kg | Check-in: 25kg | Refundable</p>
-                    <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
-                      Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
-                      <a
-                        href="tel:1888-959-4847"
-                      >1888-959-4847</a>
+                    >
+                      Cabin: 7kg | Check-in: 25kg | Refundable
+                    </p>
+                    <p
+                      style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'"
+                    >
+                      Seems not found what you are looking for ? Call Now For
+                      Dirt Cheap Fares
+                      <a href="tel:1888-220-3565">1888-220-3565</a>
                     </p>
                   </div>
-                  <p class="show_flight" @click="showDetail(index)">Flight Details</p>
+                  <p class="show_flight" @click="showDetail(index)">
+                    Flight Details
+                  </p>
                 </div>
 
                 <div class="flight_details hide" :id="'fd-' + index">
@@ -804,12 +963,20 @@
                         <div class="flight_departure_time col s12 m5 offset-l3">
                           <div class="extar_flight_origin">
                             <h5>{{ q.origin }}</h5>
-                            <p class="extra_flight_departure">{{ q.dep_time }}</p>
+                            <p class="extra_flight_departure">
+                              {{ q.dep_time }}
+                            </p>
                           </div>
-                          <p class="extra_destination">{{ q.origin_fullname }}</p>
+                          <p class="extra_destination">
+                            {{ q.origin_fullname }}
+                          </p>
                         </div>
-                        <div class="extra_duration extar_flight_origin center col s12 m5">
-                          <p style="font-size:11px;color:#b5b5b5">Flight Duration</p>
+                        <div
+                          class="extra_duration extar_flight_origin center col s12 m5"
+                        >
+                          <p style="font-size:11px;color:#b5b5b5">
+                            Flight Duration
+                          </p>
                           <h5>{{ q.duration }}</h5>
                         </div>
                         <div class="flight_arrival_time col s12 m5">
@@ -818,17 +985,24 @@
                             <p class="extra_flight_arrival">{{ q.arr_time }}</p>
                           </div>
 
-                          <p class="extra_destination">{{ q.destination_fullname }}</p>
+                          <p class="extra_destination">
+                            {{ q.destination_fullname }}
+                          </p>
                         </div>
                         <div class="col s24 m3">
-                          <p class="flight_details--price">$ {{ p.price.toFixed(2) }}</p>
+                          <p class="flight_details--price">
+                            $ {{ p.price.toFixed(2) }}
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   <div v-if="p.isRound == 1" class="flight_details_border">
-                    <div v-for="(q, qIndex) in amadeus[index].round_seg" :key="q.id">
+                    <div
+                      v-for="(q, qIndex) in amadeus[index].round_seg"
+                      :key="q.id"
+                    >
                       <hr v-if="qIndex != 0" class="dashed-line-details" />
                       <div class="extra_flight_data row">
                         <div class="extra_flight_name col s12 m3">
@@ -849,23 +1023,37 @@
                         <div class="flight_departure_time col s12 m5 offset-l3">
                           <div class="extar_flight_origin">
                             <h5>{{ q.round_origin }}</h5>
-                            <p class="extra_flight_departure">{{ q.round_dep_time }}</p>
+                            <p class="extra_flight_departure">
+                              {{ q.round_dep_time }}
+                            </p>
                           </div>
-                          <p class="extra_destination">{{ q.round_origin_fullname }}</p>
+                          <p class="extra_destination">
+                            {{ q.round_origin_fullname }}
+                          </p>
                         </div>
-                        <div class="extra_duration extar_flight_origin center col s12 m5">
-                          <p style="font-size:11px;color:#b5b5b5">Flight Duration</p>
+                        <div
+                          class="extra_duration extar_flight_origin center col s12 m5"
+                        >
+                          <p style="font-size:11px;color:#b5b5b5">
+                            Flight Duration
+                          </p>
                           <h5>{{ q.round_duration }}</h5>
                         </div>
                         <div class="flight_arrival_time col s12 m5">
                           <div class="extar_flight_origin">
                             <h5>{{ q.round_destination }}</h5>
-                            <p class="extra_flight_arrival">{{ q.round_arr_time }}</p>
+                            <p class="extra_flight_arrival">
+                              {{ q.round_arr_time }}
+                            </p>
                           </div>
-                          <p class="extra_destination">{{ q.round_destination_fullname }}</p>
+                          <p class="extra_destination">
+                            {{ q.round_destination_fullname }}
+                          </p>
                         </div>
                         <div class="col s24 m3">
-                          <p class="flight_details--price" v-if="qIndex==0">$ {{ p.round_price.toFixed(2) }}</p>
+                          <p class="flight_details--price" v-if="qIndex == 0">
+                            $ {{ p.round_price.toFixed(2) }}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -956,7 +1144,10 @@
           class
           style="font-size: 12px;
     color: #9f9f9f;"
-        >*Offer valid for selected dates | Subject to Availability | Terms and Conditions Apply</p>
+        >
+          *Offer valid for selected dates | Subject to Availability | Terms and
+          Conditions Apply
+        </p>
       </div>
     </div>
   </div>
@@ -1005,349 +1196,340 @@ export default {
   }),
 
   mounted() {
+    var second_part = this.$route.query;
 
+    console.log(second_part);
 
-    var second_part = this.$route.query
-
-    console.log(second_part)
-
-
-     var ori_ = second_part.OriginStation
-     var des_ = second_part.DestinationStation
-     var start_date_ = second_part.DepartureDate.split("/").reverse().join("/")
-     var end_date_ = second_part.ReturnDate.split("/").reverse().join("/")
-
+    var ori_ = second_part.OriginStation;
+    var des_ = second_part.DestinationStation;
+    var start_date_ = second_part.DepartureDate.split("/")
+      .reverse()
+      .join("/");
+    var end_date_ = second_part.ReturnDate.split("/")
+      .reverse()
+      .join("/");
 
     //  for (const [key, value] of Object.entries(second_part)) {
 
-         
     //     console.log(key, value);
-    
-    
+
     // }
 
+    localStorage.setItem("from", ori_);
+    localStorage.setItem("to", des_);
+    localStorage.setItem("departure", start_date_);
 
-
-          localStorage.setItem("from", ori_);
-          localStorage.setItem("to", des_);
-          localStorage.setItem("departure", start_date_);
-
-
-            if(second_part.SearchType.toLowerCase() == 'return'){
-                localStorage.setItem("way", 'roundtrip');
-                localStorage.setItem("return", end_date_);
-            }else if(second_part.SearchType.toLowerCase() == 'oneway'){
-                localStorage.setItem("way", 'oneway');
-                localStorage.setItem("return",  start_date_);
-            }
-
-
-          localStorage.setItem("travel_class", second_part.cabinclass.toUpperCase());
-          localStorage.setItem("adult", second_part.Adults);
-          localStorage.setItem("children", second_part.Children);
-          localStorage.setItem("infants", second_part.Infants);
-        //   localStorage.setItem("currency", second_part.currency);
-        //   localStorage.setItem("nonStop", second_part.nonStop);
-
-
-      axios({
-        method: "GET",
-        url: "https://www.cheapairhub.com/api/api.php?getAirport=getAirport&query=" + ori_,
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        }
-      })
-        .then(res => {
-         console.log("resssssssssssssssssssssssss");
-         console.log("res", res.data.name);
-
-         if( res.data.name != undefined){
-              localStorage.setItem("from_airport", res.data.iata_code + " , " + res.data.name);
-              localStorage.setItem("from_des", res.data.municipality);
-
-         }else{
-
-              localStorage.setItem("from_airport", ori_);
-              localStorage.setItem("from_des", ori_);
-
-         }
-          
-
-          console.log("sdsds")
-
-
-
-      axios({
-        method: "GET",
-        url: "https://www.cheapairhub.com/api/api.php?getAirport=getAirport&query=" + des_,
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        }
-      })
-        .then(res => {
-          console.log("res", res.data.name);
-
-            if( res.data.name != undefined){
-
-          localStorage.setItem("to_airport", res.data.iata_code + " , " + res.data.name);
-          localStorage.setItem("to_arr", res.data.municipality);
-
-
-
-            }else{
-              
-              localStorage.setItem("to_airport", des_);
-              localStorage.setItem("to_arr",  des_);
-
-            }
-
-
-
-    if (
-      localStorage.getItem("from") != null &&
-      localStorage.getItem("from") != "" &&
-      (localStorage.getItem("to") != null && localStorage.getItem("to") != "")
-    ) {
-      $(".processing").removeClass("hide");
-
-      $("#from_des").val(localStorage.getItem("from_des"));
-      $("#from_iata").val(localStorage.getItem("from"));
-
-      if (
-        localStorage.getItem("isInternationDep") == "0" ||
-        localStorage.getItem("isInternationDep") == "1"
-      ) {
-        this.isInternationDep = localStorage.getItem("isInternationDep");
-      }
-
-      this.picked = localStorage.getItem("way");
-
-      $(".from_airport")
-        .html(localStorage.getItem("from_airport"))
-        .removeClass("hide");
-
-      $("#to_arr").val(localStorage.getItem("to_arr"));
-      $("#to_iata").val(localStorage.getItem("to"));
-      $(".to_airport")
-        .html(localStorage.getItem("to_airport"))
-        .removeClass("hide");
-
-      $(".drop-down .selected span")
-        .eq(0)
-        .html(localStorage.getItem("travel_class"));
-      $(".drop-down .selected .value").html(
-        localStorage.getItem("travel_class")
-      );
-
-      $(".drop-down1 .selected span")
-        .eq(0)
-        .html(localStorage.getItem("adult"));
-      $(".drop-down1 .selected .value").html(localStorage.getItem("adult"));
-
-      $(".drop-down2 .selected span")
-        .eq(0)
-        .html(localStorage.getItem("children"));
-      $(".drop-down2 .selected .value").html(localStorage.getItem("children"));
-
-      $(".drop-down3 .selected span")
-        .eq(0)
-        .html(localStorage.getItem("infants"));
-      $(".drop-down3 .selected .value").html(localStorage.getItem("infants"));
-
-      this.saveChanges();
-    } else {
-      $(".processing").addClass("hide");
+    if (second_part.SearchType.toLowerCase() == "return") {
+      localStorage.setItem("way", "roundtrip");
+      localStorage.setItem("return", end_date_);
+    } else if (second_part.SearchType.toLowerCase() == "oneway") {
+      localStorage.setItem("way", "oneway");
+      localStorage.setItem("return", start_date_);
     }
 
+    localStorage.setItem("travel_class", second_part.cabinclass.toUpperCase());
+    localStorage.setItem("adult", second_part.Adults);
+    localStorage.setItem("children", second_part.Children);
+    localStorage.setItem("infants", second_part.Infants);
+    //   localStorage.setItem("currency", second_part.currency);
+    //   localStorage.setItem("nonStop", second_part.nonStop);
 
+    axios({
+      method: "GET",
+      url:
+        "https://www.cheapairhub.com/api/api.php?getAirport=getAirport&query=" +
+        ori_,
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      }
+    })
+      .then(res => {
+        console.log("resssssssssssssssssssssssss");
+        console.log("res", res.data.name);
 
-    var dp1 = $(".datepickerReturn")
-      .datepicker({
-        autoClose: true,
-        onSelect: function onSelect(fd, date) {
-          console.log(fd);
-
-          var day = fd.split(",")[0];
-          var _date = fd.split(",")[1];
-          var month = fd.split(",")[2];
-          var year = fd.split(",")[3];
-          var date_0 = fd.split(",")[4];
-          var month_0 = fd.split(",")[5];
-
-          $("#return_date").empty();
-
-          $("#ret_date_hidden").val(year + "-" + month_0 + "-" + date_0);
-
-          var d1 = document.getElementById("return_date");
-          d1.insertAdjacentHTML(
-            "beforeend",
-            '<span class="font30" style="padding-right:5px">' +
-              _date +
-              "</span><span  style='padding-right:5px'>" +
-              month +
-              '</span><span class="shortYear">' +
-              year +
-              "</span>"
+        if (res.data.name != undefined) {
+          localStorage.setItem(
+            "from_airport",
+            res.data.iata_code + " , " + res.data.name
           );
-
-          $(".return_day").html(day);
+          localStorage.setItem("from_des", res.data.municipality);
+        } else {
+          localStorage.setItem("from_airport", ori_);
+          localStorage.setItem("from_des", ori_);
         }
-      })
-      .data("datepicker");
 
-    var dp = $(".datepicker-here")
-      .datepicker({
-        autoClose: true,
-        minDate: new Date(),
-        onSelect: function onSelect(fd, date) {
-          console.log(fd);
+        console.log("sdsds");
 
-          var day = fd.split(",")[0];
-          var _date = fd.split(",")[1];
-          var month = fd.split(",")[2];
-          var year = fd.split(",")[3];
-          var date_0 = fd.split(",")[4];
-          var month_0 = fd.split(",")[5];
-
-          $("#departure_date").empty();
-
-          var d1 = document.getElementById("departure_date");
-          d1.insertAdjacentHTML(
-            "beforeend",
-            '<span class="font30"  style="padding-right:5px">' +
-              _date +
-              "</span><span  style='padding-right:5px'>" +
-              month +
-              '</span><span class="shortYear">' +
-              year +
-              "</span>"
-          );
-
-          $("#dep_date_hidden").val(year + "-" + month_0 + "-" + date_0);
-
-          $(".departure_day").html(day);
-
-          $("#return_date").empty();
-
-          var d1 = document.getElementById("return_date");
-          d1.insertAdjacentHTML(
-            "beforeend",
-            '<span class="font30">' +
-              _date +
-              "</span><span>" +
-              month +
-              '</span><span class="shortYear">' +
-              year +
-              "</span>"
-          );
-
-          $(".return_day").html(day);
-
-          dp1.selectDate(new Date(date));
-          dp1.update("minDate", date);
-        }
-      })
-      .data("datepicker");
-
-    dp.selectDate(new Date(localStorage.getItem("departure")));
-    dp1.selectDate(new Date(localStorage.getItem("return")));
-
-    //TOGGLING NESTED ul
-    $(".drop-down .selected p").click(function() {
-      $(".drop-down .options ul").toggle();
-    });
-
-    //SELECT OPTIONS AND HIDE OPTION AFTER SELECTION
-    $(".drop-down .options ul li p").click(function() {
-      var text = $(this).html();
-      $(".drop-down .selected p span").html(text);
-      $(".drop-down .options ul").hide();
-    });
-
-    //HIDE OPTIONS IF CLICKED ANYWHERE ELSE ON PAGE
-    $(document).bind("click", function(e) {
-      var $clicked = $(e.target);
-      if (!$clicked.parents().hasClass("drop-down"))
-        $(".drop-down .options ul").hide();
-    });
-
-    //TOGGLING NESTED ul
-    $(".drop-down1 .selected p").click(function() {
-      $(".drop-down1 .options ul").toggle();
-    });
-
-    //SELECT OPTIONS AND HIDE OPTION AFTER SELECTION
-    $(".drop-down1 .options ul li p").click(function() {
-      var text = $(this).html();
-      $(".drop-down1 .selected p span").html(text);
-      $(".drop-down1 .options ul").hide();
-    });
-
-    //HIDE OPTIONS IF CLICKED ANYWHERE ELSE ON PAGE
-    $(document).bind("click", function(e) {
-      var $clicked = $(e.target);
-      if (!$clicked.parents().hasClass("drop-down1"))
-        $(".drop-down1 .options ul").hide();
-    });
-
-    //TOGGLING NESTED ul
-    $(".drop-down2 .selected p").click(function() {
-      $(".drop-down2 .options ul").toggle();
-    });
-
-    //SELECT OPTIONS AND HIDE OPTION AFTER SELECTION
-    $(".drop-down2 .options ul li p").click(function() {
-      var text = $(this).html();
-      $(".drop-down2 .selected p span").html(text);
-      $(".drop-down2 .options ul").hide();
-    });
-
-    //HIDE OPTIONS IF CLICKED ANYWHERE ELSE ON PAGE
-    $(document).bind("click", function(e) {
-      var $clicked = $(e.target);
-      if (!$clicked.parents().hasClass("drop-down2"))
-        $(".drop-down2 .options ul").hide();
-    });
-
-    //TOGGLING NESTED ul
-    $(".drop-down3 .selected p").click(function() {
-      $(".drop-down3 .options ul").toggle();
-    });
-
-    //SELECT OPTIONS AND HIDE OPTION AFTER SELECTION
-    $(".drop-down3 .options ul li p").click(function() {
-      var text = $(this).html();
-      $(".drop-down3 .selected p span").html(text);
-      $(".drop-down3 .options ul").hide();
-    });
-
-    //HIDE OPTIONS IF CLICKED ANYWHERE ELSE ON PAGE
-    $(document).bind("click", function(e) {
-      var $clicked = $(e.target);
-      if (!$clicked.parents().hasClass("drop-down3"))
-        $(".drop-down3 .options ul").hide();
-    });
-
-    //function init() here
-
-    this.getToken();
-
+        axios({
+          method: "GET",
+          url:
+            "https://www.cheapairhub.com/api/api.php?getAirport=getAirport&query=" +
+            des_,
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          }
         })
-        .catch(err => {
-          console.log("error in request1", err.response.data.message);
-        });
+          .then(res => {
+            console.log("res", res.data.name);
 
+            if (res.data.name != undefined) {
+              localStorage.setItem(
+                "to_airport",
+                res.data.iata_code + " , " + res.data.name
+              );
+              localStorage.setItem("to_arr", res.data.municipality);
+            } else {
+              localStorage.setItem("to_airport", des_);
+              localStorage.setItem("to_arr", des_);
+            }
 
-        })
-        .catch(err => {
-          console.log("error in request1", err.response.data.message);
-        });
+            if (
+              localStorage.getItem("from") != null &&
+              localStorage.getItem("from") != "" &&
+              localStorage.getItem("to") != null &&
+                localStorage.getItem("to") != ""
+            ) {
+              $(".processing").removeClass("hide");
 
+              $("#from_des").val(localStorage.getItem("from_des"));
+              $("#from_iata").val(localStorage.getItem("from"));
 
+              if (
+                localStorage.getItem("isInternationDep") == "0" ||
+                localStorage.getItem("isInternationDep") == "1"
+              ) {
+                this.isInternationDep = localStorage.getItem(
+                  "isInternationDep"
+                );
+              }
 
+              this.picked = localStorage.getItem("way");
 
+              $(".from_airport")
+                .html(localStorage.getItem("from_airport"))
+                .removeClass("hide");
 
+              $("#to_arr").val(localStorage.getItem("to_arr"));
+              $("#to_iata").val(localStorage.getItem("to"));
+              $(".to_airport")
+                .html(localStorage.getItem("to_airport"))
+                .removeClass("hide");
 
+              $(".drop-down .selected span")
+                .eq(0)
+                .html(localStorage.getItem("travel_class"));
+              $(".drop-down .selected .value").html(
+                localStorage.getItem("travel_class")
+              );
+
+              $(".drop-down1 .selected span")
+                .eq(0)
+                .html(localStorage.getItem("adult"));
+              $(".drop-down1 .selected .value").html(
+                localStorage.getItem("adult")
+              );
+
+              $(".drop-down2 .selected span")
+                .eq(0)
+                .html(localStorage.getItem("children"));
+              $(".drop-down2 .selected .value").html(
+                localStorage.getItem("children")
+              );
+
+              $(".drop-down3 .selected span")
+                .eq(0)
+                .html(localStorage.getItem("infants"));
+              $(".drop-down3 .selected .value").html(
+                localStorage.getItem("infants")
+              );
+
+              this.saveChanges();
+            } else {
+              $(".processing").addClass("hide");
+            }
+
+            var dp1 = $(".datepickerReturn")
+              .datepicker({
+                autoClose: true,
+                onSelect: function onSelect(fd, date) {
+                  console.log(fd);
+
+                  var day = fd.split(",")[0];
+                  var _date = fd.split(",")[1];
+                  var month = fd.split(",")[2];
+                  var year = fd.split(",")[3];
+                  var date_0 = fd.split(",")[4];
+                  var month_0 = fd.split(",")[5];
+
+                  $("#return_date").empty();
+
+                  $("#ret_date_hidden").val(
+                    year + "-" + month_0 + "-" + date_0
+                  );
+
+                  var d1 = document.getElementById("return_date");
+                  d1.insertAdjacentHTML(
+                    "beforeend",
+                    '<span class="font30" style="padding-right:5px">' +
+                      _date +
+                      "</span><span  style='padding-right:5px'>" +
+                      month +
+                      '</span><span class="shortYear">' +
+                      year +
+                      "</span>"
+                  );
+
+                  $(".return_day").html(day);
+                }
+              })
+              .data("datepicker");
+
+            var dp = $(".datepicker-here")
+              .datepicker({
+                autoClose: true,
+                minDate: new Date(),
+                onSelect: function onSelect(fd, date) {
+                  console.log(fd);
+
+                  var day = fd.split(",")[0];
+                  var _date = fd.split(",")[1];
+                  var month = fd.split(",")[2];
+                  var year = fd.split(",")[3];
+                  var date_0 = fd.split(",")[4];
+                  var month_0 = fd.split(",")[5];
+
+                  $("#departure_date").empty();
+
+                  var d1 = document.getElementById("departure_date");
+                  d1.insertAdjacentHTML(
+                    "beforeend",
+                    '<span class="font30"  style="padding-right:5px">' +
+                      _date +
+                      "</span><span  style='padding-right:5px'>" +
+                      month +
+                      '</span><span class="shortYear">' +
+                      year +
+                      "</span>"
+                  );
+
+                  $("#dep_date_hidden").val(
+                    year + "-" + month_0 + "-" + date_0
+                  );
+
+                  $(".departure_day").html(day);
+
+                  $("#return_date").empty();
+
+                  var d1 = document.getElementById("return_date");
+                  d1.insertAdjacentHTML(
+                    "beforeend",
+                    '<span class="font30">' +
+                      _date +
+                      "</span><span>" +
+                      month +
+                      '</span><span class="shortYear">' +
+                      year +
+                      "</span>"
+                  );
+
+                  $(".return_day").html(day);
+
+                  dp1.selectDate(new Date(date));
+                  dp1.update("minDate", date);
+                }
+              })
+              .data("datepicker");
+
+            dp.selectDate(new Date(localStorage.getItem("departure")));
+            dp1.selectDate(new Date(localStorage.getItem("return")));
+
+            //TOGGLING NESTED ul
+            $(".drop-down .selected p").click(function() {
+              $(".drop-down .options ul").toggle();
+            });
+
+            //SELECT OPTIONS AND HIDE OPTION AFTER SELECTION
+            $(".drop-down .options ul li p").click(function() {
+              var text = $(this).html();
+              $(".drop-down .selected p span").html(text);
+              $(".drop-down .options ul").hide();
+            });
+
+            //HIDE OPTIONS IF CLICKED ANYWHERE ELSE ON PAGE
+            $(document).bind("click", function(e) {
+              var $clicked = $(e.target);
+              if (!$clicked.parents().hasClass("drop-down"))
+                $(".drop-down .options ul").hide();
+            });
+
+            //TOGGLING NESTED ul
+            $(".drop-down1 .selected p").click(function() {
+              $(".drop-down1 .options ul").toggle();
+            });
+
+            //SELECT OPTIONS AND HIDE OPTION AFTER SELECTION
+            $(".drop-down1 .options ul li p").click(function() {
+              var text = $(this).html();
+              $(".drop-down1 .selected p span").html(text);
+              $(".drop-down1 .options ul").hide();
+            });
+
+            //HIDE OPTIONS IF CLICKED ANYWHERE ELSE ON PAGE
+            $(document).bind("click", function(e) {
+              var $clicked = $(e.target);
+              if (!$clicked.parents().hasClass("drop-down1"))
+                $(".drop-down1 .options ul").hide();
+            });
+
+            //TOGGLING NESTED ul
+            $(".drop-down2 .selected p").click(function() {
+              $(".drop-down2 .options ul").toggle();
+            });
+
+            //SELECT OPTIONS AND HIDE OPTION AFTER SELECTION
+            $(".drop-down2 .options ul li p").click(function() {
+              var text = $(this).html();
+              $(".drop-down2 .selected p span").html(text);
+              $(".drop-down2 .options ul").hide();
+            });
+
+            //HIDE OPTIONS IF CLICKED ANYWHERE ELSE ON PAGE
+            $(document).bind("click", function(e) {
+              var $clicked = $(e.target);
+              if (!$clicked.parents().hasClass("drop-down2"))
+                $(".drop-down2 .options ul").hide();
+            });
+
+            //TOGGLING NESTED ul
+            $(".drop-down3 .selected p").click(function() {
+              $(".drop-down3 .options ul").toggle();
+            });
+
+            //SELECT OPTIONS AND HIDE OPTION AFTER SELECTION
+            $(".drop-down3 .options ul li p").click(function() {
+              var text = $(this).html();
+              $(".drop-down3 .selected p span").html(text);
+              $(".drop-down3 .options ul").hide();
+            });
+
+            //HIDE OPTIONS IF CLICKED ANYWHERE ELSE ON PAGE
+            $(document).bind("click", function(e) {
+              var $clicked = $(e.target);
+              if (!$clicked.parents().hasClass("drop-down3"))
+                $(".drop-down3 .options ul").hide();
+            });
+
+            //function init() here
+
+            this.getToken();
+          })
+          .catch(err => {
+            console.log("error in request1", err.response.data.message);
+          });
+      })
+      .catch(err => {
+        console.log("error in request1", err.response.data.message);
+      });
 
     //  var dp = $(".datepicker-here").datepicker({
     //     autoClose: true,
@@ -1361,33 +1543,57 @@ export default {
 
     //    dp.selectDate(new Date())
     //    dp.selectDate(new Date())
-
   },
 
   methods: {
+    newSearch: function() {
+      console.log("rtnsssssssssssssssssssssssss");
 
-            newSearch: function(){
+      var newstring1 = $("#dep_date_hidden")
+        .val()
+        .split("-")
+        .reverse()
+        .join("/");
+      var newstring2 = $("#ret_date_hidden")
+        .val()
+        .split("-")
+        .reverse()
+        .join("/");
 
+      var rtn = "Oneway";
+      if (this.picked == "roundtrip") {
+        rtn = "Return";
+      }
 
-console.log('rtnsssssssssssssssssssssssss')
+      console.log("rtn");
+      console.log(newstring2);
 
-        var newstring1 = $("#dep_date_hidden").val().split("-").reverse().join("/")
-        var newstring2 = $("#ret_date_hidden").val().split("-").reverse().join("/")
+      // https://booking.domain.com/en-us/selectflights?SearchType=Oneway&OriginStation=HKG&DestinationStation=NGO&DepartureDate=03/03/2017&Adults=1
 
-      var rtn = "Oneway"
-        if(this.picked == 'roundtrip'){
-            rtn = "Return"
-        }
-
-        console.log('rtn')
-        console.log(newstring2)
-
-        // https://booking.domain.com/en-us/selectflights?SearchType=Oneway&OriginStation=HKG&DestinationStation=NGO&DepartureDate=03/03/2017&Adults=1
-
-         window.location.href = "/en-us/?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children="+ $(".drop-down2 .selected .value").html() +"&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html()
-        // this.$router.go("/cheapairhub6/en-us/?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children=2&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html())
-
-
+      window.location.href =
+        "/en-us/?SearchType=" +
+        rtn +
+        "&OriginStation=" +
+        $("#from_iata")
+          .val()
+          .toUpperCase() +
+        "&DestinationStation=" +
+        $("#to_iata")
+          .val()
+          .toUpperCase() +
+        "&DepartureDate=" +
+        newstring1 +
+        "&ReturnDate=" +
+        newstring2 +
+        "&Adults=" +
+        $(".drop-down1 .selected .value").html() +
+        "&Children=" +
+        $(".drop-down2 .selected .value").html() +
+        "&Infants=" +
+        $(".drop-down3 .selected .value").html() +
+        "&cabinclass=" +
+        $(".drop-down .selected .value").html();
+      // this.$router.go("/cheapairhub6/en-us/?SearchType="+ rtn + "&OriginStation="+ $("#from_iata").val().toUpperCase()  +"&DestinationStation="+ $("#to_iata").val().toUpperCase() +"&DepartureDate="+ newstring1 +"&ReturnDate="+ newstring2 +"&Adults="+ $(".drop-down1 .selected .value").html() +"&Children=2&Infants="+ $(".drop-down3 .selected .value").html() +"&cabinclass=" + $(".drop-down .selected .value").html())
     },
     sendDisc: function(e) {
       axios({
@@ -1491,22 +1697,22 @@ console.log('rtnsssssssssssssssssssssssss')
 
           console.log("Thjis si also");
 
-        //   localStorage.setItem("from", this.origin);
-        //   localStorage.setItem("to", this.destination);
-        //   localStorage.setItem("departure", this.departureDate);
-        //   localStorage.setItem("return", this.returnDate);
-        //   localStorage.setItem("travel_class", this.travelClass);
-        //   localStorage.setItem("adult", this.adults);
-        //   localStorage.setItem("children", this.children);
-        //   localStorage.setItem("infants", this.infants);
-        //   localStorage.setItem("currency", this.currency);
-        //   localStorage.setItem("nonStop", this.nonStop);
+          //   localStorage.setItem("from", this.origin);
+          //   localStorage.setItem("to", this.destination);
+          //   localStorage.setItem("departure", this.departureDate);
+          //   localStorage.setItem("return", this.returnDate);
+          //   localStorage.setItem("travel_class", this.travelClass);
+          //   localStorage.setItem("adult", this.adults);
+          //   localStorage.setItem("children", this.children);
+          //   localStorage.setItem("infants", this.infants);
+          //   localStorage.setItem("currency", this.currency);
+          //   localStorage.setItem("nonStop", this.nonStop);
 
-        //   localStorage.setItem("from_des", $("#from_des").val());
-        //   localStorage.setItem("from_airport", $(".from_airport").html());
+          //   localStorage.setItem("from_des", $("#from_des").val());
+          //   localStorage.setItem("from_airport", $(".from_airport").html());
 
-        //   localStorage.setItem("to_arr", $("#to_arr").val());
-        //   localStorage.setItem("to_airport", $(".to_airport").html());
+          //   localStorage.setItem("to_arr", $("#to_arr").val());
+          //   localStorage.setItem("to_airport", $(".to_airport").html());
 
           var url = "";
 
@@ -1637,12 +1843,9 @@ console.log('rtnsssssssssssssssssssssssss')
                     ).detailedName
                   );
 
-                  var a = data.data[
-                    i
-                  ].offerItems[0].services[0].segments[
-                    j
-                  ].flightSegment.departure.at
-
+                  var a =
+                    data.data[i].offerItems[0].services[0].segments[j]
+                      .flightSegment.departure.at;
 
                   var zone = " AM";
 
@@ -1653,19 +1856,13 @@ console.log('rtnsssssssssssssssssssssssss')
 
                   if (b[0] > 12) {
                     b[0] = b[0] - 12;
-                    if(b[0] < 10){
-                      b[0] = "0" + b[0].toString()
+                    if (b[0] < 10) {
+                      b[0] = "0" + b[0].toString();
                     }
-                    zone = " PM"
+                    zone = " PM";
                   }
 
-                  tmp.dep_time = b.slice(0, 2).join(":") + zone
-
-
-
-
-
-
+                  tmp.dep_time = b.slice(0, 2).join(":") + zone;
 
                   tmp.destination =
                     data.data[i].offerItems[0].services[0].segments[
@@ -1680,12 +1877,9 @@ console.log('rtnsssssssssssssssssssssssss')
                     ).detailedName
                   );
 
-
-
-                  var a = data.data[i].offerItems[0].services[0].segments[
-                    j
-                  ].flightSegment.arrival.at
-
+                  var a =
+                    data.data[i].offerItems[0].services[0].segments[j]
+                      .flightSegment.arrival.at;
 
                   var zone = " AM";
 
@@ -1696,15 +1890,14 @@ console.log('rtnsssssssssssssssssssssssss')
 
                   if (b[0] > 12) {
                     b[0] = b[0] - 12;
-                    if(b[0] < 10){
-                      b[0] = "0" + b[0].toString()
+                    if (b[0] < 10) {
+                      b[0] = "0" + b[0].toString();
                     }
-                    zone = " PM"
+                    zone = " PM";
                   }
-                  tmp.arr_time = b.slice(0, 2).join(":") + zone
+                  tmp.arr_time = b.slice(0, 2).join(":") + zone;
 
-
-                  console.log(tmp.arr_time)
+                  console.log(tmp.arr_time);
 
                   tmp.flight_number =
                     data.data[i].offerItems[0].services[0].segments[
@@ -1762,31 +1955,26 @@ console.log('rtnsssssssssssssssssssssssss')
                   ).detailedName
                 );
 
-               var a = data.data[
-                  i
-                ].offerItems[0].services[0].segments[0].flightSegment.departure.at
+                var a =
+                  data.data[i].offerItems[0].services[0].segments[0]
+                    .flightSegment.departure.at;
 
+                var zone = " AM";
 
-                                    var zone = " AM";
+                var b = a
+                  .split("T")
+                  ["1"].split("-")
+                  ["0"].split(":");
 
-                  var b = a
-                    .split("T")
-                    ["1"].split("-")
-                    ["0"].split(":");
-
-                  if (b[0] > 12) {
-                    b[0] = b[0] - 12;
-                    if(b[0] < 10){
-                      b[0] = "0" + b[0].toString()
-                    }
-                    zone = " PM"
+                if (b[0] > 12) {
+                  b[0] = b[0] - 12;
+                  if (b[0] < 10) {
+                    b[0] = "0" + b[0].toString();
                   }
-                  
-                  temp.dep_time = b.slice(0, 2).join(":") + zone
+                  zone = " PM";
+                }
 
-
-
-
+                temp.dep_time = b.slice(0, 2).join(":") + zone;
 
                 temp.destination =
                   data.data[i].offerItems[0].services[0].segments[
@@ -1802,59 +1990,58 @@ console.log('rtnsssssssssssssssssssssssss')
                   ).detailedName
                 );
 
+                var a =
+                  data.data[i].offerItems[0].services[0].segments[
+                    data.data[i].offerItems[0].services[0].segments.length - 1
+                  ].flightSegment.arrival.at;
 
-                
-                  var a = data.data[i].offerItems[0].services[0].segments[
-                  data.data[i].offerItems[0].services[0].segments.length - 1
-                ].flightSegment.arrival.at
+                var b = a
+                  .split("T")
+                  ["1"].split("-")
+                  ["0"].split(":");
 
-                  var b = a
-                    .split("T")
-                    ["1"].split("-")
-                    ["0"].split(":");
+                var zone = " AM";
 
-                  var zone = " AM";
-                  
-                  var b = a
-                    .split("T")
-                    ["1"].split("-")
-                    ["0"].split(":");
+                var b = a
+                  .split("T")
+                  ["1"].split("-")
+                  ["0"].split(":");
 
-                  if (b[0] > 12) {
-                    b[0] = b[0] - 12;
-                    if(b[0] < 10){
-                      b[0] = "0" + b[0].toString()
-                    }
-                    zone = " PM"
+                if (b[0] > 12) {
+                  b[0] = b[0] - 12;
+                  if (b[0] < 10) {
+                    b[0] = "0" + b[0].toString();
                   }
-                  temp.arr_time = b.slice(0, 2).join(":") + zone
+                  zone = " PM";
+                }
+                temp.arr_time = b.slice(0, 2).join(":") + zone;
 
-                var a = data.data[i].offerItems[0].services[0].segments[
-                  data.data[i].offerItems[0].services[0].segments.length - 1
-                ].flightSegment.arrival.at
+                var a =
+                  data.data[i].offerItems[0].services[0].segments[
+                    data.data[i].offerItems[0].services[0].segments.length - 1
+                  ].flightSegment.arrival.at;
 
+                var zone = " AM";
 
-                
-                  var zone = " AM";
-                  
-                  var b = a
-                    .split("T")
-                    ["1"].split("-")
-                    ["0"].split(":");
+                var b = a
+                  .split("T")
+                  ["1"].split("-")
+                  ["0"].split(":");
 
-                  if (b[0] > 12) {
-                    b[0] = b[0] - 12;
-                    if(b[0] < 10){
-                      b[0] = "0" + b[0].toString()
-                    }
-                    zone = " PM"
+                if (b[0] > 12) {
+                  b[0] = b[0] - 12;
+                  if (b[0] < 10) {
+                    b[0] = "0" + b[0].toString();
                   }
-                  temp.arr_time = b.slice(0, 2).join(":") + zone
+                  zone = " PM";
+                }
+                temp.arr_time = b.slice(0, 2).join(":") + zone;
 
                 temp.price =
                   data.data[i].offerItems[0].pricePerAdult.total -
                   parseFloat(
-                    (this.disc / 100) * data.data[i].offerItems[0].pricePerAdult.total
+                    (this.disc / 100) *
+                      data.data[i].offerItems[0].pricePerAdult.total
                   ).toFixed(2);
 
                 temp.seg = seg;
@@ -1897,29 +2084,26 @@ console.log('rtnsssssssssssssssssssssssss')
                       ).detailedName
                     );
 
-                    var a = data.data[
-                      i
-                    ].offerItems[0].services[1].segments[
-                      j
-                    ].flightSegment.departure.at
+                    var a =
+                      data.data[i].offerItems[0].services[1].segments[j]
+                        .flightSegment.departure.at;
 
-                                                          var zone = " AM";
+                    var zone = " AM";
 
-                  var b = a
-                    .split("T")
-                    ["1"].split("-")
-                    ["0"].split(":");
+                    var b = a
+                      .split("T")
+                      ["1"].split("-")
+                      ["0"].split(":");
 
-                  if (b[0] > 12) {
-                    b[0] = b[0] - 12;
-                    if(b[0] < 10){
-                      b[0] = "0" + b[0].toString()
+                    if (b[0] > 12) {
+                      b[0] = b[0] - 12;
+                      if (b[0] < 10) {
+                        b[0] = "0" + b[0].toString();
+                      }
+                      zone = " PM";
                     }
-                    zone = " PM"
-                  }
-                  
-                  tmp.round_dep_time = b.slice(0, 2).join(":") + zone
 
+                    tmp.round_dep_time = b.slice(0, 2).join(":") + zone;
 
                     tmp.round_destination =
                       data.data[i].offerItems[0].services[1].segments[
@@ -1934,33 +2118,25 @@ console.log('rtnsssssssssssssssssssssssss')
                       ).detailedName
                     );
 
+                    var a =
+                      data.data[i].offerItems[0].services[1].segments[j]
+                        .flightSegment.arrival.at;
 
- 
-                  var a =  data.data[
-                      i
-                    ].offerItems[0].services[1].segments[
-                      j
-                    ].flightSegment.arrival.at
+                    var zone = " AM";
 
-                  var zone = " AM";
-                  
-                  var b = a
-                    .split("T")
-                    ["1"].split("-")
-                    ["0"].split(":");
+                    var b = a
+                      .split("T")
+                      ["1"].split("-")
+                      ["0"].split(":");
 
-                  if (b[0] > 12) {
-                    b[0] = b[0] - 12;
-                    if(b[0] < 10){
-                      b[0] = "0" + b[0].toString()
+                    if (b[0] > 12) {
+                      b[0] = b[0] - 12;
+                      if (b[0] < 10) {
+                        b[0] = "0" + b[0].toString();
+                      }
+                      zone = " PM";
                     }
-                    zone = " PM"
-                  }
-                  tmp.arr_time = b.slice(0, 2).join(":") + zone
-
-
-
-
+                    tmp.arr_time = b.slice(0, 2).join(":") + zone;
 
                     tmp.round_flight_number =
                       data.data[i].offerItems[0].services[1].segments[
@@ -2019,13 +2195,11 @@ console.log('rtnsssssssssssssssssssssssss')
                     ).detailedName
                   );
 
-                  var a = data.data[
-                    i
-                  ].offerItems[0].services[1].segments[0].flightSegment.departure.at
+                  var a =
+                    data.data[i].offerItems[0].services[1].segments[0]
+                      .flightSegment.departure.at;
 
-
-                    
-                                                          var zone = " AM";
+                  var zone = " AM";
 
                   var b = a
                     .split("T")
@@ -2034,14 +2208,13 @@ console.log('rtnsssssssssssssssssssssssss')
 
                   if (b[0] > 12) {
                     b[0] = b[0] - 12;
-                    if(b[0] < 10){
-                      b[0] = "0" + b[0].toString()
+                    if (b[0] < 10) {
+                      b[0] = "0" + b[0].toString();
                     }
-                    zone = " PM"
+                    zone = " PM";
                   }
-                  
-                  temp.round_dep_time = b.slice(0, 2).join(":") + zone
-                    
+
+                  temp.round_dep_time = b.slice(0, 2).join(":") + zone;
 
                   temp.round_destination =
                     data.data[i].offerItems[0].services[1].segments[
@@ -2058,16 +2231,13 @@ console.log('rtnsssssssssssssssssssssssss')
                     ).detailedName
                   );
 
-                  temp.round_arr_time = data.data[
-                    i
-                  ].offerItems[0].services[1].segments[
-                    data.data[i].offerItems[0].services[1].segments.length - 1
-                  ].flightSegment.arrival.at
+                  temp.round_arr_time =
+                    data.data[i].offerItems[0].services[1].segments[
+                      data.data[i].offerItems[0].services[1].segments.length - 1
+                    ].flightSegment.arrival.at;
 
-
-                  
                   var zone = " AM";
-                  
+
                   var b = a
                     .split("T")
                     ["1"].split("-")
@@ -2075,23 +2245,20 @@ console.log('rtnsssssssssssssssssssssssss')
 
                   if (b[0] > 12) {
                     b[0] = b[0] - 12;
-                    if(b[0] < 10){
-                      b[0] = "0" + b[0].toString()
+                    if (b[0] < 10) {
+                      b[0] = "0" + b[0].toString();
                     }
-                    zone = " PM"
+                    zone = " PM";
                   }
-                  temp.round_arr_time = b.slice(0, 2).join(":") + zone
+                  temp.round_arr_time = b.slice(0, 2).join(":") + zone;
 
-
-                                  var a =  data.data[
-                    i
-                  ].offerItems[0].services[1].segments[
-                    data.data[i].offerItems[0].services[1].segments.length - 1
-                  ].flightSegment.arrival.at
-
+                  var a =
+                    data.data[i].offerItems[0].services[1].segments[
+                      data.data[i].offerItems[0].services[1].segments.length - 1
+                    ].flightSegment.arrival.at;
 
                   var zone = " AM";
-                  
+
                   var b = a
                     .split("T")
                     ["1"].split("-")
@@ -2099,17 +2266,18 @@ console.log('rtnsssssssssssssssssssssssss')
 
                   if (b[0] > 12) {
                     b[0] = b[0] - 12;
-                    if(b[0] < 10){
-                      b[0] = "0" + b[0].toString()
+                    if (b[0] < 10) {
+                      b[0] = "0" + b[0].toString();
                     }
-                    zone = " PM"
+                    zone = " PM";
                   }
-                  temp.round_arr_time = b.slice(0, 2).join(":") + zone
+                  temp.round_arr_time = b.slice(0, 2).join(":") + zone;
 
                   temp.round_price =
                     data.data[i].offerItems[0].pricePerAdult.total -
                     parseFloat(
-                      (this.disc / 100) * data.data[i].offerItems[0].pricePerAdult.total
+                      (this.disc / 100) *
+                        data.data[i].offerItems[0].pricePerAdult.total
                     ).toFixed(2);
 
                   temp.round_seg = round_seg;
@@ -2636,7 +2804,7 @@ console.log('rtnsssssssssssssssssssssssss')
     getSortedData: function(data, isAsc) {
       return data.sort((a, b) => {
         return (
-          (a.offerItems[0].price < b.offerItems[0].pricePerAdult.total 
+          (a.offerItems[0].price < b.offerItems[0].pricePerAdult.total
             ? -1
             : 1) * (isAsc ? 1 : -1)
         );
@@ -2644,11 +2812,7 @@ console.log('rtnsssssssssssssssssssssssss')
     },
     sortAmadeusData: function(data, isAsc) {
       return data.sort((a, b) => {
-        return (
-          (a.price < b.price 
-            ? -1
-            : 1) * (isAsc ? 1 : -1)
-        );
+        return (a.price < b.price ? -1 : 1) * (isAsc ? 1 : -1);
       });
     },
     getSortedDataGo: function(data, isAsc) {
@@ -2913,7 +3077,6 @@ console.log('rtnsssssssssssssssssssssssss')
   }
 };
 </script>
-
 
 <style scoped>
 [type="radio"]:checked + label,
