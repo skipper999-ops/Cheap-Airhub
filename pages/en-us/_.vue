@@ -67,7 +67,7 @@
             <p
               style="padding-bottom:10px"
             >Call the below Toll free Number to confirm your booking at the lowest fare</p>
-            <p style="color:black;font-weight:bold">1888-959-4847</p>
+            <p style="color:black;font-weight:bold">1888-220-3565</p>
           </div>
         </div>
       </div>
@@ -647,11 +647,11 @@
                           style="width: 50px;height: 100%;object-fit: contain;"
                           src="~static/call-now.gif"
                         />
-                          <p class="flight__phone">1888-959-4847</p>
+                          <p class="flight__phone">1888-220-3565</p>
                       </div>
                       <a
                         class="btn"
-                        href="tel:1888-959-4847"
+                        href="tel:1888-220-3565"
                         style="color:white; text-decoration:none;margin-top: 20px"
                       >Call Now</a>
                     </div>
@@ -724,9 +724,7 @@
                 </div>
 
                                      <div
-                      class="flight_book col s24 m12 hide-on-large-only" style="
-    text-align: center;
-"
+                      class="flight_book col s24 m12 hide-on-large-only" style="text-align: center;"
                     >
 
                    <h3 style="font-size:30px" v-if="p.isRound == 1">
@@ -744,11 +742,11 @@
                           style="width: 50px;height: 100%;object-fit: contain;"
                           src="~static/call-now.gif"
                         />
-                          <p class="flight__phone">1888-959-4847</p>
+                          <p class="flight__phone">1888-220-3565</p>
                       </div>
                       <a
                         class="btn"
-                        href="tel:1888-959-4847"
+                        href="tel:1888-220-3565"
                         style="color:white; text-decoration:none;margin-top: 20px"
                       >Call Now</a>
                     </div>
@@ -763,8 +761,8 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:1888-959-4847"
-                      >1888-959-4847</a>
+                        href="tel:1888-220-3565"
+                      >1888-220-3565</a>
                     </p>
                   </div>
                   <div v-if="isInternationDep == 1">
@@ -774,8 +772,8 @@
                     <p style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'">
                       Seems not found what you are looking for ? Call Now For Dirt Cheap Fares
                       <a
-                        href="tel:1888-959-4847"
-                      >1888-959-4847</a>
+                        href="tel:1888-220-3565"
+                      >1888-220-3565</a>
                     </p>
                   </div>
                   <p class="show_flight" @click="showDetail(index)">Flight Details</p>
@@ -1419,7 +1417,7 @@ console.log('rtnsssssssssssssssssssssssss')
             "Content-Type": "application/x-www-form-urlencoded"
           },
           data:
-            "client_id=VflUteAXrhhmdy8nkCAEPMbGnzni8Bnb&client_secret=RtGNBLpiWYJdRbYY&grant_type=client_credentials"
+            "client_id=rqAGsz8ICj3uFXLJAoXjpZZNV8zRydwZ&client_secret=GCuL3KqzWAs8j0A7&grant_type=client_credentials"
         })
           .then(res => {
             console.log("res", res);

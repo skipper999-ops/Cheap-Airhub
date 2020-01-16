@@ -10,32 +10,32 @@
         <h5>
           <strong>What if I typed in the wrong date and time?</strong>
         </h5>
-        <p>Most airlines allow us to make a change on the Dates and time of a reservation. For any changes to the reservation, kindly contact our Help Desk on Toll free number 1888-959-4847 and the representatives will check on the airline penalties and rules for your specific ticket.</p>
+        <p>Most airlines allow us to make a change on the Dates and time of a reservation. For any changes to the reservation, kindly contact our Help Desk on Toll free number 1888-220-3565 and the representatives will check on the airline penalties and rules for your specific ticket.</p>
         <br />
         <h5>
           <strong>What if I typed in the wrong airport?</strong>
         </h5>
-        <p>Most airlines allow us to make a change on the Departure and arrival airports of a reservation. For any changes to the reservation, kindly contact our Help Desk on Toll free number 1888-959-4847 and the representatives will check on the airline penalties and rules for your specific ticket.</p>
+        <p>Most airlines allow us to make a change on the Departure and arrival airports of a reservation. For any changes to the reservation, kindly contact our Help Desk on Toll free number 1888-220-3565 and the representatives will check on the airline penalties and rules for your specific ticket.</p>
         <br />
         <h5>
           <strong>What if I typed wrong name(s)?</strong>
         </h5>
-        <p>Names on a Reservation can never be changed or altered for any reason. You can contact our Help desk on Toll free number 1888-959-4847 and our representatives will check with the airlines if any amendments can be done.</p>
+        <p>Names on a Reservation can never be changed or altered for any reason. You can contact our Help desk on Toll free number 1888-220-3565 and our representatives will check with the airlines if any amendments can be done.</p>
         <br />
         <h5>
           <strong>How do I contact a Travel consultant?</strong>
         </h5>
-        <p>You can call on our Toll free number 1888-959-4847 for assistance on your air reservation. Our Customer Service Team is available 24x7, 365 Days. You may also email your questions/ comments/ concerns to customerservice@CheapAirHub.com</p>
+        <p>You can call on our Toll free number 1888-220-3565 for assistance on your air reservation. Our Customer Service Team is available 24x7, 365 Days. You may also email your questions/ comments/ concerns to customerservice@CheapAirHub.com</p>
         <br />
         <h5>
           <strong>How do I add additional passengers to an existing reservation?</strong>
         </h5>
-        <p>If you need to add additional passengers to an existing reservation, you can call our Toll free number 1888-959-4847 for assistance. Our Customer Service Team is available 24x7, 365 Days.</p>
+        <p>If you need to add additional passengers to an existing reservation, you can call our Toll free number 1888-220-3565 for assistance. Our Customer Service Team is available 24x7, 365 Days.</p>
         <br />
         <h5>
           <strong>Can a child travel alone on your website? Or Can I book a reservation for an Unaccompanied Minor on your website?</strong>
         </h5>
-        <p>A child below the age of 18 travelling alone is considered an Unaccompanied Minor. Every airline has established their own rules and regulations regarding the reservations of unaccompanied minors. For reservations of Unaccompanied minors, kindly contact us on our Toll free number 1888-959-4847.</p>
+        <p>A child below the age of 18 travelling alone is considered an Unaccompanied Minor. Every airline has established their own rules and regulations regarding the reservations of unaccompanied minors. For reservations of Unaccompanied minors, kindly contact us on our Toll free number 1888-220-3565.</p>
         <br />
         <h5>
           <strong>What are the rules for traveling with an infant or toddler under the age of 2?</strong>
@@ -67,7 +67,7 @@
         <h5>
           <strong>Why is a flight or fare shown and then not available when I attempt to book it?</strong>
         </h5>
-        <p>The Airline inventory changes frequently and thus airfares keep fluctuating. There is a possibility that from the time that you initially select a flight option until the time you confirm the reservation there is a revision in the fares and you may face difficulty in completing your reservation. We suggest that you contact our Help Desk on our Toll free number 1888-959-4847 to book your travel.</p>
+        <p>The Airline inventory changes frequently and thus airfares keep fluctuating. There is a possibility that from the time that you initially select a flight option until the time you confirm the reservation there is a revision in the fares and you may face difficulty in completing your reservation. We suggest that you contact our Help Desk on our Toll free number 1888-220-3565 to book your travel.</p>
         <br />
         <h5>
           <strong>Why did I receive a “Validation error” when trying to book?</strong>
@@ -77,7 +77,7 @@
         <h5>
           <strong>How do I cancel my reservation?</strong>
         </h5>
-        <p>We offer special fares which are mostly non-refundable. You can contact our Help desk on our Toll Free number 1888-959-4847 and the representatives will check on the airline penalties and rules for your specific ticket.</p>
+        <p>We offer special fares which are mostly non-refundable. You can contact our Help desk on our Toll Free number 1888-220-3565 and the representatives will check on the airline penalties and rules for your specific ticket.</p>
         <p>Once you decide to cancel the reservation you are subject to the “Terms and Conditions” of Cancelation as stated by the airlines.</p>
         <br />
         <h5>
@@ -89,7 +89,7 @@
           <strong>How do I select / change seat assignments?</strong>
         </h5>
         <p>
-          Seat numbers are automatically assigned after your reservation has been ticketed on all applicable flights. To change your seat assignments or select a seat please call our Help Desk on our Toll Free number 1888-959-4847 or contact the airlines directly. For a list of world-wide airline phone numbers, please visit the
+          Seat numbers are automatically assigned after your reservation has been ticketed on all applicable flights. To change your seat assignments or select a seat please call our Help Desk on our Toll Free number 1888-220-3565 or contact the airlines directly. For a list of world-wide airline phone numbers, please visit the
            <nuxt-link to="/airportcontact">Airline Contact Number page</nuxt-link> Airline Contact Number page</a>.
         </p>
         <p>Although we can pass your seating request to the respective airlines (wherever applicable), we cannot guarantee that the request will be honored.</p>
@@ -127,7 +127,7 @@
           <strong>How do I pay for all travel products such as air tickets, insurance, hotels etc. purchased online?</strong>
         </h5>
         <p>The form of payment accepted to purchase online is a valid US or Canadian credit or debit card. Debit cards may be used but are generally subject to low daily limits that may cause the payment process to be rejected, i.e. Credit card declined. We accept the following types of major credit cards: American Express, Visa, Master Card, Discover, and Diners Club. If you do not have a valid credit card then tickets may not be purchased on-line. Only one card may be used to purchase the ticket(s) on a given reservation.</p>
-        <p>To complete the purchase process you will need to enter information about the credit card and have this information validated before a ticket or a final confirmation is issued. If the entered credit card information is not valid then an error will be generated and an e-mail sent to you (at the e-mail address specified by you) indicating that the credit card has been declined. In order to keep the reservation you must call the Help Desk on our Toll Free number 1888-959-4847 and provide the Representative with valid credit card information within 24 hours of making the reservation, or the reservation may be terminated. Please be aware we have no control of the airlines taking their seats back for inventory purposes from an un-ticketed reservation without notice. Most credit card declines are the result of inaccurate information being entered into the website payment page such as transposing credit card digits, having the wrong security code or expiration date, or the name on the card and address are inconsistent. These problems can be remedied by simply calling Help Desk and correcting the entered data.</p>
+        <p>To complete the purchase process you will need to enter information about the credit card and have this information validated before a ticket or a final confirmation is issued. If the entered credit card information is not valid then an error will be generated and an e-mail sent to you (at the e-mail address specified by you) indicating that the credit card has been declined. In order to keep the reservation you must call the Help Desk on our Toll Free number 1888-220-3565 and provide the Representative with valid credit card information within 24 hours of making the reservation, or the reservation may be terminated. Please be aware we have no control of the airlines taking their seats back for inventory purposes from an un-ticketed reservation without notice. Most credit card declines are the result of inaccurate information being entered into the website payment page such as transposing credit card digits, having the wrong security code or expiration date, or the name on the card and address are inconsistent. These problems can be remedied by simply calling Help Desk and correcting the entered data.</p>
         <br />
         <h5>
           <strong>Can I pay for the ticket with a Debit card?</strong>
@@ -152,7 +152,7 @@
         <h5>
           <strong>I have a non US, non Canadian credit card, can I use it?</strong>
         </h5>
-        <p>CheapAirHub.com has recently started allowing credit cards issued outside the US/Canada to be used as a form of payment for certain itineraries. There are some stipulations involved and in even rarer cases additional fees collected. If CheapAirHub.com does require certain documents and/or charge a fee you will be prompted on the site prior to you accepting and clicking purchase. If you have further questions please call on our Toll free number 1888-959-4847 or email us at customerservice@CheapAirHub.com</p>
+        <p>CheapAirHub.com has recently started allowing credit cards issued outside the US/Canada to be used as a form of payment for certain itineraries. There are some stipulations involved and in even rarer cases additional fees collected. If CheapAirHub.com does require certain documents and/or charge a fee you will be prompted on the site prior to you accepting and clicking purchase. If you have further questions please call on our Toll free number 1888-220-3565 or email us at customerservice@CheapAirHub.com</p>
         <br />
         <h5>
           <strong>Why was my credit card declined?</strong>
@@ -183,7 +183,7 @@
         <h5>
           <strong>What if I have not received my confirmation email with My Booking reference code?</strong>
         </h5>
-        <p>Once you have completed the online request you will instantaneously receive an email acknowledging your request which will include a booking reference code. If you don’t receive it within few minutes you may have entered your email incorrectly or your email server has routed the email to a spam/junk folder. It is suggested to call our Help Desk on our Toll free number 1888-959-4847 if you don’t receive an email after making your request.</p>
+        <p>Once you have completed the online request you will instantaneously receive an email acknowledging your request which will include a booking reference code. If you don’t receive it within few minutes you may have entered your email incorrectly or your email server has routed the email to a spam/junk folder. It is suggested to call our Help Desk on our Toll free number 1888-220-3565 if you don’t receive an email after making your request.</p>
         <br />
         <h5>
           <strong>What should I do if I have lost my itinerary or I need another copy of my itinerary?</strong>
@@ -198,12 +198,12 @@
           <strong>I have a confirmed reservation on 2 or more airlines. Why are you unable to issue my ticket?</strong>
         </h5>
         <p>Some airlines do not have ticketing and/or baggage transfer agreements with each other therefore causing the itinerary you chose to be invalid and unable to be confirmed and ticketed by the airline. If this situation arises your request will be cancelled and nothing will be charged to your card.</p>
-        <p>You can then proceed to go back online to choose an alternate itinerary or call on our Toll free number 1888-959-4847 for assistance.</p>
+        <p>You can then proceed to go back online to choose an alternate itinerary or call on our Toll free number 1888-220-3565 for assistance.</p>
         <br />
         <h5>
           <strong>Do I have an Electronic Ticket or paper ticket for my reservation?</strong>
         </h5>
-        <p>Our system is programmed to automatically issue e-tickets. If the airline prohibits an e-ticket due to some technical reasons, we will notify you within 24 hours of your booking. An additional Fedex shipping charge will be applied to your total charges if you agree for Paper Tickets. If you are concerned about having a paper ticket, you may call our Help Desk on our Toll free number 1888-959-4847.</p>
+        <p>Our system is programmed to automatically issue e-tickets. If the airline prohibits an e-ticket due to some technical reasons, we will notify you within 24 hours of your booking. An additional Fedex shipping charge will be applied to your total charges if you agree for Paper Tickets. If you are concerned about having a paper ticket, you may call our Help Desk on our Toll free number 1888-220-3565.</p>
 
 
         <h4 class="head-deatilpage">SHIPPING PROCESS</h4>
@@ -234,7 +234,7 @@
         </h5>
         <p>
           If you purchased paper tickets our shipping department will send them via Fed Ex and will also send an email to the traveler advising the Fed Ex tracking number in order for you to track your package. The tickets are normally sent with a 3 day delivery but can take longer if over a weekend/holiday. You can use your tracking number on the
-          <a href="http://www.fedex.com/" target="_blank">www.fedex.com</a> to view the status. If 4 or more days have passed, you may call our Help Desk on our Toll free number 1888-959-4847 for assistance.
+          <a href="http://www.fedex.com/" target="_blank">www.fedex.com</a> to view the status. If 4 or more days have passed, you may call our Help Desk on our Toll free number 1888-220-3565 for assistance.
         </p>
         <br />
         <h5>
@@ -266,7 +266,7 @@
         <h5>
           <strong>What are the rules on unaccompanied minors traveling alone?</strong>
         </h5>
-        <p>Most airlines allow unaccompanied children at or above a certain age to fly, though usually with several restrictions. Programs vary widely from airline to airline, and no two airlines will have the same polices, which is why we suggest you to call us on our Toll free number 1888-959-4847 for assistance or make direct reservations with the airline for unaccompanied minors.</p>
+        <p>Most airlines allow unaccompanied children at or above a certain age to fly, though usually with several restrictions. Programs vary widely from airline to airline, and no two airlines will have the same polices, which is why we suggest you to call us on our Toll free number 1888-220-3565 for assistance or make direct reservations with the airline for unaccompanied minors.</p>
         <p>In the U.S., there are no clear regulatory guidelines with respect to unaccompanied children, so it is important that you take the time to understand the specific policies of the airline and then make the reservation.</p>
         <br />
         <h5>

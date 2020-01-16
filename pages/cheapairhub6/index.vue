@@ -42,7 +42,7 @@
             <h4>Please save the transaction ID for future reference</h4>
             <p>Transaction ID: {{ transaction_id }}</p>
             <p>Call the below number to confirm your booking at the lowest fare</p>
-            <p>1888-959-4847</p>
+            <p>1888-220-3565</p>
           </div>
         </div>
       </div>
@@ -827,7 +827,7 @@
         >
           <div class="row">
             <div class="hide-on-med-and-down col s24 m24 l12 pic-call">
-            <a href="tel:1888-959-4847">
+            <a href="tel:1888-220-3565">
                 <h1><i class="fa fa-phone-square"></i>&nbsp;CALL NOW</h1>
             </a>
         </div>
@@ -836,7 +836,7 @@
     align-items: center;
     justify-content: center;">
     <div style="text-align:center">
-      <p style="color:white;font-size:45px">1888-959-4847</p>
+      <p style="color:white;font-size:45px">1888-220-3565</p>
       <p style="color:white">Call For Unpublished Cheap Flight Deals</p>
     </div>
           
@@ -955,9 +955,9 @@ export default {
 
 
     
-            $(".telephone").attr("href" , 'tel:1888-959-4847')
+            $(".telephone").attr("href" , 'tel:1888-220-3565')
 
-    $(".telephone").html('1888-959-4847')
+    $(".telephone").html('1888-220-3565')
 
     window.addEventListener("resize", this.onResize);
 
@@ -1167,7 +1167,7 @@ export default {
           "Content-Type": "application/x-www-form-urlencoded"
         },
         data:
-          "client_id=VflUteAXrhhmdy8nkCAEPMbGnzni8Bnb&client_secret=RtGNBLpiWYJdRbYY&grant_type=client_credentials"
+          "client_id=rqAGsz8ICj3uFXLJAoXjpZZNV8zRydwZ&client_secret=GCuL3KqzWAs8j0A7&grant_type=client_credentials"
       })
         .then(res => {
           console.log("res", res);
