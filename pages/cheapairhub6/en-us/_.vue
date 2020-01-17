@@ -2185,7 +2185,7 @@ export default {
                       }
                       zone = " PM";
                     }
-                    tmp.arr_time = b.slice(0, 2).join(":") + zone;
+                    tmp.round_arr_time = b.slice(0, 2).join(":") + zone;
 
                     tmp.round_flight_number =
                       data.data[i].offerItems[0].services[1].segments[

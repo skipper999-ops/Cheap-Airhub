@@ -1959,7 +1959,7 @@ export default {
                     }
                     zone = " PM"
                   }
-                  tmp.arr_time = b.slice(0, 2).join(":") + zone
+                  tmp.round_arr_time = b.slice(0, 2).join(":") + zone
 
 
 
