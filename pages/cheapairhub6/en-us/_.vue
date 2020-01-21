@@ -920,13 +920,13 @@
                     >
                       Cabin: 7kg | Check-in: 15kg | Refundable
                     </p>
-                    <p
+                    <!-- <p
                       style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'"
                     >
                       Seems not found what you are looking for ? Call Now For
                       Dirt Cheap Fares
                       <a href="tel:+1-888-220-3565 ">+1-888-220-3565</a>
-                    </p>
+                    </p> -->
                   </div>
                   <div v-if="isInternationDep == 1">
                     
@@ -936,13 +936,13 @@
                     >
                       Cabin: 7kg | Check-in: 25kg | Refundable
                     </p>
-                    <p
+                    <!-- <p
                       style="font-size:12px;font-style:italic;color:#515151;font-family:'Manjari'"
                     >
                       Seems not found what you are looking for ? Call Now For
                       Dirt Cheap Fares
                       <a href="tel:+1-888-220-3565 ">+1-888-220-3565</a>
-                    </p>
+                    </p> -->
                   </div>
                   <p class="show_flight" @click="showDetail(index)">
                     Flight Details
