@@ -6,15 +6,15 @@
           <h2 class="head-deatilpage">Contact Us</h2>
           <div class="row body-contact">
             <div class="detail-info col l12 m24 m24">
-              <h4
+              <!-- <h4
                 style="font-size:18px;padding-top:20px"
-              >CheapAirHub subsidiary Of Fx Trade Consulting Private Limited</h4>
+              >CheapAirHub</h4>
               <p><span style="font-weight:bold">Address :</span>Suit 36, Unit 1701, Express Trade Tower-5,
                 7thFloor, Sector-132,
                 Noida UP 201301</p>
-              <p><span style="font-weight:bold">Phone Number :</span> +91 0120-4203761</p>
+              <p><span style="font-weight:bold">Phone Number :</span> +91 0120-4203761</p> -->
               <p><span style="font-weight:bold">Email : </span>support@cheapairhub.com</p>
-              <p><span style="font-weight:bold">Customer Service Number</span> <span>Toll Free :</span> 1888-220-3565</p>
+              <p><span style="font-weight:bold">Customer Service Number</span> <span>Toll Free :</span> +1-888-220-3565</p>
               <p
                 v-if="form_submitted"
                 style="color:green"
