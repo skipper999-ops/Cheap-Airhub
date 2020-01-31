@@ -709,7 +709,7 @@
                         v-if="p.seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
-                        {{ p.seg.length }} stop(s)
+                        {{ p.seg.length - 1 }} stop(s)
                       </p>
                       <p
                         class="hide-on-med-and-down"
@@ -735,7 +735,7 @@
                         v-if="p.seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
-                        {{ p.seg.length }} stop(s)
+                        {{ p.seg.length - 1 }} stop(s)
                       </p>
                       <p
                         class="hide-on-large-only"

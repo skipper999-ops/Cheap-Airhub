@@ -713,7 +713,7 @@
                       </p>
                       <p
                         class="hide-on-med-and-down"
-                        v-if="p.seg.length == 1"
+                        v-if="p.seg.length - 1 == 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
                         Non-stop
@@ -735,7 +735,7 @@
                         v-if="p.seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
-                        {{ p.seg.length }} stop(s)
+                        {{ p.seg.length - 1 }} stop(s)
                       </p>
                       <p
                         class="hide-on-large-only"
@@ -813,7 +813,7 @@
                         v-if="p.round_seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
-                        {{ p.round_seg.length }} stop(s)
+                        {{ p.round_seg.length - 1 }} stop(s)
                       </p>
                       <p
                         class="hide-on-med-and-down"
@@ -835,7 +835,7 @@
                         v-if="p.round_seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
-                        {{ p.round_seg.length }} stop(s)
+                        {{ p.round_seg.length - 1 }} stop(s)
                       </p>
                       <p
                         class="hide-on-med-and-down"
