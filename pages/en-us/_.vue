@@ -990,7 +990,7 @@
                           </p>
                         </div>
                         <div class="col s24 m3">
-                          <p class="flight_details--price">
+                          <p class="flight_details--price" v-if="qIndex == 0">
                             $ {{ p.price.toFixed(2) }}
                           </p>
                         </div>
@@ -1628,7 +1628,7 @@ export default {
             "Content-Type": "application/x-www-form-urlencoded"
           },
           data:
-            "client_id=VflUteAXrhhmdy8nkCAEPMbGnzni8Bnb&client_secret=RtGNBLpiWYJdRbYY&grant_type=client_credentials"
+            "client_id=kztHtqVTBFzcNAAxWFl2mhZx2z5DZEzF&client_secret=nXcUlJJIzvBrFQVd&grant_type=client_credentials"
         })
           .then(res => {
             console.log("res", res);
