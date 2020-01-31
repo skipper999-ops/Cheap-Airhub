@@ -808,14 +808,14 @@
                       <p class="flight_departure">{{ p.round_dep_time }}</p>
                       <p
                         class="hide-on-med-and-down"
-                        v-if="p.round_seg.length - 1 > 0"
+                        v-if="p.round_seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
                         {{ p.seg.length - 1 }} stop(s)
                       </p>
                       <p
                         class="hide-on-med-and-down"
-                        v-if="p.round_seg.length - 1 == 0"
+                        v-if="p.round_seg.length == 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
                         Non-stop
@@ -830,14 +830,14 @@
                       <h5>{{ p.round_duration }}</h5>
                       <p
                         class="hide-on-med-and-down"
-                        v-if="p.round_seg.length - 1 > 0"
+                        v-if="p.round_seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
-                        {{ p.seg.length - 1 }} stop(s)
+                        {{ p.round_seg.length - 1 }} stop(s)
                       </p>
                       <p
                         class="hide-on-med-and-down"
-                        v-if="p.round_seg.length - 1 == 0"
+                        v-if="p.round_seg.length == 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
                         Non-stop

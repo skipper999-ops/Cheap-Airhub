@@ -706,14 +706,14 @@
                       <h5 class="hide-on-med-and-down">{{ p.duration }}</h5>
                       <p
                         class="hide-on-med-and-down"
-                        v-if="p.seg.length - 1 > 0"
+                        v-if="p.seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
-                        {{ p.seg.length - 1 }} stop(s)
+                        {{ p.seg.length }} stop(s)
                       </p>
                       <p
                         class="hide-on-med-and-down"
-                        v-if="p.seg.length - 1 == 0"
+                        v-if="p.seg.length == 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
                         Non-stop
@@ -732,14 +732,14 @@
                       <p class="flight_arrival">{{ p.arr_time }}</p>
                       <p
                         class="hide-on-large-only"
-                        v-if="p.seg.length - 1 > 0"
+                        v-if="p.seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
-                        {{ p.seg.length - 1 }} stop(s)
+                        {{ p.seg.length }} stop(s)
                       </p>
                       <p
                         class="hide-on-large-only"
-                        v-if="p.seg.length - 1 == 0"
+                        v-if="p.seg.length == 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
                         Non-stop
@@ -810,14 +810,14 @@
                       <p class="flight_departure">{{ p.round_dep_time }}</p>
                       <p
                         class="hide-on-med-and-down"
-                        v-if="p.round_seg.length - 1 > 0"
+                        v-if="p.round_seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
-                        {{ p.seg.length - 1 }} stop(s)
+                        {{ p.round_seg.length }} stop(s)
                       </p>
                       <p
                         class="hide-on-med-and-down"
-                        v-if="p.round_seg.length - 1 == 0"
+                        v-if="p.round_seg.length == 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
                         Non-stop
@@ -832,14 +832,14 @@
                       <h5>{{ p.round_duration }}</h5>
                       <p
                         class="hide-on-med-and-down"
-                        v-if="p.round_seg.length - 1 > 0"
+                        v-if="p.round_seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
-                        {{ p.seg.length - 1 }} stop(s)
+                        {{ p.round_seg.length }} stop(s)
                       </p>
                       <p
                         class="hide-on-med-and-down"
-                        v-if="p.round_seg.length - 1 == 0"
+                        v-if="p.round_seg.length == 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
                         Non-stop
@@ -1946,7 +1946,7 @@ export default {
                   }
                   tmp.arr_time = b.slice(0, 2).join(":") + zone;
 
-                  console.log(tmp.arr_time);
+                  // console.log(tmp.arr_time);
 
                   tmp.flight_number =
                     data.data[i].offerItems[0].services[0].segments[
@@ -2086,12 +2086,28 @@ export default {
                 }
                 temp.arr_time = b.slice(0, 2).join(":") + zone;
 
-                temp.price =
-                  data.data[i].offerItems[0].pricePerAdult.total -
-                  parseFloat(
-                    (this.disc / 100) *
-                      data.data[i].offerItems[0].pricePerAdult.total
-                  ).toFixed(2);
+                
+                  // console.log(parseInt(
+                  //   (this.disc / 100) *
+                  //     data.data[i].offerItems[0].pricePerAdult.total
+                  // ).toFixed(2))
+                  // console.log(i)
+
+                // temp.price =
+                //   data.data[i].offerItems[0].pricePerAdult.total -
+                //   parseFloat(
+                //     (this.disc / 100) *
+                //       data.data[i].offerItems[0].pricePerAdult.total
+                //   ).toFixed(2);
+
+                temp.og_price = data.data[i].offerItems[0].pricePerAdult.total
+
+                temp.price = parseFloat(
+                      (this.disc / 100) *
+                        data.data[i].offerItems[0].pricePerAdult.total
+                    )
+
+                temp.price = temp.price + ( 5 / 100 )  * temp.price
 
                 temp.seg = seg;
 
@@ -2322,12 +2338,23 @@ export default {
                   }
                   temp.round_arr_time = b.slice(0, 2).join(":") + zone;
 
+                  temp.round_og_price = data.data[i].offerItems[0].pricePerAdult.total
+
+                  // temp.round_price =
+                  //   data.data[i].offerItems[0].pricePerAdult.total -
+                  //   parseFloat(
+                  //     (this.disc / 100) *
+                  //       data.data[i].offerItems[0].pricePerAdult.total
+                  //   ).toFixed(2);
+
                   temp.round_price =
-                    data.data[i].offerItems[0].pricePerAdult.total -
                     parseFloat(
                       (this.disc / 100) *
                         data.data[i].offerItems[0].pricePerAdult.total
-                    ).toFixed(2);
+                    )
+                    
+                  temp.round_price = temp.round_price - ( 5 / 100 )  * temp.round_price
+
 
                   temp.round_seg = round_seg;
                 }
@@ -2486,7 +2513,7 @@ export default {
             })
             .catch(err => {
               console.log(err);
-              console.log(err.response);
+              // console.log(err.response);
 
               $("#error_log").removeClass("hide");
               $(".processing").addClass("hide");
@@ -2571,7 +2598,7 @@ export default {
               "&counter=0"
           })
             .then(res => {
-              console.log("res", res.data.data.onwardflights);
+              // console.log("res", res.data.data.onwardflights);
 
               var data = res.data.data.onwardflights;
               var returnflights = res.data.data.returnflights;
@@ -2585,9 +2612,9 @@ export default {
 
               if (this.isInternationDep == 0) {
                 for (var i = 0; i < data.length; i++) {
-                  console.log("one");
+                  // console.log("one");
 
-                  console.log(parseInt(data[i].stops));
+                  // console.log(parseInt(data[i].stops));
 
                   if (parseInt(data[i].stops) == 0) {
                     var loop =
@@ -2639,9 +2666,9 @@ export default {
                 }
 
                 for (var i = 0; i < returnflights.length; i++) {
-                  console.log("one");
+                  // console.log("one");
 
-                  console.log(parseInt(returnflights[i].stops));
+                  // console.log(parseInt(returnflights[i].stops));
 
                   if (parseInt(returnflights[i].stops) == 0) {
                     var loop =
@@ -2695,7 +2722,7 @@ export default {
                 console.log("Internation result");
 
                 for (var i = 0; i < data.length; i++) {
-                  console.log(data[i].returnfl.length);
+                  // console.log(data[i].returnfl.length);
                   if (data[i].returnfl.length == 0) {
                     var loop =
                       '<div class="card"> <div class="flight_name"> <p>' +
@@ -2720,8 +2747,8 @@ export default {
                     var d1 = document.getElementById("goibibo_internation");
                     d1.insertAdjacentHTML("beforeend", loop);
                   } else {
-                    console.log(data[i].returnfl[0].destination);
-                    console.log(i);
+                    // console.log(data[i].returnfl[0].destination);
+                    // console.log(i);
 
                     var onwardflights,
                       arrtime,
@@ -2736,7 +2763,7 @@ export default {
 
                       arrtime = data[i].arrtime;
                     } else {
-                      console.log(data[i].onwardflights.length - 1);
+                      // console.log(data[i].onwardflights.length - 1);
 
                       onwardflights =
                         data[i].onwardflights[data[i].onwardflights.length - 1]
@@ -2771,11 +2798,11 @@ export default {
                           );
                         }
 
-                        console.log("origin_length");
-                        console.log(origin_length);
+                        // console.log("origin_length");
+                        // console.log(origin_length);
 
                         for (var j = 0; j < origin_length; j++) {
-                          console.log(originStops);
+                          // console.log(originStops);
 
                           originStops = originStops.concat(
                             " - " + data[i].onwardflights[j].origin
@@ -2872,13 +2899,9 @@ export default {
       });
     },
     capitalizeFirstLetter: function(string) {
-      console.log("char");
-      console.log(string);
+
 
       if (string != undefined && string != "") {
-        console.log(
-          "ss" + string.charAt(0).toUpperCase() + string.toLowerCase().slice(1)
-        );
 
         return string
           .toLowerCase()
@@ -3059,8 +3082,6 @@ export default {
       }
     },
     getJSONKeyValue: function(json, value) {
-      console.log("value");
-      console.log(value);
 
       for (var i in json) {
         var key = i;
