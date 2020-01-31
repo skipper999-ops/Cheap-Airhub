@@ -706,14 +706,14 @@
                       <h5 class="hide-on-med-and-down">{{ p.duration }}</h5>
                       <p
                         class="hide-on-med-and-down"
-                        v-if="p.seg.length - 1 > 0"
+                        v-if="p.seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
-                        {{ p.seg.length - 1 }} stop(s)
+                        {{ p.seg.length }} stop(s)
                       </p>
                       <p
                         class="hide-on-med-and-down"
-                        v-if="p.seg.length - 1 == 0"
+                        v-if="p.seg.length == 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
                         Non-stop
@@ -732,14 +732,14 @@
                       <p class="flight_arrival">{{ p.arr_time }}</p>
                       <p
                         class="hide-on-large-only"
-                        v-if="p.seg.length - 1 > 0"
+                        v-if="p.seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
-                        {{ p.seg.length - 1 }} stop(s)
+                        {{ p.seg.length }} stop(s)
                       </p>
                       <p
                         class="hide-on-large-only"
-                        v-if="p.seg.length - 1 == 0"
+                        v-if="p.seg.length == 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
                         Non-stop
@@ -811,7 +811,7 @@
                         v-if="p.round_seg.length > 1"
                         style="font-size: 11px;color: rgb(181, 181, 181);"
                       >
-                        {{ p.seg.length - 1 }} stop(s)
+                        {{ p.round_seg.length }} stop(s)
                       </p>
                       <p
                         class="hide-on-med-and-down"
@@ -2037,12 +2037,28 @@ export default {
                 }
                 temp.arr_time = b.slice(0, 2).join(":") + zone;
 
-                temp.price =
-                  data.data[i].offerItems[0].pricePerAdult.total -
-                  parseFloat(
-                    (this.disc / 100) *
-                      data.data[i].offerItems[0].pricePerAdult.total
-                  ).toFixed(2);
+                                
+                  // console.log(parseInt(
+                  //   (this.disc / 100) *
+                  //     data.data[i].offerItems[0].pricePerAdult.total
+                  // ).toFixed(2))
+                  // console.log(i)
+
+                // temp.price =
+                //   data.data[i].offerItems[0].pricePerAdult.total -
+                //   parseFloat(
+                //     (this.disc / 100) *
+                //       data.data[i].offerItems[0].pricePerAdult.total
+                //   ).toFixed(2);
+
+                temp.og_price = data.data[i].offerItems[0].pricePerAdult.total
+
+                temp.price = parseFloat(
+                      (this.disc / 100) *
+                        data.data[i].offerItems[0].pricePerAdult.total
+                    )
+
+                temp.price = temp.price + ( 5 / 100 )  * temp.price
 
                 temp.seg = seg;
 
@@ -2273,12 +2289,22 @@ export default {
                   }
                   temp.round_arr_time = b.slice(0, 2).join(":") + zone;
 
+                  temp.round_og_price = data.data[i].offerItems[0].pricePerAdult.total
+
+                  // temp.round_price =
+                  //   data.data[i].offerItems[0].pricePerAdult.total -
+                  //   parseFloat(
+                  //     (this.disc / 100) *
+                  //       data.data[i].offerItems[0].pricePerAdult.total
+                  //   ).toFixed(2);
+
                   temp.round_price =
-                    data.data[i].offerItems[0].pricePerAdult.total -
                     parseFloat(
                       (this.disc / 100) *
                         data.data[i].offerItems[0].pricePerAdult.total
-                    ).toFixed(2);
+                    )
+                    
+                  temp.round_price = temp.round_price - ( 5 / 100 )  * temp.round_price
 
                   temp.round_seg = round_seg;
                 }
