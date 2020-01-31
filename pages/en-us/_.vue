@@ -1944,12 +1944,15 @@ export default {
 
                 temp.og_price = data.data[i].offerItems[0].pricePerAdult.total;
 
-                temp.price = parseFloat(
+                temp.price =  temp.og_price - parseFloat(
                   (this.disc / 100) *
                     data.data[i].offerItems[0].pricePerAdult.total
                 );
 
                 temp.price = temp.price + (5 / 100) * temp.price;
+
+                console.log(temp.price)
+                console.log(temp.og_price)
 
                 temp.seg = seg;
 
@@ -2190,7 +2193,7 @@ export default {
                   //       data.data[i].offerItems[0].pricePerAdult.total
                   //   ).toFixed(2);
 
-                  temp.round_price = parseFloat(
+                  temp.round_price =  temp.round_og_price - parseFloat(
                     (this.disc / 100) *
                       data.data[i].offerItems[0].pricePerAdult.total
                   );
