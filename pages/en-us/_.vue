@@ -581,7 +581,7 @@
           <p style="text-align:center;">No flight found</p>
         </div>
 
-        <div class="row">
+       <div class="row">
           <div class="col s24">
             <div id="amadeus">
               <div class="card oneseg" v-for="(p, index) in amadeus" :key="p.id">
@@ -686,7 +686,7 @@
                       </div>
                       <a
                         class="btn"
-                        href="tel:+1-888-220-3565"
+                        href="tel:+1-888-220-3565 "
                         style="color:white; text-decoration:none;margin-top: 20px"
                       >Call Now</a>
                     </div>
@@ -729,16 +729,6 @@
                         class="hide-on-large-only"
                         style="font-size:11px;color:#b5b5b5"
                       >{{ p.round_duration }}</p>
-                      <p
-                        class="hide-on-med-and-down"
-                        v-if="p.round_seg.length > 1"
-                        style="font-size: 11px;color: rgb(181, 181, 181);"
-                      >{{ p.round_seg.length }} stop(s)</p>
-                      <p
-                        class="hide-on-med-and-down"
-                        v-if="p.round_seg.length == 1"
-                        style="font-size: 11px;color: rgb(181, 181, 181);"
-                      >Non-stop</p>
                     </div>
                     <div
                       class="extra_duration extar_flight_origin center col s12 m3 hide-on-med-and-down"
@@ -788,7 +778,6 @@
                     <span style="color:grey;font-size:12px">fr</span>
                     $ {{ p.price.toFixed(2) }}
                   </h3>
-
                   <h3 style="font-size:30px" v-if="p.isRound == 1">
                     <span style="color:grey;font-size:12px">fr</span>
                     $
@@ -799,6 +788,7 @@
                   </h3>
                   <p style="padding-top: 5px">Per Adult</p>
                   <p style="color:red;padding-top: 5px">Limited Time Offer</p>
+
                   <p
                     class="hide-on-med-and-up"
                     style="padding-bottom: 10px"
@@ -818,7 +808,7 @@
                   </div>
                   <a
                     class="btn"
-                    href="tel:+1-888-220-3565"
+                    href="tel:+1-888-220-3565 "
                     style="color:white; text-decoration:none;margin-top: 20px"
                   >Call Now</a>
                 </div>
@@ -839,7 +829,7 @@
                     >
                       Seems not found what you are looking for ? Call Now For
                       Dirt Cheap Fares
-                      <a href="tel:+1-888-220-3565">+1-888-220-3565</a>
+                      <a href="tel:+1-888-220-3565 ">+1-888-220-3565</a>
                     </p>-->
                   </div>
                   <div v-if="isInternationDep == 1">
@@ -855,7 +845,7 @@
                     >
                       Seems not found what you are looking for ? Call Now For
                       Dirt Cheap Fares
-                      <a href="tel:+1-888-220-3565">+1-888-220-3565</a>
+                      <a href="tel:+1-888-220-3565 ">+1-888-220-3565</a>
                     </p>-->
                   </div>
                   <p class="show_flight" @click="showDetail(index)">Flight Details</p>
@@ -874,6 +864,7 @@
                                 q.carrier_icon +
                                 '.png'
                             "
+                            @error="setFallbackImageUrl"
                           />
                           <p>{{ q.carrier_name }}</p>
                           <p>{{ q.carrier_icon }} - {{ q.flight_number }}</p>
