@@ -1511,7 +1511,7 @@ export default {
             "Content-Type": "application/x-www-form-urlencoded"
           },
           data:
-            "client_id=kztHtqVTBFzcNAAxWFl2mhZx2z5DZEzF&client_secret=nXcUlJJIzvBrFQVd&grant_type=client_credentials"
+            "client_id=kAKCLuAFIGM6tQAJA5g33iLS9ntmry8N&client_secret=izItfc6t8jPHSOUB&grant_type=client_credentials"
         })
           .then(res => {
             console.log("res", res);
