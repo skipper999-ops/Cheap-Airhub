@@ -1545,7 +1545,11 @@ export default {
 
 .airportName {
   font-size: 14px;
-  color: rgb(74, 74, 74);
+  color: rgb(74, 74, 74);    
+overflow: hidden;
+    text-overflow: ellipsis;
+    height: 20px;
+    white-space: pre-line;
 }
 
 .datepickerstyle {
